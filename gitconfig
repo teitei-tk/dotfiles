@@ -1,0 +1,17 @@
+[color]
+    ui = auto
+[user]
+    name = teitei-tk
+    email = teitei.tk@gmail.com
+[core]
+    excludesfile = $HOME/.gitignore
+    editor = /usr/bin/vim
+[include]
+    path = $HOME/.gitconfig_local
+[alias]
+    st = status
+    ch = checkout
+    history = log --pretty=format:¥"%C(yellow)%h %C(White)%ad | %C(White)%s%d %C(Red)[%an]¥" --graph --date=short
+    restart = reset --hard HEAD
+[grep]
+    lineNumber = true
