@@ -1,13 +1,10 @@
 [color]
     ui = auto
-[user]
-    name = teitei-tk
-    email = teitei.tk@gmail.com
 [core]
-    excludesfile = $HOME/.gitignore
+    excludesfile = ~/.gitignore
     editor = /usr/bin/vim
 [include]
-    path = $HOME/.gitconfig_local
+    path = ~/.gitconfig_local
 [alias]
     st = status
     ch = checkout
