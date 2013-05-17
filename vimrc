@@ -53,10 +53,11 @@ Bundle "git://github.com/tpope/vim-fugitive.git"
 Bundle "git://github.com/fholgado/minibufexpl.vim.git"
 Bundle "scrooloose/syntastic.git"
 Bundle "Shougo/neocomplcache.git"
+Bundle "Glench/Vim-Jinja2-Syntax.git"
 
 " python
 Bundle "nathanaelkane/vim-indent-guides"
-Bundle "davidhalter/jedi-vim"
+"Bundle davidhalter/jedi-vim"
 
 " vim-scripts repos
 Bundle 'L9'
@@ -113,6 +114,11 @@ augroup END
 
 " jedi-vim "
 syntax on
+
+
+" Jinja2
+au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
 
 " ------------------------------------------------------------------------ "
 " neocomplcache
