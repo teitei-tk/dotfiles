@@ -65,6 +65,7 @@ Bundle 'FuzzyFinder'
 Bundle 'Align'
 Bundle 'railscasts'
 Bundle 'Zenburn'
+Bundle 'basyura/jslint.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
