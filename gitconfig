@@ -8,7 +8,7 @@
 [alias]
     st = status
     ch = checkout
-    history = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%d %C(Red)[%an]\" --graph --date=short
+    history = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%d %C(Red)[%an]\" --graph --date=iso
     restart = reset --hard HEAD
 [grep]
     lineNumber = true
