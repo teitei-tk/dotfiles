@@ -54,6 +54,7 @@ Bundle "git://github.com/fholgado/minibufexpl.vim.git"
 Bundle "scrooloose/syntastic.git"
 Bundle "Shougo/neocomplcache.git"
 Bundle "Glench/Vim-Jinja2-Syntax.git"
+Bundle "bling/vim-airline.git"
 
 " python
 Bundle "nathanaelkane/vim-indent-guides"
@@ -234,3 +235,5 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " ステータスラインに日時を表示する
 set statusline+=\ \%{g:Date()}
+
+let g:airline_modified_detection=0
