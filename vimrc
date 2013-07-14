@@ -11,13 +11,11 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " required!
 NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 
-" My NeoBundles here:
-NeoBundle 'AutoClose'
-NeoBundle 'The-NERD-tree'
-NeoBundle 'snipMate'
-NeoBundle 'majutsushi/tagbar'
+" status bar
+NeoBundle "bling/vim-airline.git"
 
 " original repos on github
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -25,11 +23,10 @@ NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'pekepeke/titanium-vim'
-NeoBundle "git://github.com/fholgado/minibufexpl.vim.git"
+NeoBundle "fholgado/minibufexpl.vim.git"
 NeoBundle "scrooloose/syntastic.git"
 NeoBundle "Shougo/neocomplcache.git"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
-NeoBundle "bling/vim-airline.git"
 NeoBundle 'tpope/vim-fugitive.git'
 
 " python
@@ -42,6 +39,10 @@ NeoBundle 'Align'
 NeoBundle 'railscasts'
 NeoBundle 'Zenburn'
 NeoBundle 'basyura/jslint.vim'
+NeoBundle 'AutoClose'
+NeoBundle 'The-NERD-tree'
+NeoBundle 'snipMate'
+NeoBundle 'majutsushi/tagbar'
 
 " non github repos
 NeoBundle 'git://git.wincent.com/command-t.git'
