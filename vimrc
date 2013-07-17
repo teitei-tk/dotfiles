@@ -12,36 +12,36 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle "Shougo/neocomplcache.git"
 NeoBundle 'Shougo/vimproc'
+
+" buffer tab
+NeoBundle "fholgado/minibufexpl.vim.git"
 
 " status bar
 NeoBundle "bling/vim-airline.git"
 
+" colorscheme
+NeoBundle 'railscasts'
+NeoBundle 'Zenburn'
+
 " original repos on github
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'pekepeke/titanium-vim'
-NeoBundle "fholgado/minibufexpl.vim.git"
 NeoBundle "scrooloose/syntastic.git"
-NeoBundle "Shougo/neocomplcache.git"
-NeoBundle "Glench/Vim-Jinja2-Syntax.git"
 NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'basyura/jslint.vim'
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
+NeoBundle "Glench/Vim-Jinja2-Syntax.git"
 
 " vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
-NeoBundle 'railscasts'
-NeoBundle 'Zenburn'
-NeoBundle 'basyura/jslint.vim'
 NeoBundle 'AutoClose'
 NeoBundle 'The-NERD-tree'
-NeoBundle 'snipMate'
 NeoBundle 'majutsushi/tagbar'
 
 " non github repos
@@ -72,11 +72,6 @@ set directory=~/.vim/backup
 " backup
 set backup
 set backupdir=~/.vim/backup
-
-augroup filetypedetect
-    au BufNewFile,BufRead *.as setf actionscript
-    au FileType javascript call JavaScriptFold()
-augroup END
 
 " Setting For Python
 autocmd FileType python setl nocindent
