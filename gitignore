@@ -1,11 +1,9 @@
 .svn/
-.*
 !.gitignore
 *‾
 
 # KDE
 .directory
-.*
 !.gitignore
 *‾
 
