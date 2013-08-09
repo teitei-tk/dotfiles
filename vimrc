@@ -32,6 +32,9 @@ NeoBundle "scrooloose/syntastic.git"
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'basyura/jslint.vim'
 
+"NeoBundle 'alpaca-tc/alpaca_powertabline'
+"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
@@ -237,3 +240,4 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgr
 let g:indent_guides_color_change_percent = 30
 " " ガイドの幅
 let g:indent_guides_guide_size = 1"
+
