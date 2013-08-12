@@ -22,7 +22,7 @@ tmux_session_info+=(["separator"]="${separator_right_bold}")
 
 declare -A username
 username+=(["script"]="whoami")
-username+=(["foreground"]="colour238")
+username+=(["foreground"]="colour255")
 username+=(["background"]="colour69")
 username+=(["separator"]="${separator_right_bold}")
 
