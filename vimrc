@@ -241,3 +241,9 @@ let g:indent_guides_color_change_percent = 30
 " " ガイドの幅
 let g:indent_guides_guide_size = 1"
 
+
+"------------------------------------------------------------------------"
+" vim airline
+" ------------------------------------------------------------------------ "
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
