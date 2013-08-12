@@ -23,7 +23,7 @@ tmux_session_info+=(["separator"]="${separator_right_bold}")
 declare -A username
 username+=(["script"]="whoami")
 username+=(["foreground"]="colour255")
-username+=(["background"]="colour69")
+username+=(["background"]="colour8")
 username+=(["separator"]="${separator_right_bold}")
 
 #declare -A ostype
@@ -43,7 +43,7 @@ username+=(["separator"]="${separator_right_bold}")
 
 declare -A vcs_branch
 vcs_branch+=(["script"]="${segments_path}/vcs_branch.sh")
-vcs_branch+=(["foreground"]="colour88")
+vcs_branch+=(["foreground"]="colour1")
 vcs_branch+=(["background"]="colour52")
 vcs_branch+=(["separator"]="${separator_right_bold}")
 
