@@ -14,11 +14,11 @@ tmux_session_info+=(["foreground"]="colour234")
 tmux_session_info+=(["background"]="colour148")
 tmux_session_info+=(["separator"]="${separator_right_bold}")
 
-declare -A hostname
-hostname+=(["script"]="${segments_path}/hostname.sh")
-hostname+=(["foreground"]="white")
-hostname+=(["background"]="colour63")
-hostname+=(["separator"]="${separator_right_bold}")
+#declare -A hostname
+#hostname+=(["script"]="${segments_path}/hostname.sh")
+#hostname+=(["foreground"]="white")
+#hostname+=(["background"]="colour63")
+#hostname+=(["separator"]="${separator_right_bold}")
 
 declare -A username
 username+=(["script"]="whoami")
@@ -26,24 +26,20 @@ username+=(["foreground"]="colour238")
 username+=(["background"]="colour69")
 username+=(["separator"]="${separator_right_bold}")
 
-declare -A ostype
-ostype+=(["script"]="${wrapper_segments_path}/ostype.sh")
-ostype+=(["foreground"]="colour21")
-ostype+=(["background"]="colour33")
-ostype+=(["separator"]="${separator_right_bold}")
+#declare -A ostype
+#ostype+=(["script"]="${wrapper_segments_path}/ostype.sh")
+#ostype+=(["foreground"]="colour21")
+#ostype+=(["background"]="colour33")
+#ostype+=(["separator"]="${separator_right_bold}")
 
-declare -A lan_ip
-lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-lan_ip+=(["foreground"]="colour255")
-lan_ip+=(["background"]="colour24")
-lan_ip+=(["separator"]="${separator_right_bold}")
 
-declare -A wan_ip
-wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-wan_ip+=(["foreground"]="colour255")
-wan_ip+=(["background"]="colour24")
-wan_ip+=(["separator"]="${separator_right_thin}")
-wan_ip+=(["separator_fg"]="white")
+
+#declare -A wan_ip
+#wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
+#wan_ip+=(["foreground"]="colour255")
+#wan_ip+=(["background"]="colour24")
+#wan_ip+=(["separator"]="${separator_right_thin}")
+#wan_ip+=(["separator_fg"]="white")
 
 declare -A vcs_branch
 vcs_branch+=(["script"]="${segments_path}/vcs_branch.sh")
@@ -79,17 +75,17 @@ vcs_others+=(["separator"]="${separator_right_bold}")
 # Register Segments
 #
 register_segment "tmux_session_info"
-if [ "$window_width" -ge 160 ]; then
-    register_segment "hostname"
-fi
+#if [ "$window_width" -ge 160 ]; then
+#    register_segment "hostname"
+#fi
 if [ "$window_width" -ge 200 ]; then
     register_segment "username"
 fi
-if [ "$window_width" -ge 140 ]; then
-    register_segment "ostype"
-fi
-register_segment "lan_ip"
-register_segment "wan_ip"
+#if [ "$window_width" -ge 140 ]; then
+#    register_segment "ostype"
+#fi
+#register_segment "lan_ip"
+#register_segment "wan_ip"
 if [ "$window_width" -ge 188 ]; then
     register_segment "vcs_branch"
 fi

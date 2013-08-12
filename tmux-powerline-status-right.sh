@@ -8,17 +8,23 @@
 #
 #   tmux-powerline-wrapper segments path: ${wrapper_segments_path}
 #
-declare -A lang
-lang+=(["script"]="${wrapper_segments_path}/lang.sh")
-lang+=(["foreground"]="colour248")
-lang+=(["background"]="colour95")
-lang+=(["separator"]="${separator_left_bold}")
+#declare -A lang
+#lang+=(["script"]="${wrapper_segments_path}/lang.sh")
+#lang+=(["foreground"]="colour248")
+#lang+=(["background"]="colour95")
+#lang+=(["separator"]="${separator_left_bold}")
 
-declare -A uptime
-uptime+=(["script"]="${wrapper_segments_path}/uptime.sh")
-uptime+=(["foreground"]="colour22")
-uptime+=(["background"]="colour64")
-uptime+=(["separator"]="${separator_left_bold}")
+#declare -A uptime
+#uptime+=(["script"]="${wrapper_segments_path}/uptime.sh")
+#uptime+=(["foreground"]="colour22")
+#uptime+=(["background"]="colour64")
+#uptime+=(["separator"]="${separator_left_bold}")
+
+declare -A lan_ip
+lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
+lan_ip+=(["foreground"]="colour255")
+lan_ip+=(["background"]="colour24")
+lan_ip+=(["separator"]="${separator_left_bold}")
 
 declare -A load_mem
 load_mem+=(["script"]="${wrapper_segments_path}/load-mem.sh")
@@ -56,6 +62,7 @@ date+=(["separator"]="${separator_left_bold}")
 #
 # Register Segments
 #
+register_segment "lan_ip"
 if [ "$window_width" -ge 122 ]; then
     register_segment "lang"
 fi
