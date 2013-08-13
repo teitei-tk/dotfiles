@@ -20,6 +20,8 @@ NeoBundle "fholgado/minibufexpl.vim.git"
 
 " status bar
 NeoBundle "bling/vim-airline.git"
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
 " colorscheme
 NeoBundle 'railscasts'
@@ -32,8 +34,6 @@ NeoBundle "scrooloose/syntastic.git"
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'basyura/jslint.vim'
 
-"NeoBundle 'alpaca-tc/alpaca_powertabline'
-"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
@@ -243,7 +243,10 @@ let g:indent_guides_guide_size = 1"
 
 
 "------------------------------------------------------------------------"
-" vim airline
+" vim airline & powerline
 " ------------------------------------------------------------------------ "
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+set laststatus=2
+set rtp+=~/.vim/vundle/powerline/powerline/bindings/vim
+
+" powerline fontを使用
+let g:airline_powerline_fonts = 1  " 
