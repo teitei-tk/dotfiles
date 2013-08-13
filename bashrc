@@ -17,6 +17,13 @@ if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi
 
+# macosxでChromeがインストールされていれば、Chrome.appを開く
+if [ `uname` == "Darwin" ]; then
+    if [ -d /Applications/Google\ Chrome.app ]; then
+        alias chrome="open /Applications/Google\ Chrome.app"
+    fi
+fi
+
 GIT_PS1_SHOWDIRTYSTATE=true
 export PATH=$PATH:/usr/local/share/npm/bin
 export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
