@@ -9,4 +9,4 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 
-set guifont=Ricty\ Regular\ for\ Powerline:h15
+set guifont=Ricty\ Regular\ for\ Powerline:h14
