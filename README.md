@@ -19,6 +19,7 @@
 * <code> $ mkdir ~/.tmux && cd ~/.tmux </code>
 * <code> $ git clone git://github.com/yonchu/tmux-powerline.git </code>
 * <code> $ git clone git://github.com/yonchu/tmux-powerline-wrapper.git </code>
+
 ##### font
 * <code> $ brew install fontforge </code>
 * <code> $ sudo cp /System/Library/Fonts/Ricty-Regular.ttf $HOME/.font/ </code>
