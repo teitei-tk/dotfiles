@@ -11,16 +11,10 @@
 #### git-completion
 * <code>$ wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash</code>
 * <code>$ wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh</code>
-
 * <code> $ mv git-completion.bash ~/.git-completion.bash </code>
 * <code> $ mv git-prompt.sh ~/.git-prompt.sh </code>
 
-#### tmux-powerline
-* <code> $ mkdir ~/.tmux && cd ~/.tmux </code>
-* <code> $ git clone git://github.com/yonchu/tmux-powerline.git </code>
-* <code> $ git clone git://github.com/yonchu/tmux-powerline-wrapper.git </code>
-
-##### font
+#### tmux-powerline font
 * <code> $ brew install fontforge </code>
 * <code> $ sudo cp /System/Library/Fonts/Ricty-Regular.ttf $HOME/.font/ </code>
 * <code> $ fontforge -script $HOME/.bundle/powerline/font/fontpatcher.py $HOME/.font/Ricty-Regular.ttf </code>
