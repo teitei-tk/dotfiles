@@ -20,11 +20,11 @@
 * <code> $ git clone git://github.com/yonchu/tmux-powerline.git </code>
 * <code> $ git clone git://github.com/yonchu/tmux-powerline-wrapper.git </code>
 ##### font
-	* <code> $ brew install fontforge </code>
-	* <code> $ sudo cp /System/Library/Fonts/Ricty-Regular.ttf $HOME/.font/ </code>
-	* <code> $ fontforge -script $HOME/.bundle/powerline/font/fontpatcher.py $HOME/.font/Ricty-Regular.ttf </code>
+* <code> $ brew install fontforge </code>
+* <code> $ sudo cp /System/Library/Fonts/Ricty-Regular.ttf $HOME/.font/ </code>
+* <code> $ fontforge -script $HOME/.bundle/powerline/font/fontpatcher.py $HOME/.font/Ricty-Regular.ttf </code>
 </code>
-	* http://qiita.com/alpaca_taichou/items/ab70f914a6a577e25d70
+* http://qiita.com/alpaca_taichou/items/ab70f914a6a577e25d70
 
 ### etc
 #### tmux-powerline color
