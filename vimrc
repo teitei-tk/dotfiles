@@ -9,6 +9,7 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
@@ -204,10 +205,12 @@ let g:neocomplcache_snippets_dir='~/.vim/snippets'
 imap <C-k> <plug>(neocomplcache_snippets_expand)
 smap <C-k> <plug>(neocomplcache_snippets_expand)
 
+
 "------------------------------------------------------------------------"
 " colorscheme
 " ------------------------------------------------------------------------ "
-let scheme = 'zenburn'
+""let scheme = 'zenburn'
+let scheme = 'railscasts'
 augroup guicolorscheme
     autocmd!
     execute 'autocmd GUIEnter * colorscheme' scheme
@@ -215,6 +218,9 @@ augroup END
 execute 'colorscheme' scheme
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
+
+" neocomplcache保管時のback-ground-color
+hi Pmenu ctermbg=8
 
 "------------------------------------------------------------------------"
 " status Line
