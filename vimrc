@@ -222,6 +222,9 @@ let g:netrw_altv = 1
 " neocomplcache保管時のback-ground-color
 hi Pmenu ctermbg=8
 
+" neocomplcacheの現在選択時 
+hi PmenuSel ctermbg=1
+
 "------------------------------------------------------------------------"
 " status Line
 " ------------------------------------------------------------------------ "
