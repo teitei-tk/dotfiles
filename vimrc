@@ -9,7 +9,6 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
@@ -25,6 +24,7 @@ NeoBundle 'itchyny/lightline.vim'
 " colorscheme
 NeoBundle 'railscasts'
 NeoBundle 'Zenburn'
+NeoBundle 'w0ng/vim-hybrid'
 
 " original repos on github
 NeoBundle 'pangloss/vim-javascript'
@@ -55,10 +55,10 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-" ----------------------------------------------------------------------- "
+" -----------------------------------------------------------------------
 " Setting
-" ----------------------------------------------------------------------- "
-set nu
+" -----------------------------------------------------------------------
+set number
 set expandtab
 set shiftwidth=4
 set showmatch
@@ -174,7 +174,7 @@ endif
     let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " スニペットを展開する。スニペットが関係しないところでは行末まで削除
-imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
+map <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
 smap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
 
 " 前回行われた補完をキャンセルします
@@ -205,23 +205,21 @@ imap <C-k> <plug>(neocomplcache_snippets_expand)
 smap <C-k> <plug>(neocomplcache_snippets_expand)
 
 
-"------------------------------------------------------------------------"
+" ------------------------------------------------------------------------
 " colorscheme
-" ------------------------------------------------------------------------ "
-colorscheme railscasts
+" ------------------------------------------------------------------------
+colorscheme hybrid
 
+
+" ------------------------------------------------------------------------
+" window
+" ------------------------------------------------------------------------
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
-" neocomplcache保管時のback-ground-color
-hi Pmenu ctermbg=8
-
-" neocomplcacheの現在選択時 
-hi PmenuSel ctermbg=1
-
-"------------------------------------------------------------------------"
+"-------------------------------------------------------------------------
 " status Line
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------
 function! g:Date()
     return strftime("%x %H:%M")
 endfunction
@@ -229,6 +227,10 @@ endfunction
 " gitのbranch名をstatusバーに表示
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+
+" ------------------------------------------------------------------------
+" vim-indent-guides
+" ------------------------------------------------------------------------
 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup=1
 " ガイドをスタートするインデントの量
@@ -245,9 +247,9 @@ let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
 
 
-"------------------------------------------------------------------------"
+" ------------------------------------------------------------------------
 " lightline
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------
 set laststatus=2
 
 if !has('gui_running')

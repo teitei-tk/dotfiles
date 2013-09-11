@@ -1,5 +1,5 @@
 set imdisable
-colorscheme railscasts
+colorscheme hybrid
 
 augroup filetypedetect
     au BufNewFile,BufRead *.as setf actionscript
@@ -9,5 +9,5 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 
-set transparency=15
+set transparency=5
 set guifont=Ricty\ Regular\ for\ Powerline:h14
