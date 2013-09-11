@@ -9,5 +9,5 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 
-set transparency=5
+set transparency=10
 set guifont=Ricty\ Regular\ for\ Powerline:h14

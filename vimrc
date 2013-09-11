@@ -210,6 +210,12 @@ smap <C-k> <plug>(neocomplcache_snippets_expand)
 " ------------------------------------------------------------------------
 colorscheme hybrid
 
+" ------------------------------------------------------------------------
+" vim-gitgutter
+" ------------------------------------------------------------------------
+nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+
 
 " ------------------------------------------------------------------------
 " window
