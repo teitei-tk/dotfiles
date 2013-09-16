@@ -33,7 +33,7 @@ NeoBundle "scrooloose/syntastic.git"
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'basyura/jslint.vim'
 NeoBundle 'airblade/vim-gitgutter'
-
+NeoBundle 'plasticboy/vim-markdown'
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
