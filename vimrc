@@ -35,6 +35,9 @@ NeoBundle 'basyura/jslint.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'plasticboy/vim-markdown'
 
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'rizzatti/dash.vim'
+
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
