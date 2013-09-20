@@ -13,7 +13,15 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle "Shougo/neocomplcache.git"
-NeoBundle 'Shougo/vimproc'
+NeoBundleLazy 'Shougo/vimproc', {
+\ 'build' : {
+\    'windows' : 'make -f make_mingw32.mak',
+\    'cygwin' : 'make -f make_cygwin.mak',
+\    'mac' : 'make -f make_mac.mak',
+\    'unix' : 'make -f make_unix.mak',
+\    },
+\ }
+NeoBundle 'tpope/vim-dispatch'
 
 " buffer tab
 NeoBundle "fholgado/minibufexpl.vim.git"
@@ -37,6 +45,9 @@ NeoBundle 'plasticboy/vim-markdown'
 
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
+
+
+""NeoBundleLazy 'nosami/Omnisharp', { 'autoload': {'filetypes': ['cs']}, 'build': { 'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"', 'mac': 'xbuild server/OmniSharp.sln', 'unix': 'xbuild server/OmniSharp.sln', } }
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
@@ -70,6 +81,9 @@ set tabstop=4
 set cursorline
 set cursorcolumn
 
+" cs
+autocmd FileType cs se fenc=utf-8 bomb
+
 " swapfile
 set swapfile
 set directory=~/.vim/backup
@@ -102,6 +116,16 @@ augroup END
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 
 " ------------------------------------------------------------------------ "
