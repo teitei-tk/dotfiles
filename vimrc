@@ -80,17 +80,11 @@ set smarttab
 set tabstop=4
 set cursorline
 set cursorcolumn
+set noswapfile
+set nobackup
 
 " cs
 autocmd FileType cs se fenc=utf-8 bomb
-
-" swapfile
-set swapfile
-set directory=~/.vim/backup
-
-" backup
-set backup
-set backupdir=~/.vim/backup
 
 " Setting For Python
 autocmd FileType python setl nocindent
