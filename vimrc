@@ -34,24 +34,29 @@ NeoBundle 'railscasts'
 NeoBundle 'Zenburn'
 NeoBundle 'w0ng/vim-hybrid'
 
-" original repos on github
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'pekepeke/titanium-vim'
-NeoBundle "scrooloose/syntastic.git"
+" git
 NeoBundle 'tpope/vim-fugitive.git'
-NeoBundle 'basyura/jslint.vim'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'plasticboy/vim-markdown'
 
-NeoBundle 'rizzatti/funcoo.vim'
-NeoBundle 'rizzatti/dash.vim'
+" js
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'basyura/jslint.vim'
 
+" titanium
+NeoBundle 'pekepeke/titanium-vim'
 
-""NeoBundleLazy 'nosami/Omnisharp', { 'autoload': {'filetypes': ['cs']}, 'build': { 'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"', 'mac': 'xbuild server/OmniSharp.sln', 'unix': 'xbuild server/OmniSharp.sln', } }
+" cs
+NeoBundleLazy 'nosami/Omnisharp', { 'autoload': {'filetypes': ['cs']}, 'build': { 'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"', 'mac': 'xbuild server/OmniSharp.sln', 'unix': 'xbuild server/OmniSharp.sln', } }
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
+
+" etc
+NeoBundle "scrooloose/syntastic.git"
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rizzatti/funcoo.vim'
+NeoBundle 'rizzatti/dash.vim'
 
 " vim-scripts repos
 NeoBundle 'L9'
