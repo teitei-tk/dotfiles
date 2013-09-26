@@ -13,6 +13,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle "Shougo/neocomplcache.git"
+NeoBundle 'tpope/vim-dispatch'
 NeoBundleLazy 'Shougo/vimproc', {
 \ 'build' : {
 \    'windows' : 'make -f make_mingw32.mak',
@@ -21,7 +22,7 @@ NeoBundleLazy 'Shougo/vimproc', {
 \    'unix' : 'make -f make_unix.mak',
 \    },
 \ }
-NeoBundle 'tpope/vim-dispatch'
+
 
 " buffer tab
 NeoBundle "fholgado/minibufexpl.vim.git"
@@ -46,7 +47,14 @@ NeoBundle 'basyura/jslint.vim'
 NeoBundle 'pekepeke/titanium-vim'
 
 " cs
-NeoBundleLazy 'nosami/Omnisharp', { 'autoload': {'filetypes': ['cs']}, 'build': { 'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"', 'mac': 'xbuild server/OmniSharp.sln', 'unix': 'xbuild server/OmniSharp.sln', } }
+NeoBundleLazy 'nosami/Omnisharp', {
+\ 'autoload': {
+\   'filetypes': ['cs']}, 'build': {
+\       'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+\       'mac': 'xbuild server/OmniSharp.sln',
+\       'unix': 'xbuild server/OmniSharp.sln',
+\   }
+\ }
 
 " python
 NeoBundle "nathanaelkane/vim-indent-guides"
@@ -144,6 +152,15 @@ nmap <C-p> : MBEbp<CR> " 前のバッファ
 
 
 " ------------------------------------------------------------------------ "
+" Omnisharp
+" ------------------------------------------------------------------------ "
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
+
+
+" ------------------------------------------------------------------------ "
 " neocomplcache
 " ------------------------------------------------------------------------ "
 let g:neocomplcache_enable_at_startup = 1 "起動時に有効化
@@ -184,7 +201,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_max_list = 20
 
 " シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 2
 
 " ディクショナリ定義
 let g:neocomplcache_dictionary_filetype_lists = {
