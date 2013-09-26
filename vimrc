@@ -75,9 +75,6 @@ NeoBundle 'AutoClose'
 NeoBundle 'The-NERD-tree'
 NeoBundle 'majutsushi/tagbar'
 
-" non github repos
-NeoBundle 'git://git.wincent.com/command-t.git'
-
 " required!
 filetype plugin indent on 
 filetype indent on
