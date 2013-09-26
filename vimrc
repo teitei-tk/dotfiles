@@ -57,6 +57,7 @@ NeoBundleLazy 'nosami/Omnisharp', {
 \ }
 
 " python
+NeoBundle "davidhalter/jedi-vim"
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
 
@@ -161,6 +162,12 @@ let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
 
 " ------------------------------------------------------------------------ "
+" jedi-vim
+" ------------------------------------------------------------------------ "
+let g:jedi#popup_on_dot = 0
+
+
+" ------------------------------------------------------------------------ "
 " neocomplcache
 " ------------------------------------------------------------------------ "
 let g:neocomplcache_enable_at_startup = 1 "起動時に有効化
@@ -252,6 +259,7 @@ smap <C-k> <plug>(neocomplcache_snippets_expand)
 " ------------------------------------------------------------------------
 colorscheme hybrid
 
+
 " ------------------------------------------------------------------------
 " vim-gitgutter
 " ------------------------------------------------------------------------
@@ -265,6 +273,7 @@ nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 " ------------------------------------------------------------------------
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
+
 
 "-------------------------------------------------------------------------
 " status Line
