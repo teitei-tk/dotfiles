@@ -94,6 +94,7 @@ set cursorline
 set cursorcolumn
 set noswapfile
 set nobackup
+set fileformat=unix
 
 " cs
 autocmd FileType cs se fenc=utf-8 bomb
