@@ -66,6 +66,7 @@ NeoBundle "scrooloose/syntastic.git"
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " vim-scripts repos
 NeoBundle 'L9'
