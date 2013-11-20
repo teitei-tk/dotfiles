@@ -4,7 +4,7 @@
 1. <code>$ mkdir -p ~/.vim/vundle  ~/.vim/backup</code>
 1. <code>$ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</code>
 1. <code>$ python setup.py</code>
-1. <code>$ vim :NeoBundleInstall</code>
+1. <code>$ vim +NeoBundleInstall</code>
 
 
 ## more
