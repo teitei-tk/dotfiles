@@ -23,7 +23,6 @@ NeoBundleLazy 'Shougo/vimproc', {
 \    },
 \ }
 
-
 " buffer tab
 NeoBundle "fholgado/minibufexpl.vim.git"
 
@@ -111,11 +110,13 @@ function! s:javascript_filetype_settings()
 endfunction
 autocmd FileType javascript call s:javascript_filetype_settings()
 
-" phpLint"
+" php
 augroup PHP
+    " Lint
     autocmd!
     autocmd FileType php set makeprg=php\ -l\ %
     autocmd FileType php :set dictionary=~/.vim/php.dict
+
     " php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
     autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
 augroup END
@@ -164,6 +165,10 @@ let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 " ------------------------------------------------------------------------ "
 let g:jedi#popup_on_dot = 0
 
+" ------------------------------------------------------------------------ "
+" Unite
+" ------------------------------------------------------------------------ "
+let g:unite_enable_start_insert=1
 
 " ------------------------------------------------------------------------ "
 " neocomplcache
