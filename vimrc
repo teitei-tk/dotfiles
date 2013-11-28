@@ -55,6 +55,9 @@ NeoBundleLazy 'nosami/Omnisharp', {
 \   }
 \ }
 
+" php
+NeoBundle 'nishigori/vim-php-dictionary'
+
 " python
 NeoBundle "davidhalter/jedi-vim"
 NeoBundle "nathanaelkane/vim-indent-guides"
