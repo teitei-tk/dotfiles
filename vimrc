@@ -38,6 +38,12 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'airblade/vim-gitgutter'
 
+" ftp sync
+NeoBundle 'eshion/vim-sftp-sync'
+
+" syntax
+NeoBundle "scrooloose/syntastic.git"
+
 " js
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'basyura/jslint.vim'
@@ -63,20 +69,23 @@ NeoBundle "davidhalter/jedi-vim"
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle "Glench/Vim-Jinja2-Syntax.git"
 
-" etc
-NeoBundle "scrooloose/syntastic.git"
+" markdown
 NeoBundle 'plasticboy/vim-markdown'
+
+" util
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
-
-" vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
 NeoBundle 'The-NERD-tree'
-NeoBundle 'majutsushi/tagbar'
+NeoBundleLazy 'majutsushi/tagbar', {
+\ "build": {
+\   "mac": "brew install ctags",
+\   }
+\ }
 
 " required!
 filetype plugin indent on 
