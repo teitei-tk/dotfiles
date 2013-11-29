@@ -86,11 +86,7 @@ NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
 NeoBundle 'The-NERD-tree'
-NeoBundleLazy 'majutsushi/tagbar', {
-\ "build": {
-\   "mac": "brew install ctags",
-\   }
-\ }
+NeoBundle 'majutsushi/tagbar'
 
 " required!
 filetype plugin indent on 
