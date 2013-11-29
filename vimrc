@@ -137,6 +137,10 @@ augroup END
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
 
+" space + gで grep の書式を挿入
+au QuickfixCmdPost vimgrep cw
+nnoremap <expr> <space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
+
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
