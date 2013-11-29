@@ -9,6 +9,11 @@ if has('vim_starting')
 endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+" load local setting
+if filereadable(expand('~/.vimrc_local'))
+  source ~/.vimrc_local
+endif
+
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
