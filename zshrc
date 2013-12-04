@@ -98,5 +98,7 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 
+source ~/.bashrc_local
+
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
 RPROMPT='%{${fg[blue]}%}[%d]%{${reset_color}%}'
