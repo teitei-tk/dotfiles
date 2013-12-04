@@ -81,7 +81,7 @@ function rprompt-git-current-branch {
   action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
 
   # %{...%} surrounds escape string
-  echo "%{$color%} ($name$action$color) %{$reset_color%}"
+  echo "%{$color%} ($name$action$color)%{$reset_color%}"
 }
 
 autoload bashcompinit
@@ -98,5 +98,5 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 
-PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch`$ '
+PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
 RPROMPT='%{${fg[blue]}%}[%d]%{${reset_color}%}'
