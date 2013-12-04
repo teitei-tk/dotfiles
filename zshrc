@@ -70,7 +70,7 @@ function rprompt-git-current-branch {
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     color=${fg[red]}
   elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-    color=${fg[red]}
+    color=${fg_bold[red]}
   elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
     color=${fg_bold[yellow]}
   else
