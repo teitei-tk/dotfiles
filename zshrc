@@ -84,6 +84,10 @@ function rprompt-git-current-branch {
   echo "%{$color%} ($name$action$color) %{$reset_color%}"
 }
 
+autoload bashcompinit
+bashcompinit
+source ~/.git-completion.bash
+
 # -------------------------------------------
 # alias
 # -------------------------------------------
