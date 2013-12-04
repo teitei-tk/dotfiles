@@ -6,10 +6,6 @@ export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 setopt no_beep           # ビープ音を鳴らさないようにする
 setopt correct
 
-HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
-HISTSIZE=10000            # メモリに保存されるヒストリの件数
-SAVEHIST=10000            # 保存されるヒストリの件数
-
 # -------------------------------------------
 # history
 # -------------------------------------------
@@ -101,4 +97,4 @@ alias dir="ls"
 source ~/.bashrc_local
 
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
-RPROMPT='%{${fg[blue]}%}[%d]%{${reset_color}%}'
+RPROMPT='%{${fg_bold[gray]}%}[%d]%{${reset_color}%}'
