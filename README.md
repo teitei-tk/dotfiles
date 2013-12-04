@@ -5,6 +5,7 @@
 1. <code>$ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim</code>
 1. <code>$ python setup.py</code>
 1. <code>$ vim +NeoBundleInstall</code>
+1. <code>$ chsh -s /bin/zsh </code>
 
 
 ## more
