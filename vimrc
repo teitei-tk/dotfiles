@@ -68,6 +68,7 @@ NeoBundleLazy 'nosami/Omnisharp', {
 
 " php
 NeoBundle 'nishigori/vim-php-dictionary'
+NeoBundle 'miya0001/vim-dict-wordpress.git'
 
 " python
 NeoBundle "davidhalter/jedi-vim"
@@ -126,11 +127,12 @@ autocmd FileType javascript call s:javascript_filetype_settings()
 " php
 augroup PHP
     " Lint
-    autocmd!
-    autocmd FileType php set makeprg=php\ -l\ %
-    autocmd FileType php :set dictionary=~/.vim/php.dict
+    autocmd FileType php :set dictionary=~/.vim/bundle/vim-php-dictionary/dict/*.dict
+    autocmd FileType php :set dictionary=~/.vim/bundle/vim-dict-wordpress/*.dict
 
     " php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
+    autocmd!
+    autocmd FileType php set makeprg=php\ -l\ %
     autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
 augroup END
 
