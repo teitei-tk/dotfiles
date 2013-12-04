@@ -72,9 +72,9 @@ function rprompt-git-current-branch {
   elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
     color=${fg[red]}
   elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-    color=${fg_bold[red]}
+    color=${fg_bold[yellow]}
   else
-    color=${fg[red]}
+    color=${fg_bold[red]}
   fi
 
   gitdir=`git rev-parse --git-dir 2> /dev/null`
