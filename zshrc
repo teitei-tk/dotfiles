@@ -6,6 +6,8 @@ export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
 setopt no_beep           # ビープ音を鳴らさないようにする
 setopt correct
 
+bindkey -e
+
 # -------------------------------------------
 # history
 # -------------------------------------------
