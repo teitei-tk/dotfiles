@@ -98,3 +98,5 @@ source ~/.bashrc_local
 
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
 RPROMPT='%{${fg_bold[blue]}%}[%d]%{${reset_color}%}'
+
+cd $HOME
