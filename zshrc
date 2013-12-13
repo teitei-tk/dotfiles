@@ -95,6 +95,7 @@ alias ll="ls -l"
 alias c="clear"
 alias l="ls"
 alias dir="ls"
+alias history="history 1"
 
 source ~/.bashrc_local
 
