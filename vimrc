@@ -165,7 +165,6 @@ let g:miniBufExplModSelTarget=1
 let g:miniBufExplSplitToEdge=1
 
 nnoremap <C-d> : bd<CR> " バッファを閉じる
-nmap <Space> : MBEbn<CR> " 次のバッファ
 nmap <C-n> : MBEbn<CR> " 次のバッファ
 nmap <C-p> : MBEbp<CR> " 前のバッファ
 
