@@ -17,6 +17,7 @@ endif
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle "Shougo/neocomplcache.git"
 NeoBundle 'tpope/vim-dispatch'
 NeoBundleLazy 'Shougo/vimproc', {
