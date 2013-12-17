@@ -189,13 +189,16 @@ let g:jedi#popup_on_dot = 0
 let g:unite_enable_start_insert = 1
 
 " files
-nnoremap <silent> <Space>0 :<C-u>Unite file<CR>
+nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
 
 " buffer
-nnoremap <silent> <Space>9 :<C-u>Unite buffer<CR>
+nnoremap <silent> <Space>8 :<C-u>Unite buffer<CR>
+
+" use file list
+nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
 
 " bookmark
-nnoremap <silent> <Space>8 :<C-u>Unite bookmark<CR>
+nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
 
 
 
