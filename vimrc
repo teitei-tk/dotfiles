@@ -177,6 +177,8 @@ if !exists('g:neocomplcache_force_omni_patterns')
 endif
 let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
+nnoremap <silent> ,gd  :OmniSharpGotoDefinition<CR>
+
 
 " ------------------------------------------------------------------------ 
 " jedi-vim
