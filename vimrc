@@ -1,6 +1,6 @@
-" ----------------------------------------------------------------------- "
+" ----------------------------------------------------------------------- 
 " NeoBundle
-" ----------------------------------------------------------------------- "
+" ----------------------------------------------------------------------- 
 set nocompatible " be iMproved
 filetype off
 
@@ -87,7 +87,6 @@ NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
-NeoBundle 'The-NERD-tree'
 NeoBundle 'majutsushi/tagbar'
 
 " required!
@@ -155,9 +154,9 @@ if has("multi_byte")
 endif
 
 
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 " minibufexpl
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 let g:miniBufExplMapWindowNavVim=1 "hjklで移動
 let g:miniBufExplSplitBelow=0 " Put new window above
 let g:miniBufExplMapWindowNavArrows=1
@@ -170,28 +169,53 @@ nmap <C-n> : MBEbn<CR> " 次のバッファ
 nmap <C-p> : MBEbp<CR> " 前のバッファ
 
 
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 " Omnisharp
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 if !exists('g:neocomplcache_force_omni_patterns')
   let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
 
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 " jedi-vim
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 let g:jedi#popup_on_dot = 0
 
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 " Unite
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 let g:unite_enable_start_insert = 1
 
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------
+" vimfiler
+" ------------------------------------------------------------------------
+nnoremap <F2> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd! FileType vimfiler call g:my_vimfiler_settings()
+function! g:my_vimfiler_settings()
+  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
+  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+endfunction
+
+let s:my_action = { 'is_selectable' : 1 }
+function! s:my_action.func(candidates)
+  wincmd p
+  exec 'split '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_split', s:my_action)
+
+let s:my_action = { 'is_selectable' : 1 }                     
+function! s:my_action.func(candidates)
+  wincmd p
+  exec 'vsplit '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_vsplit', s:my_action)
+
+" ------------------------------------------------------------------------ 
 " neocomplcache
-" ------------------------------------------------------------------------ "
+" ------------------------------------------------------------------------ 
 let g:neocomplcache_enable_at_startup = 1 "起動時に有効化
 function InsertTabWrapper()
     if pumvisible()
@@ -396,3 +420,5 @@ endfunction
 function! MyMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
+
+
