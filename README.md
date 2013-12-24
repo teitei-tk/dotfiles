@@ -29,3 +29,6 @@
 	* <code>
 	       echo "]${branch_symbol} #[fg=colour42]${branch}"  
 	  </code>
+
+#### make OmniSharp solution file
+* Unity -> Assets -> Sync MonoDevelop Project
