@@ -22,7 +22,7 @@
 </code>
 * http://qiita.com/alpaca_taichou/items/ab70f914a6a577e25d70
 
-### etc
+## etc
 #### tmux-powerline color
 * branch symbolを変える場合は以下のファイルを編集
 	* ~/.tmux/tmux-powerline/segments/vcs_branch.sh
