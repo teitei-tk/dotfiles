@@ -78,3 +78,6 @@ nosetests.xml
 *.csproj
 *.unityproj
 *.sln
+
+# SublimeText project files
+*.sublime-workspace
