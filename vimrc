@@ -39,6 +39,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'railscasts'
 NeoBundle 'Zenburn'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'cocopon/iceberg.vim'
 
 " git
 NeoBundle 'tpope/vim-fugitive.git'
