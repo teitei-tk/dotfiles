@@ -89,6 +89,7 @@ NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'mattn/calendar-vim'
 
 " required!
 filetype plugin indent on 
