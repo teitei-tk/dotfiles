@@ -90,6 +90,7 @@ NeoBundle 'Align'
 NeoBundle 'AutoClose'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mattn/calendar-vim'
+NeoBundle 't9md/vim-choosewin'
 
 " required!
 filetype plugin indent on 
@@ -338,6 +339,13 @@ nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 
+
+" ------------------------------------------------------------------------
+" vim-choosewin
+" ------------------------------------------------------------------------
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
+let g:choosewin_overlay_clear_multibyte = 1
 
 "-------------------------------------------------------------------------
 " status Line
