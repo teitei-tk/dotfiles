@@ -390,7 +390,8 @@ let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+      \   'right': [ [ 'date' ], ['fileencoding', 'filetype', 'fileformat'], ]
       \ },
       \ 'component_function': {
       \   'modified': 'MyModified',
@@ -401,6 +402,7 @@ let g:lightline = {
       \   'filetype': 'MyFiletype',
       \   'fileencoding': 'MyFileencoding',
       \   'mode': 'MyMode',
+      \   'date' : 'CurrentDatetime'
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
@@ -447,4 +449,6 @@ function! MyMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
 
-
+function! CurrentDatetime()
+    return strftime("%x %H:%M")
+endfunction
