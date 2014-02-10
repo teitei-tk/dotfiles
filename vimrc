@@ -391,7 +391,7 @@ let g:lightline = {
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'date' ], ['fileencoding', 'filetype', 'fileformat'], ]
+      \   'right': [ [ 'date' ], [ 'fileformat', 'filetype', 'fileencoding' ], ]
       \ },
       \ 'component_function': {
       \   'modified': 'MyModified',
