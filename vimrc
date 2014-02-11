@@ -132,6 +132,7 @@ function! s:javascript_filetype_settings()
     autocmd CursorMoved <buffer> call jslint#message()
 endfunction
 autocmd FileType javascript call s:javascript_filetype_settings()
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " php
 augroup PHP
