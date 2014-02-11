@@ -54,6 +54,12 @@ NeoBundle "scrooloose/syntastic.git"
 " js
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'basyura/jslint.vim'
+NeoBundleLazy 'marijnh/tern_for_vim', {
+\ 'build' : 'npm install',
+\ 'autoload' : {
+\   'functions': ['tern#Complete', 'tern#Enable'],
+\   'filetypes' : 'javascript'
+\ }}
 
 " titanium
 NeoBundle 'pekepeke/titanium-vim'
