@@ -163,6 +163,23 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
+" Checking typo.
+autocmd BufWriteCmd *[,*] call s:write_check_typo(expand('<afile>'))
+function! s:write_check_typo(file)
+    let writecmd = 'write'.(v:cmdbang ? '!' : '').' '.a:file
+    if exists('b:write_check_typo_nocheck')
+        execute writecmd
+        return
+    endif
+    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+    let input = input(prompt)
+    if input ==# 'YES'
+        execute writecmd
+        let b:write_check_typo_nocheck = 1
+    elseif input =~? '^y\(es\)\=$'
+        execute writecmd
+    endif
+endfunction
 
 " ------------------------------------------------------------------------ 
 " minibufexpl
