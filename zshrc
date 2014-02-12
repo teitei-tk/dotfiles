@@ -98,8 +98,11 @@ alias dir="ls"
 alias history="history 1"
 
 source ~/.bashrc_local
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
+export PATH=$PATH:/usr/local/share/npm/bin
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
 RPROMPT='%{${fg_bold[blue]}%}[%d]%{${reset_color}%}'
+export TERM=xterm-256color
 
 cd $HOME
