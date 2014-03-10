@@ -97,6 +97,7 @@ NeoBundle 'AutoClose'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 't9md/vim-choosewin'
+NeoBundle 'osyo-manga/vim-over'
 
 " required!
 filetype plugin indent on 
@@ -370,6 +371,11 @@ let g:netrw_altv = 1
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 let g:choosewin_overlay_clear_multibyte = 1
+
+" ------------------------------------------------------------------------
+" vim-over
+" ------------------------------------------------------------------------
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
 
 "-------------------------------------------------------------------------
 " status Line
