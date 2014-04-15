@@ -12,8 +12,8 @@ bindkey -e
 # history
 # -------------------------------------------
 HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
-HISTSIZE=10000            # メモリに保存されるヒストリの件数
-SAVEHIST=10000            # 保存されるヒストリの件数
+HISTSIZE=20000            # メモリに保存されるヒストリの件数
+SAVEHIST=20000            # 保存されるヒストリの件数
 
 # -------------------------------------------
 # color
@@ -101,6 +101,7 @@ source ~/.bashrc_local
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 export PATH=$PATH:/usr/local/share/npm/bin
+export PATH=$PATH:/Applications/eclipse/android/platform-tools
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%}`rprompt-git-current-branch` $ '
 RPROMPT='%{${fg_bold[blue]}%}[%d]%{${reset_color}%}'
 export TERM=xterm-256color

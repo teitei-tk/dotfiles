@@ -98,6 +98,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 't9md/vim-choosewin'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'tpope/vim-surround'
 
 " required!
 filetype plugin indent on 
