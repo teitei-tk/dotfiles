@@ -96,6 +96,7 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 alias history="history 1"
+alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
 
 source ~/.bashrc_local
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'

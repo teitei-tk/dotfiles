@@ -99,6 +99,7 @@ NeoBundle 'mattn/calendar-vim'
 NeoBundle 't9md/vim-choosewin'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'ryutorion/vim-itunes'
 
 " required!
 filetype plugin indent on 
