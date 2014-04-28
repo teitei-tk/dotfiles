@@ -79,7 +79,15 @@ NeoBundle 'nishigori/vim-php-dictionary'
 NeoBundle 'miya0001/vim-dict-wordpress.git'
 
 " python
-NeoBundle 'davidhalter/jedi-vim'
+NeoBundleLazy "davidhalter/jedi-vim", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"],
+      \ },
+      \ "build": {
+      \   "mac": "pip install jedi",
+      \   "unix": "pip install jedi",
+      \ }}
+
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
@@ -112,6 +120,9 @@ syntax on
 " -----------------------------------------------------------------------
 " Setting
 " -----------------------------------------------------------------------
+" <Leader>を,に
+let mapleader = ","
+
 " 行数表示
 set number
 
@@ -224,7 +235,21 @@ nnoremap <silent> ,gd  :OmniSharpGotoDefinition<CR>
 " ------------------------------------------------------------------------ 
 " jedi-vim
 " ------------------------------------------------------------------------ 
-let g:jedi#popup_on_dot = 0
+
+let s:hooks = neobundle#get_hooks("jedi-vim")
+function! s:hooks.on_source(bundle)
+    let g:jedi#popup_on_dot = 0
+
+    " jediにvimの設定を任せると'completeopt+=preview'するので
+    " 自動設定機能をOFFにし手動で設定を行う
+    let g:jedi#auto_vim_configuration = 0
+
+    " 補完の最初の項目が選択された状態だと使いにくいためオフにする
+    let g:jedi#popup_select_first = 0
+
+    " split
+    let g:jedi#use_splits_not_buffers = "left"
+endfunction
 
 " ------------------------------------------------------------------------ 
 " Unite
