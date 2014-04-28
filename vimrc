@@ -234,7 +234,7 @@ if !exists('g:neocomplcache_force_omni_patterns')
 endif
 let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
-nnoremap <silent> ,gd  :OmniSharpGotoDefinition<CR>
+nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
 
 
 " ------------------------------------------------------------------------ 
@@ -417,8 +417,8 @@ colorscheme hybrid
 " vim-gitgutter
 " ------------------------------------------------------------------------
 let g:gitgutter_enabled = 0
-nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
-nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent> <Leader>gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> <Leader>gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
 
 " ------------------------------------------------------------------------
