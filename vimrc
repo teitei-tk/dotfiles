@@ -123,7 +123,6 @@ syntax on
 " <Leader>を,に
 let mapleader = ","
 
-
 " 行数表示
 set number
 
@@ -142,7 +141,6 @@ set cursorcolumn
 " バックアップは自分でやります
 set noswapfile
 set nobackup
-
 
 " Beep音がうるさい
 set vb t_vb=
@@ -254,13 +252,14 @@ function! s:hooks.on_source(bundle)
     " split
     let g:jedi#use_splits_not_buffers = "left"
 
+    " neocomplcacheの補完を優先
+    let g:jedi#completions_enabled = 0
+    let g:jedi#auto_vim_configuration = 0
+    let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 endfunction
 
 " NeoCompleteの補完を優先する
 autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " ------------------------------------------------------------------------ 
 " Unite
