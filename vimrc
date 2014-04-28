@@ -109,14 +109,22 @@ syntax on
 " -----------------------------------------------------------------------
 " Setting
 " -----------------------------------------------------------------------
+" 行数表示
 set number
-set expandtab
-set shiftwidth=4
+
+" プレース表示
 set showmatch
+
+" indent
+set expandtab
 set smarttab
-set tabstop=4
+set softtabstop=4 tabstop=4 shiftwidth=4
+
+" カーソル位置大事
 set cursorline
 set cursorcolumn
+
+" バックアップは自分でやります
 set noswapfile
 set nobackup
 
@@ -395,16 +403,21 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " ------------------------------------------------------------------------
 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
 let g:indent_guides_enable_on_vim_startup=1
+
 " ガイドをスタートするインデントの量
 let g:indent_guides_start_level=2
+
 " 自動カラーを無効にする
 let g:indent_guides_auto_colors=0
+
 " 奇数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
 " 偶数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+
 " ハイライト色の変化の幅
 let g:indent_guides_color_change_percent = 30
+
 " ガイドの幅
 let g:indent_guides_guide_size = 1
 
