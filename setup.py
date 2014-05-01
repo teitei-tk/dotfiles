@@ -33,7 +33,7 @@ class Installer(object):
 
         dotfiles = os.listdir('./')
         for dotfile in dotfiles:
-            if EXCLUDE_LIST in dotfile:
+            if dotfile in EXCLUDE_LIST:
                 continue
 
             source_path = self.script_path + "/" + dotfile
@@ -46,7 +46,8 @@ class Installer(object):
 
                 print "backup %s -> %s" % ( copy_path, backup_path )
 
-            os.symlink( source_path, copy_path )
+            if not os.path.exists(copy_path):
+                os.symlink( source_path, copy_path )
 
         print "\nDone"
 
