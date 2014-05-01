@@ -1,4 +1,5 @@
 # Setup
+1. <code>$ pip install fabric</code>
 1. <code>$ git clone git://github.com:teitei-tk/MyDotfiles.git </code>
 1. <code>$ cd /path/to/MyDotfiles/</code>
 1. <code>$ fab setup_for_all</code>
