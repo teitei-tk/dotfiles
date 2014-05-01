@@ -252,10 +252,10 @@ function! s:hooks.on_source(bundle)
     " split
     let g:jedi#use_splits_not_buffers = "left"
 
-    " neocomplcacheの補完を優先
-    let g:jedi#completions_enabled = 0
-    let g:jedi#auto_vim_configuration = 0
-    let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+"   " neocomplcacheの補完を優先
+"   let g:jedi#completions_enabled = 0
+"   let g:jedi#auto_vim_configuration = 0
+"   let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 endfunction
 
 " NeoCompleteの補完を優先する
