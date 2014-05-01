@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # coding: UTF-8
 
+try:
+    import fabfile
+except:
+    print "try 'pip install fabric'"
+    import sys
+    sys.exit()
+
 import os
 import subprocess
 
@@ -60,10 +67,3 @@ class Installer(object):
             "chsh -s /bin/zsh"
             ]
         [subprocess.call(cmd, shell=True) for cmd in process_list]
-
-def run():
-    installer = Installer()
-    installer.do()
-
-if __name__ == "__main__":
-    run()
