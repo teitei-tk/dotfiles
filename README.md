@@ -1,7 +1,7 @@
 # Setup
 1. <code>$ git clone git://github.com:teitei-tk/MyDotfiles.git </code>
 1. <code>$ cd /path/to/MyDotfiles/</code>
-1. <code>$ python setup.py</code>
+1. <code>$ fab setup_for_all</code>
 
 
 ## more
