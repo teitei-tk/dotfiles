@@ -1,13 +1,5 @@
 #!/usr/bin/env python
 # coding: UTF-8
-
-try:
-    import fabfile
-except:
-    print "try 'pip install fabric'"
-    import sys
-    sys.exit()
-
 import os
 import subprocess
 
