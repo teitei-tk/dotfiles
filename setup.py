@@ -4,22 +4,36 @@
 import os
 import subprocess
 
-class Setup(object):
-    exclude_list = [".git", "README.md", "setup.py", "fabfile.py"]
+EXCLUDE_LIST = [".git", "README.md", "setup.py", "fabfile.py"]
 
+class Installer(object):
     def __init__(self):
         self.home_dir = os.environ['HOME']
         self.script_path = os.path.dirname( os.path.abspath(__file__) )
 
+    def do(self):
+        self.setup_for_dotfiles()
+        self.setup_for_vim()
+        self.setup_for_shell()
+
     def setup_for_vim(self):
-        pass
+        print "start vim setting\n"
+
+        process_list = [
+            "mkdir -p %s/.vim/vundle" % ( self.home_dir ),
+            "git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim",
+            "vim +NeoBundleInstall +q"
+            ]
+        [subprocess.call(cmd, shell=True) for cmd in process_list]
+
+        print "\nDone"
 
     def setup_for_dotfiles(self):
         print "start Dotfiles setup"
 
         dotfiles = os.listdir('./')
         for dotfile in dotfiles:
-            if self.exclude_list in dotfile:
+            if EXCLUDE_LIST in dotfile:
                 continue
 
             source_path = self.script_path + "/" + dotfile
@@ -37,36 +51,18 @@ class Setup(object):
         print "\nDone"
 
     def setup_for_shell(self):
-        pass
-
+        process_list = [
+            "wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash",
+            "wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh",
+            "mv %s/git-completion.bash %s/.git-completion.bash && rm %s/git-completion.bash" % ( self.script_path, self.home_dir, self.script_path ),
+            "mv %s/git-prompt.sh %s/.git-prompt.sh && rm %s/git-prompt.sh" % ( self.script_path, self.home_dir, self.script_path ),
+            "chsh -s /bin/zsh"
+            ]
+        [subprocess.call(cmd, shell=True) for cmd in process_list]
 
 def run():
-    pass
-
-if __name__ == "__main__":
-    print 'Dotfiles Setup Start...\n'
-
-    sourceDirPath = os.path.dirname( os.path.abspath(__file__) )
-    homeDirPath = os.environ['HOME']
-
-    dotfiles = os.listdir('./')
-    for dotfile in dotfiles:
-        if dotfile == '.git' or dotfile == 'README.md' or dotfile == 'setup.py':
-            continue
-
-        sourcePath = sourceDirPath + "/" + dotfile
-        copyPath = homeDirPath + "/." + dotfile
-
-        if os.path.isfile( copyPath ):
-            # backup
-            backupPath = homeDirPath + "/_" + dotfile
-            os.rename( copyPath, backupPath )
-
-            print "backup %s -> %s" % ( copyPath, backupPath )
-
-        os.symlink( sourcePath, copyPath )
-
-    print "\nDone"
+    installer = Installer()
+    installer.do()
 
 if __name__ == "__main__":
     run()
