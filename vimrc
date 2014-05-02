@@ -123,6 +123,9 @@ syntax on
 " <Leader>を,に
 let mapleader = ","
 
+" 一応。
+set encoding=utf-8
+
 " 行数表示
 set number
 
@@ -144,6 +147,9 @@ set nobackup
 
 " Beep音がうるさい
 set vb t_vb=
+
+" <FileName>.un~対策"
+set undofile
 
 " cs
 autocmd FileType cs se fenc=utf-8 bomb
