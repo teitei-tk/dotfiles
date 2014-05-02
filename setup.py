@@ -20,6 +20,7 @@ class Installer(object):
 
         process_list = [
             "mkdir -p %s/.vim/vundle" % ( self.home_dir ),
+            "mkdir -p %s/.vim/vimundo" % ( self.home_dir ),
             "git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim",
             "vim +NeoBundleInstall +q"
             ]

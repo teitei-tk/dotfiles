@@ -148,8 +148,10 @@ set nobackup
 " Beep音がうるさい
 set vb t_vb=
 
-" <FileName>.un~対策"
+" undo履歴
 set undofile
+set undodir=~/.vim/vimundo
+
 
 " cs
 autocmd FileType cs se fenc=utf-8 bomb
