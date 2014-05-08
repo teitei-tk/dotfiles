@@ -29,6 +29,9 @@ NeoBundleLazy 'Shougo/vimproc', {
 \    },
 \ }
 
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+
 " buffer tab
 NeoBundle "fholgado/minibufexpl.vim.git"
 
@@ -409,9 +412,31 @@ inoremap <expr><C-y> neocomplcache#close_popup()
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 " snipetの配置場所
-let g:neocomplcache_snippets_dir='~/.vim/snippets'
+let g:neocomplcache_snippets_dir='~/.vim/bundle/neosnippet-snippets/neosnippets/'
 imap <C-k> <plug>(neocomplcache_snippets_expand)
 smap <C-k> <plug>(neocomplcache_snippets_expand)
+
+
+" ----------------------------------------------------------------------- 
+" NeoSinppet
+" ----------------------------------------------------------------------- 
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+ 
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+ \ "\<Plug>(neosnippet_expand_or_jump)"
+ \: "\<TAB>"
+  
+" For snippet_complete marker.
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
 
 
 " ------------------------------------------------------------------------
@@ -557,3 +582,4 @@ endfunction
 function! CurrentDatetime()
     return strftime("%x %H:%M")
 endfunction
+
