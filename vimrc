@@ -330,7 +330,6 @@ function! s:my_action.func(candidates)
 endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
 
-NeoBundle has('lua') ? 'Shougo/neocomplete.vim' : 'Shougo/neocomplcache.vim'
 
 if neobundle#is_installed('neocomplete')
     " ------------------------------------------------------------------------ 
