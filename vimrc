@@ -371,10 +371,12 @@ if neobundle#is_installed('neocomplete.vim')
 
     " cancel last completion
     inoremap <expr><C-g> neocomplete#undo_completion()
+
+    " common complete setting
     inoremap <expr><C-l> neocomplete#complete_common_string()
 
+    " popup close
     inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
-
     inoremap <expr><C-y> neocomplete#smart_close_popup() . "\<C-h>"
 
     " Enable heavy omni completion.
@@ -454,7 +456,6 @@ elseif neobundle#is_installed('neocomplcache')
 
     " 改行で補完ウィンドウを閉じる
     inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
-
 
     " <C-h>や<BS>を押したときに確実にポップアップを削除します
     inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
