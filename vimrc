@@ -335,10 +335,19 @@ endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 
-if neobundle#is_installed('neocomplete')
-    " ------------------------------------------------------------------------ 
-    " neocomplete
-    " ------------------------------------------------------------------------ 
+if neobundle#is_installed('neocomplete.vim')
+    " Disable AutoComplPop.
+    let g:acp_enableAtStartup = 0
+
+    " Use neocomplete.
+    let g:neocomplete#enable_at_startup = 1
+
+    " Use smartcase.
+    let g:neocomplete#enable_smart_case = 1
+
+    " Use camel case
+    let g:neocomplete#enable_camel_case = 1
+
     function InsertTabWrapper()
         if pumvisible()
             return "\<c-n>"
@@ -355,63 +364,48 @@ if neobundle#is_installed('neocomplete')
 
     inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-    let g:neocomplete_enable_at_startup = 1 "起動時に有効化
+    " Set minimum syntax keyword length.
+    let g:neocomplete#sources#syntax#min_keyword_length = 2
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-    " 補完ウィンドウの設定
-    set completeopt=menuone
+    " set comlete list count
+    let g:neocomplete#max_list = 20
 
-    " 起動時に有効化
-    let g:neocomplete_enable_at_startup = 1
-
-    " autocmpltepopを無効化
-    lef g:g:acp_enableAtStartup = 0
-
-    " 大文字が入力されるまで大文字小文字の区別を無視する
-    let g:neocomplete_enable_smart_case = 1
-
-    " _(アンダースコア)区切りの補完を有効化
-    let g:neocomplete_enable_underbar_completion = 1
-
-    let g:neocomplete_enable_camel_case_completion = 1
-
-    " ポップアップメニューで表示される候補の数
-    let g:neocomplete_max_list = 20
-
-    " シンタックスをキャッシュするときの最小文字長
-    let g:neocomplete_min_syntax_length = 2
-
-    if !exists('g:neocomplete_keyword_patterns')
-        let g:neocomplete_keyword_patterns = {}
+    " Define keyword.
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
     endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    let g:neocomplete_keyword_patterns['default'] = '\h\w*'
-
-    " スニペットを展開する。スニペットが関係しないところでは行末まで削除
-    map <expr><C-k> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete_snippets_expand)" : "\<C-o>D"
-    smap <expr><C-k> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete_snippets_expand)" : "\<C-o>D"
-
-    " 前回行われた補完をキャンセルします
+    " cancel last completion
     inoremap <expr><C-g> neocomplete#undo_completion()
-
-    " 補完候補のなかから、共通する部分を補完します
     inoremap <expr><C-l> neocomplete#complete_common_string()
 
-    " 改行で補完ウィンドウを閉じる
     inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
 
-    " <C-h>や<BS>を押したときに確実にポップアップを削除します
-    inoremap <expr><C-h> neocomplete#smart_close_popup().”\<C-h>”
+    inoremap <expr><C-y> neocomplete#smart_close_popup() . "\<C-h>"
 
-    " 現在選択している候補を確定します
+    " 現在線ｔなくしている候補を確定
     inoremap <expr><C-y> neocomplete#close_popup()
 
-    " 現在選択している候補をキャンセルし、ポップアップを閉じます
+    " 現在選択している候補をキャンセルし、ポップアップを閉じる
     inoremap <expr><C-e> neocomplete#cancel_popup()
 
-    " snipetの配置場所
-    let g:neocomplete_snippets_dir='~/.vim/bundle/neosnippet-snippets/neosnippets/'
-    imap <C-k> <plug>(neocomplete_snippets_expand)
-    smap <C-k> <plug>(neocomplete_snippets_expand)
+
+    " Enable omni completion.
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType jinja,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+    " Enable heavy omni completion.
+    if !exists('g:neocomplete#sources#omni#input_patterns')
+      let g:neocomplete#sources#omni#input_patterns = {}
+    endif
+
+    let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
 elseif neobundle#is_installed('neocomplcache')
     " ------------------------------------------------------------------------ 
@@ -467,7 +461,8 @@ elseif neobundle#is_installed('neocomplcache')
     if !exists('g:neocomplcache_keyword_patterns')
         let g:neocomplcache_keyword_patterns = {}
     endif
-        let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+    let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
     " スニペットを展開する。スニペットが関係しないところでは行末まで削除
     map <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-o>D"
