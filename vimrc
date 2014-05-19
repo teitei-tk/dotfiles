@@ -107,7 +107,7 @@ NeoBundle "mattn/emmet-vim"
 " util
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'kris89/vim-multiple-cursors'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
@@ -339,11 +339,6 @@ call unite#custom_action('file', 'my_vsplit', s:my_action)
 " neocomplete
 " ------------------------------------------------------------------------
 if neobundle#is_installed('neocomplete.vim')
-    inoremap <silent> <CR> <C-r>=<SID>close_function()<CR>
-    function! s:close_function()
-      return neocomplete#close_popup() . "\<CR>"
-    endfunction
-
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
 
@@ -394,19 +389,19 @@ elseif neobundle#is_installed('neocomplcache')
     let g:neocomplete_enable_at_startup = 1 "起動時に有効化
     function InsertTabWrapper()
         if pumvisible()
-            return "\<c-n>"
+            return "\<C-n>"
         endif
         let col = col('.') - 1
         if !col || getline('.')[col - 1] !~ '\k\|<\|/'
             return "\<tab>"
         elseif exists('&omnifunc') && &omnifunc == ''
-            return "\<c-n>"
+            return "\<C-n>"
         else
-            return "\<c-x>\<c-o>"
+            return "\<C-x>\<C-o>"
         endif
     endfunction
 
-    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+    inoremap <tab> <C-r>=InsertTabWrapper()<CR>
 
     " 補完ウィンドウの設定
     set completeopt=menuone
@@ -525,6 +520,21 @@ let g:netrw_altv = 1
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 let g:choosewin_overlay_clear_multibyte = 1
+
+
+" ------------------------------------------------------------------------
+" vim-multiple-cursors
+" ------------------------------------------------------------------------
+function! Multiple_cursors_before()
+    exe 'NeoCompleteLock'
+    echo 'Disabled autocomplete'
+endfunction
+
+function! Multiple_cursors_after()
+    exe 'NeoCompleteUnlock'
+    echo 'Enabled autocomplete'
+endfunction
+
 
 " ------------------------------------------------------------------------
 " vim-over
