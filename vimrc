@@ -18,7 +18,7 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle has('lua') ? "Shougo/neocomplcache.git" : "Shougo/neocomplcache.git"
+NeoBundle has('lua') ? "Shougo/neocomplete.vim" : "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
 NeoBundleLazy 'Shougo/vimproc', {
 \ 'build' : {
@@ -99,6 +99,10 @@ NeoBundle 'plasticboy/vim-markdown'
 
 " cli
 NeoBundle 'thinca/vim-quickrun'
+
+
+" html
+NeoBundle "mattn/emmet-vim"
 
 " util
 NeoBundle 'rizzatti/funcoo.vim'
