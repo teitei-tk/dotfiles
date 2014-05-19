@@ -335,7 +335,15 @@ endfunction
 call unite#custom_action('file', 'my_vsplit', s:my_action)
 
 
+" ------------------------------------------------------------------------
+" neocomplete
+" ------------------------------------------------------------------------
 if neobundle#is_installed('neocomplete.vim')
+    inoremap <silent> <CR> <C-r>=<SID>close_function()<CR>
+    function! s:close_function()
+      return neocomplete#close_popup() . "\<CR>"
+    endfunction
+
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
 
@@ -347,22 +355,6 @@ if neobundle#is_installed('neocomplete.vim')
 
     " Use camel case
     let g:neocomplete#enable_camel_case = 1
-
-    function InsertTabWrapper()
-        if pumvisible()
-            return "\<c-n>"
-        endif
-        let col = col('.') - 1
-        if !col || getline('.')[col - 1] !~ '\k\|<\|/'
-            return "\<tab>"
-        elseif exists('&omnifunc') && &omnifunc == ''
-            return "\<c-n>"
-        else
-            return "\<c-x>\<c-o>"
-        endif
-    endfunction
-
-    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
     " Set minimum syntax keyword length.
     let g:neocomplete#sources#syntax#min_keyword_length = 2
@@ -384,20 +376,6 @@ if neobundle#is_installed('neocomplete.vim')
     inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
 
     inoremap <expr><C-y> neocomplete#smart_close_popup() . "\<C-h>"
-
-    " 現在線ｔなくしている候補を確定
-    inoremap <expr><C-y> neocomplete#close_popup()
-
-    " 現在選択している候補をキャンセルし、ポップアップを閉じる
-    inoremap <expr><C-e> neocomplete#cancel_popup()
-
-
-    " Enable omni completion.
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType jinja,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
     " Enable heavy omni completion.
     if !exists('g:neocomplete#sources#omni#input_patterns')
