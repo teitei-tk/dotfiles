@@ -242,10 +242,9 @@ nmap <C-p> : MBEbp<CR> " 前のバッファ
 " ------------------------------------------------------------------------ 
 " Omnisharp
 " ------------------------------------------------------------------------ 
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplcache_force_omni_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
 
 nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
 

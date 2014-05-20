@@ -11,7 +11,15 @@ bindkey -v
 # -------------------------------------------
 # load setting
 # -------------------------------------------
-source ~/.bashrc_local
+load_file_with_exists () {
+    if [ -e $1 ]; then
+        source $1
+    fi
+}
+
+load_file_with_exists "~/.bashrc_local"
+load_file_with_exists "~/.zshrc_local"
+
 
 # -------------------------------------------
 # history
@@ -28,15 +36,13 @@ setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加�
 # color
 # -------------------------------------------
 # カラー表示を有効化
-autoload -U colors; colors
-colors
+autoload -U colors; colors; colors
 
 # -------------------------------------------
 # 補完
 # -------------------------------------------
 # 補完機能を有効化
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
 
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -53,7 +59,9 @@ setopt interactive_comments  # コマンドラインでも # 以降をコメン�
 setopt magic_equal_subst     # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 setopt complete_in_word      # 語の途中でもカーソル位置で補完
 setopt always_last_prompt    # カーソル位置は保持したままファイル名一覧を順次その場で表示
-setopt print_eight_bit  #日本語ファイル名等8ビットを通す
+setopt print_eight_bit       #日本語ファイル名等8ビットを通す
+setopt list_types            # 補完候補にファイルの種類も表示する
+
 
 
 # -------------------------------------------
