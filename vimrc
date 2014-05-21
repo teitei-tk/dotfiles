@@ -15,7 +15,7 @@ if filereadable(expand('~/.vimrc_local'))
 endif
 
 " required!
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle has('lua') ? "Shougo/neocomplete.vim" : "Shougo/neocomplcache.vim"
