@@ -100,7 +100,6 @@ NeoBundle 'plasticboy/vim-markdown'
 " cli
 NeoBundle 'thinca/vim-quickrun'
 
-
 " html
 NeoBundle "mattn/emmet-vim"
 
@@ -501,7 +500,6 @@ colorscheme hybrid
 " ------------------------------------------------------------------------
 " vim-gitgutter
 " ------------------------------------------------------------------------
-let g:gitgutter_enabled = 0
 nnoremap <silent> <Leader>gg :<C-u>GitGutterToggle<CR>
 nnoremap <silent> <Leader>gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
