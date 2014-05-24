@@ -64,9 +64,6 @@ NeoBundleLazy 'marijnh/tern_for_vim', {
 \   'filetypes' : 'javascript'
 \ }}
 
-" titanium
-NeoBundle 'pekepeke/titanium-vim'
-
 " cs
 NeoBundleLazy 'nosami/Omnisharp', {
 \ 'autoload': {
@@ -93,6 +90,32 @@ NeoBundleLazy "davidhalter/jedi-vim", {
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
+
+" ruby
+NeoBundle 'tpope/vim-rails'
+
+NeoBundleLazy 'vim-ruby/vim-ruby', {
+    \ 'autoload' : {
+    \   'filetypes': ['ruby', 'eruby', 'haml']
+    \ } 
+}
+NeoBundle 'thinca/vim-ref'
+NeoBundleLazy 'taka84u9/vim-ref-ri', {
+    \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
+    \   'autoload': {
+    \       'filetypes': ['ruby', 'eruby', 'haml'] 
+    \   }
+    \}
+NeoBundleLazy 'skwp/vim-rspec', {
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'eruby', 'haml'] 
+    \ }
+    \}
+NeoBundleLazy 'ruby-matchit', {
+    \   'autoload' : {
+    \       'filetypes': ['ruby', 'eruby', 'haml']
+    \   } 
+    \ }
 
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
