@@ -98,7 +98,7 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
     \ 'autoload' : {
     \   'filetypes': ['ruby', 'eruby', 'haml']
     \ } 
-}
+    \}
 NeoBundle 'thinca/vim-ref'
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
     \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
@@ -115,7 +115,7 @@ NeoBundleLazy 'ruby-matchit', {
     \   'autoload' : {
     \       'filetypes': ['ruby', 'eruby', 'haml']
     \   } 
-    \ }
+    \}
 
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
