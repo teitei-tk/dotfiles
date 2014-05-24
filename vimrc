@@ -402,6 +402,7 @@ if neobundle#is_installed('neocomplete.vim')
 
     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
+    let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
 elseif neobundle#is_installed('neocomplcache')
     " ------------------------------------------------------------------------ 
