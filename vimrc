@@ -64,6 +64,12 @@ NeoBundleLazy 'marijnh/tern_for_vim', {
 \   'filetypes' : 'javascript'
 \ }}
 
+NeoBundleLazy "kchmck/vim-coffee-script", {
+    \ 'autoload': {
+    \   'filetypes' : ['coffee']
+    \ }
+    \}
+
 " cs
 NeoBundleLazy 'nosami/Omnisharp', {
 \ 'autoload': {
@@ -198,6 +204,11 @@ function! s:javascript_filetype_settings()
 endfunction
 autocmd FileType javascript call s:javascript_filetype_settings()
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+
+" coffee
+au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+
 
 " php
 augroup PHP
