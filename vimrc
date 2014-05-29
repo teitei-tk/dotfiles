@@ -216,6 +216,12 @@ autocmd FileType python setl nocindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+" ruby
+function! s:ruby_setting()
+    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endfunction
+autocmd FileType ruby call s:ruby_setting()
+
 " jslint.vim
 function! s:javascript_filetype_settings()
     autocmd BufLeave <buffer> call jslint#clear()
@@ -225,10 +231,8 @@ endfunction
 autocmd FileType javascript call s:javascript_filetype_settings()
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-
 " coffee
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
-
 
 " php
 augroup PHP
