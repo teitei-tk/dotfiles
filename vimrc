@@ -29,6 +29,8 @@ NeoBundleLazy 'Shougo/vimproc', {
 \    },
 \ }
 
+NeoBundle "mattn/benchvimrc-vim"
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
@@ -46,7 +48,7 @@ NeoBundle 'cocopon/iceberg.vim'
 
 " git
 NeoBundle 'tpope/vim-fugitive.git'
-NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'sgur/vim-gitgutter'
 
 " ftp sync
 NeoBundle 'eshion/vim-sftp-sync'
@@ -55,34 +57,49 @@ NeoBundle 'eshion/vim-sftp-sync'
 NeoBundle "scrooloose/syntastic.git"
 
 " js
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'basyura/jslint.vim'
-NeoBundleLazy 'marijnh/tern_for_vim', {
-\ 'build' : 'npm install',
-\ 'autoload' : {
-\   'functions': ['tern#Complete', 'tern#Enable'],
-\   'filetypes' : 'javascript'
-\ }}
+NeoBundleLazy 'pangloss/vim-javascript', {
+    \ 'autoload' : {
+    \   'filetypes' : ['javascript', 'coffee']
+    \ }}
 
+NeoBundleLazy 'basyura/jslint.vim', {
+    \ 'autoload' : {
+    \   'filetypes' : ['javascript']
+    \ }}
+
+NeoBundleLazy 'marijnh/tern_for_vim', {
+    \ 'build' : 'npm install',
+    \ 'autoload' : {
+    \   'functions': ['tern#Complete', 'tern#Enable'],
+    \   'filetypes' : 'javascript'
+    \ }}
+
+" coffee
 NeoBundleLazy "kchmck/vim-coffee-script", {
     \ 'autoload': {
     \   'filetypes' : ['coffee']
-    \ }
-    \}
+    \ }}
 
 " cs
 NeoBundleLazy 'nosami/Omnisharp', {
-\ 'autoload': {
-\   'filetypes': ['cs']}, 'build': {
-\       'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-\       'mac': 'xbuild server/OmniSharp.sln',
-\       'unix': 'xbuild server/OmniSharp.sln',
-\   }
-\ }
+    \ 'autoload': {
+    \   'filetypes': ['cs']}, 'build': {
+    \       'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+    \       'mac': 'xbuild server/OmniSharp.sln',
+    \       'unix': 'xbuild server/OmniSharp.sln',
+    \   }
+    \ }
 
 " php
-NeoBundle 'nishigori/vim-php-dictionary'
-NeoBundle 'miya0001/vim-dict-wordpress.git'
+NeoBundleLazy 'nishigori/vim-php-dictionary', {
+    \ 'autoload' : {
+    \   'filetypes' : ['php']
+    \ }}
+
+NeoBundle 'miya0001/vim-dict-wordpress.git', {
+    \ 'autoload' : {
+    \   'filetypes' : ['php']
+    \ }}
 
 " python
 NeoBundleLazy "davidhalter/jedi-vim", {
@@ -95,33 +112,38 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \ }}
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
+NeoBundleLazy 'Glench/Vim-Jinja2-Syntax.git', {
+    \ 'autoload' : {
+    \   'filetypes' : ['jinja']
+    \ }}
 
 " ruby
-NeoBundle 'tpope/vim-rails'
+NeoBundleLazy 'tpope/vim-rails', {
+    \ 'autoload' : {
+    \   'filetypes' : ['ruby']
+    \ }}
 
 NeoBundleLazy 'vim-ruby/vim-ruby', {
     \ 'autoload' : {
     \   'filetypes': ['ruby', 'eruby', 'haml']
-    \ } 
-    \}
+    \ }}
+
 NeoBundle 'thinca/vim-ref'
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
     \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
     \   'autoload': {
     \       'filetypes': ['ruby', 'eruby', 'haml'] 
-    \   }
-    \}
+    \  }}
+
 NeoBundleLazy 'skwp/vim-rspec', {
     \ 'autoload': {
     \   'filetypes': ['ruby', 'eruby', 'haml'] 
-    \ }
-    \}
+    \ }}
+
 NeoBundleLazy 'ruby-matchit', {
-    \   'autoload' : {
-    \       'filetypes': ['ruby', 'eruby', 'haml']
-    \   } 
-    \}
+    \ 'autoload' : {
+    \     'filetypes': ['ruby', 'eruby', 'haml']
+    \ }}
 
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
@@ -133,8 +155,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle "mattn/emmet-vim"
 
 " util
-NeoBundle 'rizzatti/funcoo.vim'
-NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'kris89/vim-multiple-cursors'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
@@ -538,6 +558,10 @@ colorscheme hybrid
 nnoremap <silent> <Leader>gg :<C-u>GitGutterToggle<CR>
 nnoremap <silent> <Leader>gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
+" vimprocを使用する
+let g:gitgutter_system_function       = 'vimproc#system'
+let g:gitgutter_system_error_function = 'vimproc#get_last_status'
+let g:gitgutter_shellescape_function  = 'vimproc#shellescape'
 
 " ------------------------------------------------------------------------
 " window
@@ -646,6 +670,7 @@ endfunction
 function! MyReadonly()
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
 endfunction
+
 
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
