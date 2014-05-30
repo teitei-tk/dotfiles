@@ -112,10 +112,7 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \ }}
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundleLazy 'Glench/Vim-Jinja2-Syntax.git', {
-    \ 'autoload' : {
-    \   'filetypes' : ['jinja']
-    \ }}
+NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
 " ruby
 NeoBundleLazy 'tpope/vim-rails', {
@@ -436,8 +433,18 @@ if neobundle#is_installed('neocomplete.vim')
     endif
 
     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.cs = '[^.]\.\%(\u\{2,}\)\?'
     let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
+
+    if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+    endif
+
+    let g:neocomplete#sources.cs = ['omni']
+    let g:neocomplete#enable_refresh_always = 0
+    let g:echodoc_enable_at_startup = 1
+    let g:neocomplete#enable_insert_char_pre = 1
+
 
 elseif neobundle#is_installed('neocomplcache')
     " ------------------------------------------------------------------------ 
