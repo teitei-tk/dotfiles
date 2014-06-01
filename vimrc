@@ -214,10 +214,7 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " ruby
-function! s:ruby_setting()
-    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-endfunction
-autocmd FileType ruby call s:ruby_setting()
+autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " jslint.vim
 function! s:javascript_filetype_settings()
