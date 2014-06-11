@@ -222,3 +222,6 @@ alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
 
 cd $HOME
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

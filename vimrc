@@ -216,6 +216,9 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 " ruby
 autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+" yaml
+autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 " jslint.vim
 function! s:javascript_filetype_settings()
     autocmd BufLeave <buffer> call jslint#clear()
@@ -412,7 +415,7 @@ if neobundle#is_installed('neocomplete.vim')
     if !exists('g:neocomplete#keyword_patterns')
         let g:neocomplete#keyword_patterns = {}
     endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
 
     " cancel last completion
     inoremap <expr><C-g> neocomplete#undo_completion()
