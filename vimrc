@@ -142,6 +142,9 @@ NeoBundleLazy 'ruby-matchit', {
     \     'filetypes': ['ruby', 'eruby', 'haml']
     \ }}
 
+" swift
+NeoBundle 'toyamarinyon/vim-swift'
+
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
 
