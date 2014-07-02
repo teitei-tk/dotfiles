@@ -46,6 +46,7 @@ NeoBundle 'railscasts'
 NeoBundle 'Zenburn'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'cocopon/iceberg.vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 " git
 NeoBundle 'tpope/vim-fugitive.git'
@@ -234,18 +235,6 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " coffee
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
-
-" php
-augroup PHP
-    " Lint
-    autocmd FileType php :set dictionary=~/.vim/bundle/vim-php-dictionary/dict/*.dict
-    autocmd FileType php :set dictionary=~/.vim/bundle/vim-dict-wordpress/*.dict
-
-    " php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
-    autocmd!
-    autocmd FileType php set makeprg=php\ -l\ %
-    autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
-augroup END
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
