@@ -17,6 +17,7 @@ endif
 " required!
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle has('lua') ? "Shougo/neocomplete.vim" : "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
