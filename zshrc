@@ -111,7 +111,7 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 alias history="history 1"
-alias repos='cd $( find ~/repos -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
+alias repos='cd $( find ~/repos ~/working -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
 alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
 
 cd $HOME
