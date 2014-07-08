@@ -21,6 +21,7 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle has('lua') ? "Shougo/neocomplete.vim" : "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'Shougo/vimshell.vim'
 NeoBundleLazy 'Shougo/vimproc', {
 \ 'build' : {
 \    'windows' : 'make -f make_mingw32.mak',
