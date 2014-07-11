@@ -211,10 +211,13 @@ set undofile
 set undodir=~/.vim/vimundo
 
 
+" ------------------------------------------------------------------------ 
+" lang
+" ------------------------------------------------------------------------ 
 " cs
 autocmd FileType cs se fenc=utf-8 bomb
 
-" Setting For Python
+" python
 autocmd FileType python setl nocindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
@@ -225,7 +228,7 @@ autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " yaml
 autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-" jslint.vim
+" javascript
 function! s:javascript_filetype_settings()
     autocmd BufLeave <buffer> call jslint#clear()
     autocmd BufWritePost <buffer> call jslint#check()
@@ -240,10 +243,14 @@ au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
 
-" space + gで grep の書式を挿入
+" ------------------------------------------------------------------------ 
+" util
+" ------------------------------------------------------------------------ 
+" space + gで vimgrep の書式を挿入
 au QuickfixCmdPost vimgrep cw
 nnoremap <expr> <space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
 
+" multi_byte setting
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -275,12 +282,12 @@ endfunction
 " ------------------------------------------------------------------------ 
 " minibufexpl
 " ------------------------------------------------------------------------ 
-let g:miniBufExplMapWindowNavVim=1 "hjklで移動
-let g:miniBufExplSplitBelow=0 " Put new window above
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplSplitToEdge=1
+let g:miniBufExplMapWindowNavVim = 1    " vim keybind
+let g:miniBufExplSplitBelow = 0         " Put new window above
+let g:miniBufExplMapWindowNavArrows = 1   
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplSplitToEdge = 1
 
 nnoremap <C-d> : bd<CR> " バッファを閉じる
 nmap <C-n> : MBEbn<CR> " 次のバッファ
@@ -290,10 +297,6 @@ nmap <C-p> : MBEbp<CR> " 前のバッファ
 " ------------------------------------------------------------------------ 
 " Omnisharp
 " ------------------------------------------------------------------------ 
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
 nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
 
 
@@ -356,9 +359,14 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 
 
 " ------------------------------------------------------------------------
+" VimShell
+" ------------------------------------------------------------------------
+nnoremap <silent> <F3> :VimShell -split<CR>
+
+" ------------------------------------------------------------------------
 " vimfiler
 " ------------------------------------------------------------------------
-nnoremap <F2> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+nnoremap <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
 autocmd! FileType vimfiler call g:my_vimfiler_settings()
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
