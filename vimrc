@@ -308,17 +308,14 @@ let s:hooks = neobundle#get_hooks("jedi-vim")
 function! s:hooks.on_source(bundle)
     let g:jedi#popup_on_dot = 0
 
-    " jediにvimの設定を任せると'completeopt+=preview'するので
-    " 自動設定機能をOFFにし手動で設定を行う
+    " auto setting off
     let g:jedi#auto_vim_configuration = 0
-
-    " 補完の最初の項目が選択された状態だと使いにくいためオフにする
     let g:jedi#popup_select_first = 0
 
-    " split
+    " split target
     let g:jedi#use_splits_not_buffers = "left"
 
-    " neocomplcacheの補完を優先
+    " use NeoComplete
     let g:jedi#completions_enabled = 0
     let g:jedi#auto_vim_configuration = 0
 endfunction
@@ -326,8 +323,9 @@ endfunction
 " NeoCompleteの補完を優先する
 autocmd FileType python setlocal omnifunc=jedi#completions
 
+
 " ------------------------------------------------------------------------ 
-" Unite
+" Unite.vim
 " ------------------------------------------------------------------------ 
 let g:unite_enable_start_insert = 1
 
@@ -343,15 +341,19 @@ nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
 " bookmark
 nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
 
-" カーソル位置の単語をgrep検索
+" grep shortcut
+nnoremap <silent> <Space>f  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
+
+" grep cursor word
 nnoremap <silent> <Space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 
-" unite grep に ag(The Silver Searcher) を使う
+" use ag to Unite grep 
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
 
 " ------------------------------------------------------------------------ 
 " vim-quickrun
@@ -373,6 +375,7 @@ nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() 
 " VimShell
 " ------------------------------------------------------------------------
 nnoremap <silent> <F3> :VimShell -split<CR>
+
 
 " ------------------------------------------------------------------------
 " vimfiler
@@ -587,6 +590,7 @@ nnoremap <silent> <Leader>gh :<C-u>GitGutterLineHighlightsToggle<CR>
 let g:gitgutter_system_function       = 'vimproc#system'
 let g:gitgutter_system_error_function = 'vimproc#get_last_status'
 let g:gitgutter_shellescape_function  = 'vimproc#shellescape'
+
 
 " ------------------------------------------------------------------------
 " window
