@@ -158,6 +158,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle "mattn/emmet-vim"
 
 " util
+NeoBundle 'rking/ag.vim'
 NeoBundle 'kris89/vim-multiple-cursors'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
@@ -246,9 +247,9 @@ au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
 " ------------------------------------------------------------------------ 
 " util
 " ------------------------------------------------------------------------ 
-" space + gで vimgrep の書式を挿入
-au QuickfixCmdPost vimgrep cw
-nnoremap <expr> <space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
+"   " space + gで vimgrep の書式を挿入
+"   au QuickfixCmdPost vimgrep cw
+"   nnoremap <expr> <space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
 
 " multi_byte setting
 if has("multi_byte")
@@ -341,6 +342,16 @@ nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
 
 " bookmark
 nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
+
+" カーソル位置の単語をgrep検索
+nnoremap <silent> <Space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " ------------------------------------------------------------------------ 
 " vim-quickrun
