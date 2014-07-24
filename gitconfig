@@ -15,7 +15,7 @@
     restart = reset --hard HEAD
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     delete-add-items       = !git status | awk '{print $1}' | xargs rm -rf
-    all-rm                 = !git status | grep deleted: | awk '{print $2}'  | xargs git rm
+    all-deleted            = !git status | grep deleted: | awk '{print $2}'  | xargs git rm
     detect-branches        = !git checkout $(git branch | peco)
 [grep]
     lineNumber = true
