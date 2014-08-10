@@ -229,14 +229,13 @@ autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " yaml
 autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-"   " javascript
-"   function! s:javascript_filetype_settings()
-"       autocmd BufLeave <buffer> call jslint#clear()
-"       autocmd BufWritePost <buffer> call jslint#check()
-"       autocmd CursorMoved <buffer> call jslint#message()
-"   endfunction
-"   autocmd FileType javascript call s:javascript_filetype_settings()
-"   autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" javascript
+function! s:javascript_filetype_settings()
+    autocmd BufLeave <buffer> call jslint#clear()
+    autocmd BufWritePost <buffer> call jslint#check()
+    autocmd CursorMoved <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
 
 " coffee
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
