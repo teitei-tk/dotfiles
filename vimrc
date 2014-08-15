@@ -52,6 +52,8 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " git
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
+NeoBundle 'rhysd/committia.vim'
+
 
 " ftp sync
 NeoBundle 'eshion/vim-sftp-sync'
