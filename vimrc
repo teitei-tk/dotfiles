@@ -53,6 +53,7 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
 NeoBundle 'rhysd/committia.vim'
+NeoBundle 'gregsexton/gitv'
 
 
 " ftp sync
@@ -244,6 +245,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
+" gitv
+autocmd FileType git :setlocal foldlevel=99
 
 " ------------------------------------------------------------------------ 
 " util
