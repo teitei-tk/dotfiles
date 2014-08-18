@@ -1,17 +1,3 @@
-#   # -------------------------------------------
-#   # anyenv
-#   # -------------------------------------------
-#   if [ -d $HOME/.anyenv ] ; then
-#       export PATH="$HOME/.anyenv/bin:$PATH"
-#       eval "$(anyenv init -)"
-
-#       for D in `ls $HOME/.anyenv/envs`
-#       do
-#           export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
-#       done
-#   fi
- 
-
 # -------------------------------------------
 # env
 # -------------------------------------------
@@ -41,3 +27,4 @@ export PATH=$PATH:/Applications/eclipse/android/platform-tools
 export TERM=xterm-256color
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%} `virtualenv_info``rprompt-git-current-branch`$ '
 RPROMPT='%{${fg_bold[blue]}%}[%d]%{${reset_color}%}'
+

@@ -52,7 +52,7 @@ NeoBundle 'chriskempson/vim-tomorrow-theme'
 " git
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
-NeoBundle 'rhysd/committia.vim'
+"NeoBundle 'rhysd/committia.vim'
 NeoBundle 'gregsexton/gitv'
 
 
