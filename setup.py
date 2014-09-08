@@ -53,7 +53,7 @@ class Installer(object):
 
     def setup_for_shell(self):
         process_list = [
-            "sudo yum install -y wget zsh",
+            "sudo yum install -y wget zsh vim",
             "wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash --no-check-certificate",
             "wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh --no-check-certificate",
             "mv %s/git-completion.bash %s/.git-completion.bash && rm %s/git-completion.bash" % ( self.script_path, self.home_dir, self.script_path ),
