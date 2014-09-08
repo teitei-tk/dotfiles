@@ -99,7 +99,9 @@ function rprompt-git-current-branch {
 
 autoload bashcompinit
 bashcompinit
-source ~/.git-completion.bash
+
+# load bash completion
+load_file_with_exists "$HOME/.git-completion.bash"
 
 # -------------------------------------------
 # alias
@@ -113,6 +115,7 @@ alias dir="ls"
 alias history="history 1"
 alias repos='cd $( find ~/repos ~/working -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
 alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
+alias ipy="ipython"
 
 cd $HOME
 

@@ -328,6 +328,9 @@ endfunction
 " NeoCompleteの補完を優先する
 autocmd FileType python setlocal omnifunc=jedi#completions
 
+" docstringは表示しない
+autocmd FileType python setlocal completeopt-=preview
+
 
 " ------------------------------------------------------------------------ 
 " Unite.vim
@@ -600,8 +603,8 @@ let g:gitgutter_shellescape_function  = 'vimproc#shellescape'
 " ------------------------------------------------------------------------
 " window
 " ------------------------------------------------------------------------
-let g:netrw_liststyle = 3
-let g:netrw_altv = 1
+"   let g:netrw_liststyle = 3
+"   let g:netrw_altv = 1
 
 
 " ------------------------------------------------------------------------

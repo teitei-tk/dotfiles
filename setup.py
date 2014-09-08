@@ -53,12 +53,12 @@ class Installer(object):
 
     def setup_for_shell(self):
         process_list = [
+            "sudo yum install -y wget",
             "wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash --no-check-certificate",
             "wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh --no-check-certificate",
             "mv %s/git-completion.bash %s/.git-completion.bash && rm %s/git-completion.bash" % ( self.script_path, self.home_dir, self.script_path ),
             "mv %s/git-prompt.sh %s/.git-prompt.sh && rm %s/git-prompt.sh" % ( self.script_path, self.home_dir, self.script_path ),
             "git clone https://github.com/riywo/anyenv ~/.anyenv",
-            'echo "export PATH="$HOME/.anyenv/bin:$PATH"" >> ~/.zshenv'
             "chsh -s /bin/zsh"
             ]
         [subprocess.call(cmd, shell=True) for cmd in process_list]
