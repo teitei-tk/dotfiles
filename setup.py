@@ -5,15 +5,18 @@ import subprocess
 
 EXCLUDE_LIST = [".git", "README.md", "setup.py", "fabfile.py"]
 
-class Installer(object):
+class DotFilesInstaller(object):
     def __init__(self):
         self.home_dir = os.environ['HOME']
         self.script_path = os.path.dirname( os.path.abspath(__file__) )
-
+    
+    @classmethod
     def do(self):
-        self.setup_for_dotfiles()
-        self.setup_for_vim()
-        self.setup_for_shell()
+        instance = DotFilesInstaller()
+
+        instance.setup_for_dotfiles()
+        instance.setup_for_shell()
+        instance.setup_for_vim()
 
     def setup_for_vim(self):
         print "start vim setting\n"
@@ -59,9 +62,9 @@ class Installer(object):
             "mv %s/git-completion.bash %s/.git-completion.bash && rm %s/git-completion.bash" % ( self.script_path, self.home_dir, self.script_path ),
             "mv %s/git-prompt.sh %s/.git-prompt.sh && rm %s/git-prompt.sh" % ( self.script_path, self.home_dir, self.script_path ),
             "git clone https://github.com/riywo/anyenv.git ~/.anyenv",
-            "chsh -s /bin/zsh"
+            "sudo chsh -s /bin/zsh"
             ]
         [subprocess.call(cmd, shell=True) for cmd in process_list]
 
 if __name__ == "__main__":
-    Installer().do()
+    DotFilesInstaller.do()
