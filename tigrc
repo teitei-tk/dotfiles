@@ -12,3 +12,5 @@ set split-view-height = 80%
 
 # diff context line
 set diff-context = 10
+
+set line-graphics = ascii
