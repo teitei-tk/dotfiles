@@ -6,3 +6,9 @@ if [ -d ${HOME}/.anyenv ] ; then
         export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
     done
 fi 
+
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+export PATH="$HOME/.golang/bin:$PATH"

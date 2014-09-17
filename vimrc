@@ -173,6 +173,7 @@ NeoBundle 't9md/vim-choosewin'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'airblade/vim-rooter'
+NeoBundle 'sorah/unite-ghq'
 
 " required!
 filetype plugin indent on 
@@ -336,6 +337,11 @@ autocmd FileType python setlocal completeopt-=preview
 " Unite.vim
 " ------------------------------------------------------------------------ 
 let g:unite_enable_start_insert = 1
+
+if executable("ghq")
+    noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
+endif
+
 
 " files
 nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
