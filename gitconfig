@@ -20,3 +20,6 @@
     detect-branches        = !git checkout $(git branch | peco)
 [grep]
     lineNumber = true
+[ghq]
+    root = ~/.golang/src/
+    root = ~/repos/

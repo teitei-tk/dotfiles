@@ -113,13 +113,17 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 alias history="history 1"
-alias repos='cd $( find ~/repos ~/working -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
+#alias repos='cd $( find ~/repos ~/working -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
+alias repos='cd $( ghq list --full-path | peco )'
 alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
 alias ipy="ipython"
 
 cd $HOME
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export GOPATH=$HOME/.golang
+export GOLANG_BIN=$HOME/.golang/bin
+export PATH="/usr/local/heroku/bin:$PATH:$GOPATH:$GOLANG_BIN"
+
 
 #source ~/.zshrc.antigen
