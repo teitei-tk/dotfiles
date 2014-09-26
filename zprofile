@@ -11,4 +11,6 @@ if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
 
-export PATH="$HOME/.golang/bin:$PATH"
+if [ -d "$HOME/.golang" ]l then
+    export PATH="$HOME/.golang/bin:$PATH"
+fi
