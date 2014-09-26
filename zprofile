@@ -7,10 +7,10 @@ if [ -d ${HOME}/.anyenv ] ; then
     done
 fi 
 
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     export PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/.golang" ]l then
+if [ -d "$HOME/.golang" ]; then
     export PATH="$HOME/.golang/bin:$PATH"
 fi
