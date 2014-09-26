@@ -43,3 +43,6 @@ alias l="ls"
 alias dir="ls"
 
 cd $HOME
+
+# added by travis gem
+[ -f /Users/teitei/.travis/travis.sh ] && source /Users/teitei/.travis/travis.sh

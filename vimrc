@@ -36,9 +36,6 @@ NeoBundle "mattn/benchvimrc-vim"
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 
-" buffer tab
-NeoBundle "fholgado/minibufexpl.vim.git"
-
 " status bar
 NeoBundle 'itchyny/lightline.vim'
 
@@ -285,21 +282,6 @@ function! s:write_check_typo(file)
         execute writecmd
     endif
 endfunction
-
-" ------------------------------------------------------------------------ 
-" minibufexpl
-" ------------------------------------------------------------------------ 
-let g:miniBufExplMapWindowNavVim = 1    " vim keybind
-let g:miniBufExplSplitBelow = 0         " Put new window above
-let g:miniBufExplMapWindowNavArrows = 1   
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplSplitToEdge = 1
-
-nnoremap <C-d> : bd<CR> " バッファを閉じる
-nmap <C-n> : MBEbn<CR> " 次のバッファ
-nmap <C-p> : MBEbp<CR> " 前のバッファ
-
 
 " ------------------------------------------------------------------------ 
 " Omnisharp
@@ -751,4 +733,3 @@ endfunction
 function! CurrentDatetime()
     return strftime("%x %H:%M")
 endfunction
-

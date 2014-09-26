@@ -127,3 +127,6 @@ export PATH="/usr/local/heroku/bin:$PATH:$GOPATH:$GOLANG_BIN"
 
 
 #source ~/.zshrc.antigen
+
+# added by travis gem
+[ -f /Users/teitei/.travis/travis.sh ] && source /Users/teitei/.travis/travis.sh
