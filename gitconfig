@@ -14,7 +14,7 @@
     ch                     = checkout
     history                = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%d %C(Red)[%an]\" --graph --date=iso
     restart                = reset --hard HEAD
-    deleted-items          = !git status | grep deleted: | awk '{print $2}'  | xargs git rm
+    delete-items           = !git status | grep deleted: | awk '{print $2}'  | xargs git rm
     delete-add-items       = !git status | awk '{print $1}' | xargs rm -rf
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     detect-branches        = !git checkout $(git branch | peco)
