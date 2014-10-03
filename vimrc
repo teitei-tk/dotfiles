@@ -255,10 +255,6 @@ au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
 " gitv
 autocmd FileType git :setlocal foldlevel=99
 
-" swift
-call neocomplete_swift_dictionary#configure_swift_dict()
-set complete+=k
-
 
 " ------------------------------------------------------------------------ 
 " util
@@ -377,7 +373,8 @@ let g:quickrun_config = {
 " run py.test
 let g:quickrun_config['python.pytest'] = {
     \ 'command': 'py.test',
-    \ 'cmdopt': '-s -v',
+    \ 'cmdopt': '-s -v -n 2',
+    \ 'hook/shebang/enable': 0,
     \ }
 
 " <C-c> で実行を強制終了させる
@@ -470,6 +467,10 @@ if neobundle#is_installed('neocomplete.vim')
     endif
 
     let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+    if !exists('g:neocomplete#sources')
+        let g:neocomplete#sources = {}
+    endif
 
     let g:neocomplete#sources.cs = ['omni']
     let g:neocomplete#enable_refresh_always = 0
