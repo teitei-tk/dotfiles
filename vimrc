@@ -19,7 +19,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle has('lua') ? "Shougo/neocomplete.vim" : "Shougo/neocomplcache.vim"
+NeoBundle "Shougo/neocomplete.vim" 
+NeoBundle "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundleLazy 'Shougo/vimproc', {
@@ -146,7 +147,7 @@ NeoBundleLazy 'ruby-matchit', {
     \ }}
 
 " swift
-NeoBundleLazy 'toyamarinyon/vim-swift', {
+NeoBundleLazy 'toyamarinyon/swift.vim', {
     \ 'autoload' : {
     \   'filetypes' : ['swift']
     \ }}
@@ -155,6 +156,8 @@ NeoBundleLazy 'tokorom/neocomplete-swift-dictionary', {
     \ 'depends' : 'Shougo/neocomplete.vim', 
     \ 'on_source': 'neocomplete.vim'
     \ }
+
+
 
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
@@ -477,6 +480,7 @@ if neobundle#is_installed('neocomplete.vim')
     let g:echodoc_enable_at_startup = 1
     let g:neocomplete#enable_insert_char_pre = 1
 
+    let g:neocomplete#force_overwrite_completefunc = 1
 
 elseif neobundle#is_installed('neocomplcache')
     " ------------------------------------------------------------------------ 
