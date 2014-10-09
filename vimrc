@@ -32,10 +32,11 @@ NeoBundleLazy 'Shougo/vimproc', {
 \    },
 \ }
 
-NeoBundle "mattn/benchvimrc-vim"
-
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+" syntax
+NeoBundle "scrooloose/syntastic.git"
 
 " status bar
 NeoBundle 'itchyny/lightline.vim'
@@ -47,10 +48,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
 
-" ftp sync
-NeoBundle 'eshion/vim-sftp-sync'
-
-" js
+" javascript
 NeoBundleLazy 'pangloss/vim-javascript', {
     \ 'autoload' : {
     \   'filetypes' : ['javascript']
@@ -100,7 +98,6 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \   "unix": "pip install jedi",
       \ }}
 
-NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
 " ruby
@@ -154,17 +151,18 @@ NeoBundle "mattn/emmet-vim"
 " util
 NeoBundle 'rking/ag.vim'
 NeoBundle 'kris89/vim-multiple-cursors'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'airblade/vim-rooter'
+NeoBundle 'mattn/calendar-vim'
+NeoBundle 't9md/vim-choosewin'
+NeoBundle 'sorah/unite-ghq'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'mattn/calendar-vim'
-NeoBundle 't9md/vim-choosewin'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'airblade/vim-rooter'
-NeoBundle 'sorah/unite-ghq'
 
 " required!
 filetype plugin indent on 
