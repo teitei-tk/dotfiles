@@ -202,179 +202,6 @@ set vb t_vb=
 set undofile
 set undodir=~/.vim/vimundo
 
-
-" ------------------------------------------------------------------------ 
-" lang
-" ------------------------------------------------------------------------ 
-" cs
-autocmd FileType cs se fenc=utf-8 bomb
-
-" python
-autocmd FileType python setl nocindent
-autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
-" ruby
-autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-" yaml
-autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-
-" javascript
-function! s:javascript_filetype_settings()
-    autocmd BufLeave <buffer> call jslint#clear()
-    autocmd BufWritePost <buffer> call jslint#check()
-    autocmd CursorMoved <buffer> call jslint#message()
-endfunction
-autocmd FileType javascript call s:javascript_filetype_settings()
-
-" coffee
-au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
-
-" Jinja2
-au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
-
-" gitv
-autocmd FileType git :setlocal foldlevel=99
-
-
-" ------------------------------------------------------------------------ 
-" util
-" ------------------------------------------------------------------------ 
-" multi_byte setting
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-" Checking typo.
-autocmd BufWriteCmd *[,*] call s:write_check_typo(expand('<afile>'))
-function! s:write_check_typo(file)
-    let writecmd = 'write'.(v:cmdbang ? '!' : '').' '.a:file
-    if exists('b:write_check_typo_nocheck')
-        execute writecmd
-        return
-    endif
-    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
-    let input = input(prompt)
-    if input ==# 'YES'
-        execute writecmd
-        let b:write_check_typo_nocheck = 1
-    elseif input =~? '^y\(es\)\=$'
-        execute writecmd
-    endif
-endfunction
-
-" ------------------------------------------------------------------------ 
-" Omnisharp
-" ------------------------------------------------------------------------ 
-nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
-
-
-" ------------------------------------------------------------------------ 
-" jedi-vim
-" ------------------------------------------------------------------------ 
-let s:hooks = neobundle#get_hooks("jedi-vim")
-function! s:hooks.on_source(bundle)
-    let g:jedi#popup_on_dot = 0
-
-    " auto setting off
-    let g:jedi#auto_vim_configuration = 0
-    let g:jedi#popup_select_first = 0
-
-    " split target
-    let g:jedi#use_splits_not_buffers = "left"
-
-    " use NeoComplete
-    let g:jedi#completions_enabled = 0
-    let g:jedi#auto_vim_configuration = 0
-endfunction
-
-" NeoCompleteの補完を優先する
-autocmd FileType python setlocal omnifunc=jedi#completions
-
-" docstringは表示しない
-autocmd FileType python setlocal completeopt-=preview
-
-
-" ------------------------------------------------------------------------ 
-" Unite.vim
-" ------------------------------------------------------------------------ 
-let g:unite_enable_start_insert = 1
-
-if executable("ghq")
-    noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
-endif
-
-" files
-nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
-
-" buffer
-nnoremap <silent> <Space>8 :<C-u>Unite buffer<CR>
-
-" use file list
-nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
-
-" bookmark
-nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
-
-" grep shortcut
-nnoremap <silent> <Space>f  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
-
-" grep cursor word
-nnoremap <silent> <Space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-" use ag to Unite grep 
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
-
-" ------------------------------------------------------------------------ 
-" vim-quickrun
-" ------------------------------------------------------------------------ 
-"  runnerにvimprocを使用して非同期に
-if neobundle#is_installed("vimproc")
-    let g:quickrun_config = {
-        \ "_" : {
-        \    "runner" : "vimproc",
-        \    "runner/vimproc/updatetime" : 60
-        \ }}
-endif
-
-" run py.test
-if executable('py.test')
-    let g:quickrun_config['python.pytest'] = {
-        \ 'command': 'py.test',
-        \ 'cmdopt': '-s -v -n 2',
-        \ 'hook/shebang/enable': 0,
-        \ }
-endif
-
-" <C-c> で実行を強制終了させる
-" quickrun.vim が実行していない場合には <C-c> を呼び出す
-nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-
-" ------------------------------------------------------------------------
-" VimShell
-" ------------------------------------------------------------------------
-nnoremap <silent> <F3> :VimShell -split<CR>
-
-
-" ------------------------------------------------------------------------
-" vimfiler
-" ------------------------------------------------------------------------
-nnoremap <silent> <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
-
-
 " ------------------------------------------------------------------------
 " neocomplete
 " ------------------------------------------------------------------------
@@ -414,6 +241,16 @@ if neobundle#is_installed('neocomplete.vim')
     inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
     inoremap <expr><C-y> neocomplete#smart_close_popup() . "\<C-h>"
 
+    if !exists('g:neocomplete#sources')
+        let g:neocomplete#sources = {}
+    endif
+
+    let g:neocomplete#sources.cs = ['omni']
+
+    if !exists('g:neocomplete#sources#omni')
+        let g:neocomplete#sources#omni = {}
+    endif
+
     " Enable heavy omni completion.
     if !exists('g:neocomplete#sources#omni#input_patterns')
       let g:neocomplete#sources#omni#input_patterns = {}
@@ -421,19 +258,14 @@ if neobundle#is_installed('neocomplete.vim')
 
     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-    let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
 
     if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
     endif
 
     let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+    let g:neocomplete#force_omni_input_patterns.cs = '.*[^=\);]'
 
-    if !exists('g:neocomplete#sources')
-        let g:neocomplete#sources = {}
-    endif
-
-    let g:neocomplete#sources.cs = ['omni']
     let g:neocomplete#enable_refresh_always = 0
     let g:echodoc_enable_at_startup = 1
     let g:neocomplete#enable_insert_char_pre = 1
@@ -524,9 +356,192 @@ elseif neobundle#is_installed('neocomplcache')
     imap <C-k> <plug>(neocomplcache_snippets_expand)
     smap <C-k> <plug>(neocomplcache_snippets_expand)
 endif
-
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+
+" ------------------------------------------------------------------------ 
+" lang setting
+" ------------------------------------------------------------------------ 
+" ruby
+function! s:ruby_settings()
+    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endfunction
+autocmd FileType ruby call s:ruby_settings()
+
+" yaml
+function! s:yaml_settings()
+    autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endfunction
+autocmd FileType yaml call s:yaml_settings()
+
+" javascript
+function! s:javascript_filetype_settings()
+    autocmd BufLeave <buffer> call jslint#clear()
+    autocmd BufWritePost <buffer> call jslint#check()
+    autocmd CursorMoved <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
+
+" coffee
+au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+
+" Jinja2
+au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
+
+" ------------------------------------------------------------------------ 
+" util
+" ------------------------------------------------------------------------ 
+" multi_byte setting
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+" Checking typo.
+autocmd BufWriteCmd *[,*] call s:write_check_typo(expand('<afile>'))
+function! s:write_check_typo(file)
+    let writecmd = 'write'.(v:cmdbang ? '!' : '').' '.a:file
+    if exists('b:write_check_typo_nocheck')
+        execute writecmd
+        return
+    endif
+    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+    let input = input(prompt)
+    if input ==# 'YES'
+        execute writecmd
+        let b:write_check_typo_nocheck = 1
+    elseif input =~? '^y\(es\)\=$'
+        execute writecmd
+    endif
+endfunction
+
+
+" ------------------------------------------------------------------------ 
+" csharp
+" ------------------------------------------------------------------------ 
+function! s:cs_settings()
+    autocmd FileType cs se fenc=utf-8 bomb
+    autocmd FileType cs setl omnifunc=OmniSharp#Complete
+endfunction
+autocmd FileType cs call s:cs_settings()
+
+nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
+
+
+" ------------------------------------------------------------------------ 
+"  python
+" ------------------------------------------------------------------------ 
+" jedi-vim
+let s:hooks = neobundle#get_hooks("jedi-vim")
+function! s:hooks.on_source(bundle)
+    let g:jedi#popup_on_dot = 0
+
+    " auto setting off
+    let g:jedi#auto_vim_configuration = 0
+    let g:jedi#popup_select_first = 0
+
+    " split target
+    let g:jedi#use_splits_not_buffers = "left"
+
+    " use NeoComplete
+    let g:jedi#completions_enabled = 0
+    let g:jedi#auto_vim_configuration = 0
+endfunction
+
+function! s:python_settings()
+    " default setting
+    autocmd FileType python setl nocindent
+    autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+    autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+    " use jedi-vim completion
+    autocmd FileType python setl omnifunc=jedi#completions
+
+    " not preview docstring
+    autocmd FileType python setl completeopt-=preview
+endfunction
+autocmd FileType python call s:python_settings()
+
+
+" ------------------------------------------------------------------------ 
+" Unite.vim
+" ------------------------------------------------------------------------ 
+let g:unite_enable_start_insert = 1
+
+if executable("ghq")
+    noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
+endif
+
+" files
+nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
+
+" buffer
+nnoremap <silent> <Space>8 :<C-u>Unite buffer<CR>
+
+" use file list
+nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
+
+" bookmark
+nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
+
+" grep shortcut
+nnoremap <silent> <Space>f  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
+
+" grep cursor word
+nnoremap <silent> <Space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" use ag to Unite grep 
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+
+" ------------------------------------------------------------------------ 
+" vim-quickrun
+" ------------------------------------------------------------------------ 
+"  runnerにvimprocを使用して非同期に
+if neobundle#is_installed("vimproc")
+    let g:quickrun_config = {
+        \ "_" : {
+        \    "runner" : "vimproc",
+        \    "runner/vimproc/updatetime" : 60
+        \ }}
+endif
+
+" run py.test
+if executable('py.test')
+    let g:quickrun_config['python.pytest'] = {
+        \ 'command': 'py.test',
+        \ 'cmdopt': '-s -v -n 2',
+        \ 'hook/shebang/enable': 0,
+        \ }
+endif
+
+" <C-c> で実行を強制終了させる
+" quickrun.vim が実行していない場合には <C-c> を呼び出す
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+
+" ------------------------------------------------------------------------
+" VimShell
+" ------------------------------------------------------------------------
+nnoremap <silent> <F3> :VimShell -split<CR>
+
+
+" ------------------------------------------------------------------------
+" vimfiler
+" ------------------------------------------------------------------------
+nnoremap <silent> <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
+
 
 
 " ----------------------------------------------------------------------- 
