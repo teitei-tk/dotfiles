@@ -41,29 +41,19 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'itchyny/lightline.vim'
 
 " colorscheme
-NeoBundle 'railscasts'
-NeoBundle 'Zenburn'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'cocopon/iceberg.vim'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
 
 " git
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
-"NeoBundle 'rhysd/committia.vim'
-NeoBundle 'gregsexton/gitv'
-
 
 " ftp sync
 NeoBundle 'eshion/vim-sftp-sync'
 
-" syntax
-NeoBundle "scrooloose/syntastic.git"
-
 " js
 NeoBundleLazy 'pangloss/vim-javascript', {
     \ 'autoload' : {
-    \   'filetypes' : ['javascript', 'coffee']
+    \   'filetypes' : ['javascript']
     \ }}
 
 NeoBundleLazy 'basyura/jslint.vim', {
@@ -96,11 +86,6 @@ NeoBundleLazy 'nosami/Omnisharp', {
 
 " php
 NeoBundleLazy 'nishigori/vim-php-dictionary', {
-    \ 'autoload' : {
-    \   'filetypes' : ['php']
-    \ }}
-
-NeoBundle 'miya0001/vim-dict-wordpress.git', {
     \ 'autoload' : {
     \   'filetypes' : ['php']
     \ }}
@@ -157,8 +142,6 @@ NeoBundleLazy 'tokorom/neocomplete-swift-dictionary', {
     \ 'on_source': 'neocomplete.vim'
     \ }
 
-
-
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
 
@@ -207,10 +190,6 @@ set showmatch
 set expandtab
 set smarttab
 set softtabstop=4 tabstop=4 shiftwidth=4
-
-" カーソル位置大事
-"   set cursorline
-"   set cursorcolumn
 
 " バックアップは自分でやります
 set noswapfile
@@ -262,10 +241,6 @@ autocmd FileType git :setlocal foldlevel=99
 " ------------------------------------------------------------------------ 
 " util
 " ------------------------------------------------------------------------ 
-"   " space + gで vimgrep の書式を挿入
-"   au QuickfixCmdPost vimgrep cw
-"   nnoremap <expr> <space>g ':vimgrep /\<' . expand('<cword>') . '\>/j **/*.' . expand('%:e')
-
 " multi_byte setting
 if has("multi_byte")
   if &termencoding == ""
@@ -336,7 +311,6 @@ if executable("ghq")
     noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
 endif
 
-
 " files
 nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
 
@@ -367,18 +341,22 @@ endif
 " vim-quickrun
 " ------------------------------------------------------------------------ 
 "  runnerにvimprocを使用して非同期に
-let g:quickrun_config = {
-    \ "_" : {
-    \    "runner" : "vimproc",
-    \    "runner/vimproc/updatetime" : 60
-    \ }}
+if neobundle#is_installed("vimproc")
+    let g:quickrun_config = {
+        \ "_" : {
+        \    "runner" : "vimproc",
+        \    "runner/vimproc/updatetime" : 60
+        \ }}
+endif
 
 " run py.test
-let g:quickrun_config['python.pytest'] = {
-    \ 'command': 'py.test',
-    \ 'cmdopt': '-s -v -n 2',
-    \ 'hook/shebang/enable': 0,
-    \ }
+if executable('py.test')
+    let g:quickrun_config['python.pytest'] = {
+        \ 'command': 'py.test',
+        \ 'cmdopt': '-s -v -n 2',
+        \ 'hook/shebang/enable': 0,
+        \ }
+endif
 
 " <C-c> で実行を強制終了させる
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
@@ -394,27 +372,7 @@ nnoremap <silent> <F3> :VimShell -split<CR>
 " ------------------------------------------------------------------------
 " vimfiler
 " ------------------------------------------------------------------------
-nnoremap <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
-autocmd! FileType vimfiler call g:my_vimfiler_settings()
-function! g:my_vimfiler_settings()
-  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
-  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
-  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
-endfunction
-
-let s:my_action = { 'is_selectable' : 1 }
-function! s:my_action.func(candidates)
-  wincmd p
-  exec 'split '. a:candidates[0].action__path
-endfunction
-call unite#custom_action('file', 'my_split', s:my_action)
-
-let s:my_action = { 'is_selectable' : 1 }                     
-function! s:my_action.func(candidates)
-  wincmd p
-  exec 'vsplit '. a:candidates[0].action__path
-endfunction
-call unite#custom_action('file', 'my_vsplit', s:my_action)
+nnoremap <silent> <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
 
 
 " ------------------------------------------------------------------------
@@ -575,9 +533,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " NeoSinppet
 " ----------------------------------------------------------------------- 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
  
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
@@ -606,16 +564,11 @@ nnoremap <silent> <Leader>gg :<C-u>GitGutterToggle<CR>
 nnoremap <silent> <Leader>gh :<C-u>GitGutterLineHighlightsToggle<CR>
 
 " vimprocを使用する
-let g:gitgutter_system_function       = 'vimproc#system'
-let g:gitgutter_system_error_function = 'vimproc#get_last_status'
-let g:gitgutter_shellescape_function  = 'vimproc#shellescape'
-
-
-" ------------------------------------------------------------------------
-" window
-" ------------------------------------------------------------------------
-"   let g:netrw_liststyle = 3
-"   let g:netrw_altv = 1
+if neobundle#is_installed("vimproc")
+    let g:gitgutter_system_function       = 'vimproc#system'
+    let g:gitgutter_system_error_function = 'vimproc#get_last_status'
+    let g:gitgutter_shellescape_function  = 'vimproc#shellescape'
+endif
 
 
 " ------------------------------------------------------------------------
@@ -645,17 +598,6 @@ endfunction
 " ------------------------------------------------------------------------
 nnoremap <silent> <Leader>m :OverCommandLine<CR>
 
-"-------------------------------------------------------------------------
-" status Line
-" ------------------------------------------------------------------------
-function! g:Date()
-    return strftime("%x %H:%M")
-endfunction
-
-" gitのbranch名をstatusバーに表示
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-
 " ------------------------------------------------------------------------
 " vim-indent-guides
 " ------------------------------------------------------------------------
@@ -670,6 +612,7 @@ let g:indent_guides_auto_colors=0
 
 " 奇数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
+
 " 偶数インデントのカラー
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 
