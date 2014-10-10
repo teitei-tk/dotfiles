@@ -47,6 +47,16 @@ NeoBundle 'w0ng/vim-hybrid'
 " git
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'sgur/vim-gitgutter'
+NeoBundleLazy 'lambdalisue/vim-gista', {
+    \ 'depends': [
+    \    'Shougo/unite.vim',
+    \    'tyru/open-browser.vim',
+    \ ],
+    \ 'autoload': {
+    \    'commands': ['Gista'],
+    \    'mappings': '<Plug>(gista-',
+    \    'unite_sources': 'gista',
+    \}}
 
 " javascript
 NeoBundleLazy 'pangloss/vim-javascript', {
