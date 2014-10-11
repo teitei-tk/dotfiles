@@ -264,6 +264,7 @@ if neobundle#is_installed('neocomplete.vim')
       let g:neocomplete#sources#omni#input_patterns = {}
     endif
 
+    let g:neocomplete#sources#omni#input_patterns.cs = '.*[^=\);]'
     let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
     let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
@@ -277,8 +278,6 @@ if neobundle#is_installed('neocomplete.vim')
     let g:neocomplete#enable_refresh_always = 0
     let g:echodoc_enable_at_startup = 1
     let g:neocomplete#enable_insert_char_pre = 1
-
-    let g:neocomplete#force_overwrite_completefunc = 1
 
 elseif neobundle#is_installed('neocomplcache')
     " ------------------------------------------------------------------------ 
