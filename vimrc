@@ -528,7 +528,7 @@ endif
 if executable('py.test')
     let g:quickrun_config['python.pytest'] = {
         \ 'command': 'py.test',
-        \ 'cmdopt': '-s -v -n 2',
+        \ 'cmdopt': '-s -v -n',
         \ 'hook/shebang/enable': 0,
         \ }
 endif

@@ -5,7 +5,6 @@
     ui = auto
 [core]
     excludesfile = ~/.gitignore
-    editor = /usr/bin/vim
 [include]
     path = ~/.gitconfig_local
 [alias]

@@ -11,14 +11,14 @@ bindkey -e
 # -------------------------------------------
 # load setting
 # -------------------------------------------
-load_file_with_exists () {
+load_file_exists () {
     if [ -e $1 ]; then
         source $1
     fi
 }
 
-load_file_with_exists "$HOME/.bashrc_local"
-load_file_with_exists "$HOME/.zshrc_local"
+load_file_exists "$HOME/.bashrc_local"
+load_file_exists "$HOME/.zshrc_local"
 
 # -------------------------------------------
 # history
@@ -101,7 +101,7 @@ autoload bashcompinit
 bashcompinit
 
 # load bash completion
-load_file_with_exists "$HOME/.git-completion.bash"
+load_file_exists "$HOME/.git-completion.bash"
 
 # -------------------------------------------
 # alias
@@ -109,24 +109,23 @@ load_file_with_exists "$HOME/.git-completion.bash"
 alias ls="ls -F"
 alias la="ls -la"
 alias ll="ls -l"
-alias c="clear"
 alias l="ls"
+alias c="clear"
 alias dir="ls"
 alias history="history 1"
 #alias repos='cd $( find ~/repos ~/working -maxdepth 3 -mindepth 1 -name "*" -type d | grep -v "\/\." | peco )'
 alias repos='cd $( ghq list --full-path | peco )'
-alias current_branch='git st | awk "NR==1" | awk "x{print $3}"'
 alias ipy="ipython"
+alias swift='xcrun swift'
 
 cd $HOME
 
-### Added by the Heroku Toolbelt
-export GOPATH=$HOME/.golang
-export GOLANG_BIN=$HOME/.golang/bin
+# Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH:$GOPATH:$GOLANG_BIN"
 
-
-#source ~/.zshrc.antigen
+# added by golang path
+export GOPATH=$HOME/.golang
+export GOLANG_BIN=$HOME/.golang/bin
 
 # added by travis gem
 [ -f /Users/teitei/.travis/travis.sh ] && source /Users/teitei/.travis/travis.sh
