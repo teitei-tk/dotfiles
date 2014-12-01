@@ -108,6 +108,11 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \   "unix": "pip install jedi",
       \ }}
 
+NeoBundleLazy "alfredodeza/khuno.vim", {
+    \ "autoload" : {
+    \   "filetypes": ["python", "python3", "djangohtml"],
+    \ }}
+
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
 " ruby
