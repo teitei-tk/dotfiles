@@ -14,6 +14,8 @@ if filereadable(expand('~/.vimrc_local'))
   source ~/.vimrc_local
 endif
 
+let $PATH = "~/.anyenv/envs/pyenv/shims:".$PATH
+
 " required!
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
@@ -108,10 +110,21 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \   "unix": "pip install jedi",
       \ }}
 
+NeoBundleLazy "lambdalisue/vim-django-support", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
+
 NeoBundleLazy 'Flake8-vim', {
     \ "autoload": {
     \   "filetypes": ["python", "python3", "djangohtml"],
     \ }}
+
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+      \ "depends": ['davidhalter/jedi-vim'],
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
@@ -485,6 +498,8 @@ function! s:python_settings()
 endfunction
 autocmd FileType python call s:python_settings()
 
+" pyenv
+let g:pyenv#pyenv_root = "~/.anyenv/envs/pyenv"
 
 " ------------------------------------------------------------------------ 
 " Unite.vim
@@ -730,3 +745,4 @@ endfunction
 function! CurrentDatetime()
     return strftime("%x %H:%M")
 endfunction
+
