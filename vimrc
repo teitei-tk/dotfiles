@@ -108,8 +108,8 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \   "unix": "pip install jedi",
       \ }}
 
-NeoBundleLazy "alfredodeza/khuno.vim", {
-    \ "autoload" : {
+NeoBundleLazy 'Flake8-vim', {
+    \ "autoload": {
     \   "filetypes": ["python", "python3", "djangohtml"],
     \ }}
 
@@ -478,6 +478,10 @@ function! s:python_settings()
 
     " not preview docstring
     autocmd FileType python setl completeopt-=preview
+
+    " check flake8 syntax
+    let g:PyFlakeOnWrite = 1
+    let g:PyFlakeRangeCommand = 'Q'
 endfunction
 autocmd FileType python call s:python_settings()
 
