@@ -26,13 +26,13 @@ NeoBundle "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundleLazy 'Shougo/vimproc', {
-\ 'build' : {
-\    'windows' : 'make -f make_mingw32.mak',
-\    'cygwin' : 'make -f make_cygwin.mak',
-\    'mac' : 'make -f make_mac.mak',
-\    'unix' : 'make -f make_unix.mak',
-\    },
-\ }
+    \ 'build' : {
+    \    'windows' : 'make -f make_mingw32.mak',
+    \    'cygwin' : 'make -f make_cygwin.mak',
+    \    'mac' : 'make -f make_mac.mak',
+    \    'unix' : 'make -f make_unix.mak',
+    \    },
+    \ }
 
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -102,18 +102,18 @@ NeoBundleLazy 'nishigori/vim-php-dictionary', {
 
 " python
 NeoBundleLazy "davidhalter/jedi-vim", {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"],
-      \ },
-      \ "build": {
-      \   "mac": "pip install jedi",
-      \   "unix": "pip install jedi",
-      \ }}
+    \ "autoload": {
+    \   "filetypes": ["python", "python3", "djangohtml"],
+    \ },
+    \ "build": {
+    \   "mac": "pip install jedi",
+    \   "unix": "pip install jedi",
+    \ }}
 
 NeoBundleLazy "lambdalisue/vim-django-support", {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
+    \ "autoload": {
+    \   "filetypes": ["python", "python3", "djangohtml"]
+    \ }}
 
 NeoBundleLazy 'Flake8-vim', {
     \ "autoload": {
@@ -121,10 +121,10 @@ NeoBundleLazy 'Flake8-vim', {
     \ }}
 
 NeoBundleLazy "lambdalisue/vim-pyenv", {
-      \ "depends": ['davidhalter/jedi-vim'],
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
+    \ "depends": ['davidhalter/jedi-vim'],
+    \ "autoload": {
+    \   "filetypes": ["python", "python3", "djangohtml"]
+    \ }}
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
@@ -181,9 +181,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'kris89/vim-multiple-cursors'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'airblade/vim-rooter'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 't9md/vim-choosewin'
 NeoBundle 'sorah/unite-ghq'
@@ -492,8 +490,13 @@ function! s:python_settings()
     " not preview docstring
     autocmd FileType python setl completeopt-=preview
 
-    " check flake8 syntax
+    " writein check pep8 syntax
     let g:PyFlakeOnWrite = 1
+
+    " disabled pep8 warning message 
+    let g:PyFlakeDisabledMessages = 'E501,W402'
+
+    " command to fix as pep8 syntax
     let g:PyFlakeRangeCommand = 'Q'
 endfunction
 autocmd FileType python call s:python_settings()
@@ -640,11 +643,6 @@ endfunction
 
 
 " ------------------------------------------------------------------------
-" vim-over
-" ------------------------------------------------------------------------
-nnoremap <silent> <Leader>m :OverCommandLine<CR>
-
-" ------------------------------------------------------------------------
 " vim-indent-guides
 " ------------------------------------------------------------------------
 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
@@ -679,38 +677,38 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'date' ], [ 'fileformat', 'filetype', 'fileencoding' ], ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \   'date' : 'CurrentDatetime'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+    \ 'colorscheme': 'jellybeans',
+    \ 'mode_map': { 'c': 'NORMAL' },
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+    \   'right': [ [ 'date' ], [ 'fileformat', 'filetype', 'fileencoding' ], ]
+    \ },
+    \ 'component_function': {
+    \   'modified': 'MyModified',
+    \   'readonly': 'MyReadonly',
+    \   'fugitive': 'MyFugitive',
+    \   'filename': 'MyFilename',
+    \   'fileformat': 'MyFileformat',
+    \   'filetype': 'MyFiletype',
+    \   'fileencoding': 'MyFileencoding',
+    \   'mode': 'MyMode',
+    \   'date' : 'CurrentDatetime'
+    \ },
+    \ 'separator': { 'left': '⮀', 'right': '⮂' },
+    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+    \ }
 
 function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
 endfunction
 
 
 function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+    return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
         \  &ft == 'unite' ? unite#get_status_string() : 
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
@@ -719,30 +717,29 @@ function! MyFilename()
 endfunction
 
 function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
+    if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? '⭠ '._ : ''
+    endif
+    return ''
 endfunction
 
 function! MyFileformat()
-  return winwidth('.') > 70 ? &fileformat : ''
+    return winwidth('.') > 70 ? &fileformat : ''
 endfunction
 
 function! MyFiletype()
-  return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+    return winwidth('.') > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
 function! MyFileencoding()
-  return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+    return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
 endfunction
 
 function! MyMode()
-  return winwidth('.') > 60 ? lightline#mode() : ''
+    return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
 
 function! CurrentDatetime()
     return strftime("%x %H:%M")
 endfunction
-
