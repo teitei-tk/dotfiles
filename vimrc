@@ -58,7 +58,7 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
     \    'commands': ['Gista'],
     \    'mappings': '<Plug>(gista-',
     \    'unite_sources': 'gista',
-    \}}
+    \ }}
 
 " javascript
 NeoBundleLazy 'pangloss/vim-javascript', {
@@ -84,15 +84,27 @@ NeoBundleLazy "kchmck/vim-coffee-script", {
     \   'filetypes' : ['coffee']
     \ }}
 
+" react
+NeoBundleLazy 'mxw/vim-jsx', {
+    \ 'depends' : ['pangloss/vim-javascript'],
+    \ 'autoload' : {
+    \   'filetypes' : ['javascript']
+    \ },
+    \ 'build' : {
+    \   'mac' : 'npm install -g jsxhint',
+    \   'linux' : 'npm install -g jsxhint'
+    \ }}
+
 " cs
 NeoBundleLazy 'nosami/Omnisharp', {
     \ 'autoload': {
-    \   'filetypes': ['cs']}, 'build': {
-    \       'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-    \       'mac': 'xbuild server/OmniSharp.sln',
-    \       'unix': 'xbuild server/OmniSharp.sln',
-    \   }
-    \ }
+    \   'filetypes': ['cs']
+    \  },
+    \ 'build': {
+    \   'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+    \   'mac': 'xbuild server/OmniSharp.sln',
+    \   'unix': 'xbuild server/OmniSharp.sln',
+    \ }}
 
 " php
 NeoBundleLazy 'nishigori/vim-php-dictionary', {
@@ -142,9 +154,9 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
 NeoBundle 'thinca/vim-ref'
 NeoBundleLazy 'taka84u9/vim-ref-ri', {
     \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
-    \   'autoload': {
-    \       'filetypes': ['ruby', 'eruby', 'haml'] 
-    \  }}
+    \ 'autoload': {
+    \   'filetypes': ['ruby', 'eruby', 'haml'] 
+    \ }}
 
 NeoBundleLazy 'skwp/vim-rspec', {
     \ 'autoload': {
@@ -444,6 +456,13 @@ function! s:write_check_typo(file)
         execute writecmd
     endif
 endfunction
+
+
+" ------------------------------------------------------------------------ 
+" JavaScript
+" ------------------------------------------------------------------------ 
+let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 
 " ------------------------------------------------------------------------ 
