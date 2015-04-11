@@ -80,3 +80,7 @@ nosetests.xml
 
 # SublimeText project files
 *.sublime-workspace
+
+
+.idea/
+.python-version
