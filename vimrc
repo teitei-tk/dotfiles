@@ -151,18 +151,6 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
     \   'filetypes': ['ruby', 'eruby', 'haml']
     \ }}
 
-NeoBundle 'thinca/vim-ref'
-NeoBundleLazy 'taka84u9/vim-ref-ri', {
-    \ 'depends': ['Shougo/unite.vim', 'thinca/vim-ref'],
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'eruby', 'haml'] 
-    \ }}
-
-NeoBundleLazy 'skwp/vim-rspec', {
-    \ 'autoload': {
-    \   'filetypes': ['ruby', 'eruby', 'haml'] 
-    \ }}
-
 NeoBundleLazy 'ruby-matchit', {
     \ 'autoload' : {
     \     'filetypes': ['ruby', 'eruby', 'haml']
@@ -178,6 +166,18 @@ NeoBundleLazy 'tokorom/neocomplete-swift-dictionary', {
     \ 'depends' : 'Shougo/neocomplete.vim', 
     \ 'on_source': 'neocomplete.vim'
     \ }
+
+" golang
+NeoBundleLazy 'fatih/vim-go', {
+    \ 'autoload': {
+    \   'filetypes': ['go']
+    \ }}
+
+" elixir
+NeoBundleLazy 'elixir-lang/vim-elixir', {
+    \ 'autoload': {
+    \   'filetypes': ['elixir']
+    \}}
 
 " markdown
 NeoBundle 'plasticboy/vim-markdown'
@@ -210,31 +210,25 @@ syntax on
 " -----------------------------------------------------------------------
 " Setting
 " -----------------------------------------------------------------------
-" <Leader>を,に
+" modify <Leader> to ','
 let mapleader = ","
-
-" 一応。
 set encoding=utf-8
-
-" 行数表示
 set number
-
-" プレース表示
 set showmatch
 
-" indent
+" indent setting
 set expandtab
 set smarttab
 set softtabstop=4 tabstop=4 shiftwidth=4
 
-" バックアップは自分でやります
+" do backup yourself
 set noswapfile
 set nobackup
 
-" Beep音がうるさい
+" No Beep Sound
 set vb t_vb=
 
-" undo履歴
+" record on undo history
 set undofile
 set undodir=~/.vim/vimundo
 
@@ -423,6 +417,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
+" elixir
+au BufRead,BufNewFile,BufReadPre *.ex,*.exs,*.eex set filetype=elixir
 
 
 " ------------------------------------------------------------------------ 
@@ -642,7 +639,7 @@ endif
 " ------------------------------------------------------------------------
 " vim-choosewin
 " ------------------------------------------------------------------------
-nmap  -  <Plug>(choosewin)
+nmap - <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 let g:choosewin_overlay_clear_multibyte = 1
 
@@ -664,25 +661,25 @@ endfunction
 " ------------------------------------------------------------------------
 " vim-indent-guides
 " ------------------------------------------------------------------------
-" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+" launch and enable vim-indent-guide at the start of vim
 let g:indent_guides_enable_on_vim_startup=1
 
-" ガイドをスタートするインデントの量
+" amount of start a indentation
 let g:indent_guides_start_level=2
 
-" 自動カラーを無効にする
+" disabled auto color
 let g:indent_guides_auto_colors=0
 
-" 奇数インデントのカラー
+" odd number indent color
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
 
-" 偶数インデントのカラー
+" even number indent color
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 
-" ハイライト色の変化の幅
+" highlight color amplitude
 let g:indent_guides_color_change_percent = 30
 
-" ガイドの幅
+" indent guide size
 let g:indent_guides_guide_size = 1
 
 
