@@ -394,7 +394,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " ------------------------------------------------------------------------ 
 " ruby
 function! s:ruby_settings()
-    autocmd FileType ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endfunction
 autocmd FileType ruby call s:ruby_settings()
 

@@ -23,6 +23,7 @@
     root = ~/.golang/src/
     root = ~/.ghq/
     root = ~/repos/
+    root = ~/vm/
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
