@@ -66,18 +66,6 @@ NeoBundleLazy 'pangloss/vim-javascript', {
     \   'filetypes' : ['javascript']
     \ }}
 
-NeoBundleLazy 'basyura/jslint.vim', {
-    \ 'autoload' : {
-    \   'filetypes' : ['javascript']
-    \ }}
-
-NeoBundleLazy 'marijnh/tern_for_vim', {
-    \ 'build' : 'npm install',
-    \ 'autoload' : {
-    \   'functions': ['tern#Complete', 'tern#Enable'],
-    \   'filetypes' : 'javascript'
-    \ }}
-
 " coffee
 NeoBundleLazy "kchmck/vim-coffee-script", {
     \ 'autoload': {
