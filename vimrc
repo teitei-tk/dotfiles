@@ -7,7 +7,7 @@ filetype off
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+"call neobundle#rc(expand('~/.vim/bundle/'))
 
 " load local setting
 if filereadable(expand('~/.vimrc_local'))
@@ -17,10 +17,12 @@ endif
 let $PATH = "~/.anyenv/envs/pyenv/shims:".$PATH
 
 " required!
+call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimfiler.vim'
+
 NeoBundle "Shougo/neocomplete.vim" 
 NeoBundle "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
@@ -70,28 +72,6 @@ NeoBundleLazy 'pangloss/vim-javascript', {
 NeoBundleLazy "kchmck/vim-coffee-script", {
     \ 'autoload': {
     \   'filetypes' : ['coffee']
-    \ }}
-
-" react
-NeoBundleLazy 'mxw/vim-jsx', {
-    \ 'depends' : ['pangloss/vim-javascript'],
-    \ 'autoload' : {
-    \   'filetypes' : ['javascript']
-    \ },
-    \ 'build' : {
-    \   'mac' : 'npm install -g jsxhint',
-    \   'linux' : 'npm install -g jsxhint'
-    \ }}
-
-" cs
-NeoBundleLazy 'nosami/Omnisharp', {
-    \ 'autoload': {
-    \   'filetypes': ['cs']
-    \  },
-    \ 'build': {
-    \   'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-    \   'mac': 'xbuild server/OmniSharp.sln',
-    \   'unix': 'xbuild server/OmniSharp.sln',
     \ }}
 
 " php
@@ -189,6 +169,7 @@ NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
 NeoBundle 'AutoClose'
+call neobundle#end()
 
 " required!
 filetype plugin indent on 
@@ -392,14 +373,6 @@ function! s:yaml_settings()
 endfunction
 autocmd FileType yaml call s:yaml_settings()
 
-" javascript
-function! s:javascript_filetype_settings()
-    autocmd BufLeave <buffer> call jslint#clear()
-    autocmd BufWritePost <buffer> call jslint#check()
-    autocmd CursorMoved <buffer> call jslint#message()
-endfunction
-autocmd FileType javascript call s:javascript_filetype_settings()
-
 " coffee
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
@@ -446,8 +419,7 @@ endfunction
 " ------------------------------------------------------------------------ 
 " JavaScript
 " ------------------------------------------------------------------------ 
-let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 " ------------------------------------------------------------------------ 
