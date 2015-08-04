@@ -31,7 +31,7 @@ class Installer(object):
             source = "{0}/{1}".format(self.script_dir, dotfile)
             dest = "{0}/{1}".format(self.home_dir, dotfile)
 
-            if os.path.isfile(dest):
+            if os.path.lexists(dest):
                 os.rename(dest, "/tmp/{0}".format("tmp", dotfile))
 
             if not os.path.exists(dest):
