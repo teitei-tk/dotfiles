@@ -171,6 +171,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 't9md/vim-choosewin'
 NeoBundle 'sorah/unite-ghq'
+NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 NeoBundle 'Align'
@@ -651,6 +652,12 @@ let g:indent_guides_color_change_percent = 30
 " indent guide size
 let g:indent_guides_guide_size = 1
 
+" ------------------------------------------------------------------------
+" incsearch
+" ------------------------------------------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " ------------------------------------------------------------------------
 " lightline
@@ -728,3 +735,4 @@ endfunction
 function! CurrentDatetime()
     return strftime("%x %H:%M")
 endfunction
+
