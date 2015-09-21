@@ -124,6 +124,12 @@ NeoBundleLazy 'ruby-matchit', {
     \     'filetypes': ['ruby', 'eruby', 'haml']
     \ }}
 
+" slim
+NeoBundleLazy 'slim-template/vim-slim', {
+    \ 'autoload': {
+    \   'filetypes': ['slim']
+    \}}
+
 " swift
 NeoBundleLazy 'toyamarinyon/swift.vim', {
     \ 'autoload' : {
@@ -378,6 +384,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
+
+" slim
+au BufRead,BufNewFile,BufReadPre *.slim set filetype=slim
 
 " elixir
 au BufRead,BufNewFile,BufReadPre *.ex,*.exs,*.eex set filetype=elixir
