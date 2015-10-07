@@ -516,7 +516,7 @@ nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
 nnoremap <silent> <Space>f  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
 
 " grep cursor word
-nnoremap <silent> <Space>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> <Space>g :<C-u>Ack <cword><CR>
 
 " use ag to Unite grep 
 if executable('ag')
