@@ -117,6 +117,7 @@ alias history="history 1"
 alias repos='cd $( ghq list --full-path | peco )'
 alias ipy="ipython"
 alias swift='xcrun swift'
+alias random-string='python -c "import string, random; print(str().join([random.choice(string.ascii_letters + string.digits) for i in range(30)]))"'
 
 cd $HOME
 
