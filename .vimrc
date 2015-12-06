@@ -95,16 +95,16 @@ NeoBundleLazy "lambdalisue/vim-django-support", {
     \   "filetypes": ["python", "python3", "djangohtml"]
     \ }}
 
-NeoBundleLazy 'Flake8-vim', {
-    \ "autoload": {
-    \   "filetypes": ["python", "python3", "djangohtml"],
-    \ }}
+"   NeoBundleLazy 'Flake8-vim', {
+"       \ "autoload": {
+"       \   "filetypes": ["python", "python3", "djangohtml"],
+"       \ }}
 
-NeoBundleLazy "lambdalisue/vim-pyenv", {
-    \ "depends": ['davidhalter/jedi-vim'],
-    \ "autoload": {
-    \   "filetypes": ["python", "python3", "djangohtml"]
-    \ }}
+"   NeoBundleLazy "lambdalisue/vim-pyenv", {
+"       \ "depends": ['davidhalter/jedi-vim'],
+"       \ "autoload": {
+"       \   "filetypes": ["python", "python3", "djangohtml"]
+"       \ }}
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
@@ -590,6 +590,7 @@ endif
 " ------------------------------------------------------------------------
 " colorscheme
 " ------------------------------------------------------------------------
+set background=dark
 colorscheme hybrid
 
 
