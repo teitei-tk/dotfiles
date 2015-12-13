@@ -7,14 +7,11 @@ filetype off
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
-"call neobundle#rc(expand('~/.vim/bundle/'))
 
 " load local setting
 if filereadable(expand('~/.vimrc_local'))
   source ~/.vimrc_local
 endif
-
-let $PATH = "~/.anyenv/envs/pyenv/shims:".$PATH
 
 " required!
 call neobundle#begin(expand('~/.vim/bundle'))
@@ -95,16 +92,6 @@ NeoBundleLazy "lambdalisue/vim-django-support", {
     \   "filetypes": ["python", "python3", "djangohtml"]
     \ }}
 
-"   NeoBundleLazy 'Flake8-vim', {
-"       \ "autoload": {
-"       \   "filetypes": ["python", "python3", "djangohtml"],
-"       \ }}
-
-"   NeoBundleLazy "lambdalisue/vim-pyenv", {
-"       \ "depends": ['davidhalter/jedi-vim'],
-"       \ "autoload": {
-"       \   "filetypes": ["python", "python3", "djangohtml"]
-"       \ }}
 
 NeoBundle 'Glench/Vim-Jinja2-Syntax.git'
 
@@ -434,18 +421,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 
 " ------------------------------------------------------------------------ 
-" csharp
-" ------------------------------------------------------------------------ 
-function! s:cs_settings()
-    autocmd FileType cs se fenc=utf-8 bomb
-    autocmd FileType cs setl omnifunc=OmniSharp#Complete
-endfunction
-autocmd FileType cs call s:cs_settings()
-
-nnoremap <silent> <Leader>gd  :OmniSharpGotoDefinition<CR>
-
-
-" ------------------------------------------------------------------------ 
 "  python
 " ------------------------------------------------------------------------ 
 " jedi-vim
@@ -476,20 +451,8 @@ function! s:python_settings()
 
     " not preview docstring
     autocmd FileType python setl completeopt-=preview
-
-    " writein check pep8 syntax
-    let g:PyFlakeOnWrite = 1
-
-    " disabled pep8 warning message 
-    let g:PyFlakeDisabledMessages = 'E501,W402'
-
-    " command to fix as pep8 syntax
-    let g:PyFlakeRangeCommand = 'Q'
 endfunction
 autocmd FileType python call s:python_settings()
-
-" pyenv
-let g:pyenv#pyenv_root = "~/.anyenv/envs/pyenv"
 
 " ------------------------------------------------------------------------ 
 " Unite.vim
@@ -562,7 +525,6 @@ nnoremap <silent> <F3> :VimShell -split<CR>
 " vimfiler
 " ------------------------------------------------------------------------
 nnoremap <silent> <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
-
 
 
 " ----------------------------------------------------------------------- 
