@@ -19,6 +19,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundleLazy 'Shougo/vimfiler', {
+    \ 'depends' : [
+    \    "Shougo/unite.vim"
+    \  ],
+    \  }
+
 
 NeoBundle "Shougo/neocomplete.vim" 
 NeoBundle "Shougo/neocomplcache.vim"
