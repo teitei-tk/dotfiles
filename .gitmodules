@@ -1,9 +1,0 @@
-[submodule "tmux/tmux-powerline-wrapper"]
-	path = tmux/tmux-powerline-wrapper
-	url = git@github.com:yonchu/tmux-powerline-wrapper.git
-[submodule "tmux/tmux-powerline"]
-	path = tmux/tmux-powerline
-	url = git@github.com:erikw/tmux-powerline.git
-[submodule "antigen"]
-	path = antigen
-	url = https://github.com/zsh-users/antigen.git
