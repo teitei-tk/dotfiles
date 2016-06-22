@@ -25,7 +25,6 @@ NeoBundleLazy 'Shougo/vimfiler', {
     \  ],
     \  }
 
-
 NeoBundle "Shougo/neocomplete.vim" 
 NeoBundle "Shougo/neocomplcache.vim"
 NeoBundle 'tpope/vim-dispatch'
@@ -38,9 +37,6 @@ NeoBundleLazy 'Shougo/vimproc', {
     \    'unix' : 'make -f make_unix.mak',
     \    },
     \ }
-
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 
 " syntax
 NeoBundle "scrooloose/syntastic.git"
@@ -66,9 +62,14 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
     \ }}
 
 " javascript
-NeoBundleLazy 'pangloss/vim-javascript', {
-    \ 'autoload' : {
-    \   'filetypes' : ['javascript']
+NeoBundleLazy 'othree/yajs.vim', {
+    \ 'autoload': {
+    \   'filetypes': ['javascript']
+    \ }}
+
+NeoBundleLazy 'myhere/vim-nodejs-complete', {
+    \ 'autoload': {
+    \   'filetypes': ['javascript']
     \ }}
 
 " coffee
@@ -156,6 +157,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle "mattn/emmet-vim"
 
 " util
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'kris89/vim-multiple-cursors'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -240,6 +242,11 @@ if neobundle#is_installed('neocomplete.vim')
     " popup close
     inoremap <expr><CR> neocomplete#smart_close_popup() . "\<CR>"
     inoremap <expr><C-y> neocomplete#smart_close_popup() . "\<C-h>"
+
+    if !exists('g:neocomplcache_omni_functions')
+      let g:neocomplcache_omni_functions = {}
+    endif
+    let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
 
     if !exists('g:neocomplete#sources')
         let g:neocomplete#sources = {}
@@ -349,11 +356,6 @@ elseif neobundle#is_installed('neocomplcache')
 
     " 現在選択している候補をキャンセルし、ポップアップを閉じます
     inoremap <expr><C-e> neocomplcache#cancel_popup()
-
-    " snipetの配置場所
-    let g:neocomplcache_snippets_dir='~/.vim/bundle/neosnippet-snippets/neosnippets/'
-    imap <C-k> <plug>(neocomplcache_snippets_expand)
-    smap <C-k> <plug>(neocomplcache_snippets_expand)
 endif
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -373,6 +375,8 @@ function! s:yaml_settings()
     autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endfunction
 autocmd FileType yaml call s:yaml_settings()
+
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
 
 " coffee
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
@@ -423,8 +427,14 @@ endfunction
 " ------------------------------------------------------------------------ 
 " JavaScript
 " ------------------------------------------------------------------------ 
-let g:syntastic_javascript_checkers = ['eslint']
-
+if executable("eslint")
+    let g:syntastic_javascript_checkers = ['eslint']
+    let g:syntastic_mode_map = {
+          \ 'mode': 'active',
+          \ 'active_filetypes': ['javascript'],
+          \ 'passive_filetypes': []
+          \ }
+endif
 
 " ------------------------------------------------------------------------ 
 "  python
@@ -532,29 +542,6 @@ nnoremap <silent> <F3> :VimShell -split<CR>
 " ------------------------------------------------------------------------
 nnoremap <silent> <F2> :VimFiler -buffer-name=explorer -split -toggle -no-quit<Cr>
 
-
-" ----------------------------------------------------------------------- 
-" NeoSinppet
-" ----------------------------------------------------------------------- 
-" Plugin key-mappings.
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
- 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
- \ "\<Plug>(neosnippet_expand_or_jump)"
- \: "\<TAB>"
-  
-" For snippet_complete marker.
-if has('conceal')
-    set conceallevel=2 concealcursor=i
-endif
-
-
 " ------------------------------------------------------------------------
 " colorscheme
 " ------------------------------------------------------------------------
@@ -602,13 +589,13 @@ endfunction
 " vim-indent-guides
 " ------------------------------------------------------------------------
 " launch and enable vim-indent-guide at the start of vim
-let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_enable_on_vim_startup = 1
 
 " amount of start a indentation
-let g:indent_guides_start_level=2
+let g:indent_guides_start_level = 2
 
 " disabled auto color
-let g:indent_guides_auto_colors=0
+let g:indent_guides_auto_colors = 0
 
 " odd number indent color
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
@@ -628,6 +615,19 @@ let g:indent_guides_guide_size = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+
+" ------------------------------------------------------------------------ 
+" NERDTree
+" ------------------------------------------------------------------------ 
+autocmd StdinReadPre * let s:std_in=1
+
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = '▼'
+
+nnoremap <silent> <D-1> :<C-u>NERDTreeToggle<CR>
 
 " ------------------------------------------------------------------------
 " lightline

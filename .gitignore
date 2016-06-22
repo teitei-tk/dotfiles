@@ -24,7 +24,6 @@ Session.vim
 nbproject/private/
 build/
 nbbuild/
-dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
@@ -40,7 +39,6 @@ nbproject/
 # Packages
 *.egg
 *.egg-info
-dist
 build
 eggs
 parts
