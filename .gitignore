@@ -81,3 +81,14 @@ nosetests.xml
 
 .idea/
 .python-version
+.phpenv-version
+
+# atom ignore files
+.atom/storage/
+.atom/packages/
+.atom/compile-cache
+.atom/dev
+.atom/projects.cson
+.atom/.apm
+.atom/.npm
+.atom/.node-gyp
