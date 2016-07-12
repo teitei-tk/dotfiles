@@ -3,6 +3,7 @@
     general:
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
+  "autocomplete-python": {}
   core:
     allowPendingPaneItems: false
     disabledPackages: [
@@ -11,6 +12,7 @@
       "linter-phpmd"
     ]
   editor:
+    showIndentGuide: true
     tabType: "soft"
   "exception-reporting":
     userId: "670b895c-49e1-6a78-a3e3-9ad4ac2eba5c"
