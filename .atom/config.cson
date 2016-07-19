@@ -4,28 +4,33 @@
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
   "autocomplete-python":
-    extraPaths: "/Users/yoshikatsu.higa/.anyenv/envs/pyenv/versions"
+    extraPaths: "/Users/yoshikatsu.higa/.anyenv/envs/pyenv/versions/2.7.10/lib/python2.7/site-packages"
     pythonPaths: "/Users/yoshikatsu.higa/.anyenv/envs/pyenv/shims/python"
   core:
     allowPendingPaneItems: false
     disabledPackages: [
-      "bracket-matcher"
       "project-manager"
       "linter-phpmd"
       "linter-pep8"
     ]
   editor:
     showIndentGuide: true
+    showInvisibles: true
+    softTabs: false
     tabType: "soft"
   "exception-reporting":
     userId: "670b895c-49e1-6a78-a3e3-9ad4ac2eba5c"
+  "highlight-line": {}
   "linter-php": {}
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
-  "vim-mode-plus": {}
+  "vim-mode-plus":
+    highlightSearch: true
+    useClipboardAsDefaultRegister: true
   welcome:
     showOnStartup: false
+  whitespace: {}
 ".html.php.text":
   editor:
     tabLength: 4

@@ -30,7 +30,11 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
-
 'atom-workspace':
   'cmd-shift-o': 'fuzzy-finder:toggle-file-finder',
-  'cmd-1': 'tree-view:toggle'
+  'cmd-1': 'tree-view:toggle',
+  'cmd-shift-g': 'fuzzy-grep:toggle'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  ':': 'vim-mode-plus-ex-mode:open'
+  '!': 'vim-mode-plus-ex-mode:toggle-setting'

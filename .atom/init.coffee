@@ -10,6 +10,14 @@
 #   editor.onDidSave ->
 #     console.log "Saved! #{editor.getPath()}"
 util = require 'util'
+fs = require 'fs'
+
+class FileUtil
+  @isFile = (path) ->
+    return fs.existsSync(path) and fs.statSync(path).isFile()
+
+  @isDir = (path) ->
+    return fs.existsSync(path) and fs.statSync(path).isDirectory()
 
 ########################################
 # autocomplete-python
@@ -21,5 +29,22 @@ util = require 'util'
 #   * apply pyenv version for .python-version of each project.
 #     * if .python-version does not exist, apply of global version.
 #       * global-version exist at $HOME/.anyenv/envs/pyenv/version
-atom.config.set('autocomplete-python.pythonPaths', util.format('%s/.anyenv/envs/pyenv/shims/python', process.env.HOME))
-atom.config.set('autocomplete-python.extraPaths', util.format('%s/.anyenv/envs/pyenv/versions', process.env.HOME))
+pyEnvRoot = process.env.PYENV_ROOT
+if pyEnvRoot and FileUtil.isDir pyEnvRoot
+  localVersionPath = util.format '%s/.python-version', atom.project.getPaths()[0]
+  globalVersionPath = util.format '%s/version', pyEnvRoot
+
+  applyVirtualEnv = (filePath) ->
+    require('child_process').exec(util.format('cat %s', filePath), (err, stdout, stderr) ->
+      version = stdout.trim()
+      if not version
+        return
+
+      atom.config.set 'autocomplete-python.pythonPaths', util.format('%s/shims/python', pyEnvRoot)
+      atom.config.set 'autocomplete-python.extraPaths', util.format('%s/versions/%s/lib/python2.7/site-packages', pyEnvRoot, version)
+    )
+
+  if FileUtil.isFile localVersionPath
+    applyVirtualEnv localVersionPath
+  else if FileUtil.isFile globalVersionPath
+    applyVirtualEnv globalVersionPath
