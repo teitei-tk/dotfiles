@@ -4,16 +4,24 @@
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
   "autocomplete-python":
-    extraPaths: "/Users/yoshikatsu.higa/.anyenv/envs/pyenv/versions/2.7.10/lib/python2.7/site-packages"
-    pythonPaths: "/Users/yoshikatsu.higa/.anyenv/envs/pyenv/shims/python"
+    caseInsensitiveCompletion: false
+    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/flask-bootstrap/lib/python2.7/site-packages"
+    pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
   core:
     allowPendingPaneItems: false
     disabledPackages: [
       "project-manager"
       "linter-phpmd"
       "linter-pep8"
+      "linter-twig"
+    ]
+    themes: [
+      "conduit-ui"
+      "base16-tomorrow-dark-theme"
     ]
   editor:
+    fontFamily: "Ricty"
+    fontSize: 18
     showIndentGuide: true
     showInvisibles: true
     softTabs: false
@@ -22,6 +30,7 @@
     userId: "670b895c-49e1-6a78-a3e3-9ad4ac2eba5c"
   "highlight-line": {}
   "linter-php": {}
+  "linter-twig": {}
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
