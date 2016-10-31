@@ -20,7 +20,7 @@
 [grep]
     lineNumber = true
 [ghq]
-    root = ~/repos/
+    root = ~/.golang/src/
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f

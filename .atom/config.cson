@@ -3,12 +3,13 @@
     general:
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
+  "autocomplete-go":
+    snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/flask-bootstrap/lib/python2.7/site-packages"
+    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/CloverWitch_Scraping/lib/python2.7/site-packages"
     pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
   core:
-    allowPendingPaneItems: false
     disabledPackages: [
       "project-manager"
       "linter-phpmd"
@@ -28,18 +29,31 @@
     tabType: "soft"
   "exception-reporting":
     userId: "670b895c-49e1-6a78-a3e3-9ad4ac2eba5c"
+  "go-find-references": {}
+  gofmt: {}
   "highlight-line": {}
   "linter-php": {}
   "linter-twig": {}
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
+  react: {}
+  "tree-view": {}
   "vim-mode-plus":
     highlightSearch: true
     useClipboardAsDefaultRegister: true
   welcome:
     showOnStartup: false
   whitespace: {}
+".go.source":
+  editor:
+    tabLength: 8
+".gohtml.html.text":
+  editor:
+    tabLength: 8
+".gotemplate.source":
+  editor:
+    tabLength: 8
 ".html.php.text":
   editor:
     tabLength: 4

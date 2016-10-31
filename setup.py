@@ -5,10 +5,10 @@ import sys
 import os
 import subprocess
 
+EXCLUDE_LIST = [".git", "README.md", "setup.py", ".gitmodules"]
+
 
 class Installer(object):
-    exclude_list = [".git", "README.md", "setup.py", ".gitmodules"]
-
     @property
     def home_dir(self):
         return os.environ['HOME']
@@ -25,14 +25,14 @@ class Installer(object):
 
         dotfiles = os.listdir(self.script_dir)
         for dotfile in dotfiles:
-            if dotfile in self.exclude_list:
+            if dotfile in EXCLUDE_LIST:
                 continue
 
             source = "{0}/{1}".format(self.script_dir, dotfile)
             dest = "{0}/{1}".format(self.home_dir, dotfile)
 
             if os.path.lexists(dest):
-                os.rename(dest, "/tmp/{0}".format("tmp", dotfile))
+                os.rename(dest, "/tmp/{0}".format(dotfile.replace(".", "")))
 
             if not os.path.exists(dest):
                 os.symlink(source, dest)
