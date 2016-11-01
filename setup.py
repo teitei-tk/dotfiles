@@ -21,7 +21,6 @@ class Installer(object):
         print("Start cmd setup")
 
         self.dotfiles()
-        self.home_brew()
 
         print("All Task is Successfully")
 
@@ -43,18 +42,6 @@ class Installer(object):
                 os.symlink(source, dest)
 
         print("Finished Successfully")
-
-    def home_brew(self):
-        brew_file_list = [x.strip() for x in open("./Brewlist.txt").readlines()]
-
-        print("Install brew libs")
-
-        installed_list = ' '.join(brew_file_list)
-        command = "brew install {0}".format(installed_list)
-        subprocess.call(command, shell=True)
-
-        print("Finished Successfully")
-
 
 if __name__ == "__main__":
     Installer().run()
