@@ -29,6 +29,7 @@ json-schema@0.1.15
 jumpy@3.1.1
 language-cpp14@0.6.2
 language-docker@1.1.7
+language-haml@0.24.0
 language-tmux@0.4.0
 linter@1.11.16
 linter-golint@0.3.0
