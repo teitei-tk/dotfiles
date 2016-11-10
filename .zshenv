@@ -7,9 +7,3 @@ export PATH=$PATH:/Applications/eclipse/android/platform-tools
 export TERM=xterm-256color
 PROMPT='%{${fg[green]}%}%n@%m%{${reset_color}%} `rprompt-git-current-branch`$ '
 RPROMPT='%{${fg_bold[blue]}%}[%d]%{${reset_color}%}'
-
-
-if [ -f ~/.zshrc_local ]; then
-    # include local env setting
-    source ~/.zshrc_local
-fi
