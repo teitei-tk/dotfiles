@@ -32,9 +32,12 @@ language-docker@1.1.7
 language-haml@0.24.0
 language-tmux@0.4.0
 linter@1.11.16
+linter-erb@1.0.2
 linter-golint@0.3.0
 linter-pep8@1.3.2
 linter-php@1.2.0
+linter-ruby@1.2.2
+linter-sass-lint@1.7.4
 linter-twig@0.1.1
 multi-cursor-plus@1.0.3
 navigator-godef@1.0.4

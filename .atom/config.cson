@@ -16,6 +16,7 @@
       "linter-pep8"
       "linter-twig"
     ]
+    telemetryConsent: "no"
     themes: [
       "conduit-ui"
       "base16-tomorrow-dark-theme"
