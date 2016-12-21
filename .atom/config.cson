@@ -7,39 +7,56 @@
     snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/CloverWitch_Scraping/lib/python2.7/site-packages"
-    pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
+    extraPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
+    pythonPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/shims/python"
+    useKite: false
+  "autocomplete-ruby":
+    rsensePath: "~/.anyenv/envs/rbenv/shims/rsense"
   core:
     disabledPackages: [
       "project-manager"
       "linter-phpmd"
       "linter-pep8"
-      "linter-twig"
+      "linter-erb"
+      "linter-ruby"
     ]
     telemetryConsent: "no"
     themes: [
       "conduit-ui"
       "base16-tomorrow-dark-theme"
     ]
+    useCustomTitleBar: true
   editor:
     fontFamily: "Ricty"
-    fontSize: 18
+    fontSize: 17
     showIndentGuide: true
     showInvisibles: true
-    softTabs: false
     tabType: "soft"
   "exception-reporting":
     userId: "670b895c-49e1-6a78-a3e3-9ad4ac2eba5c"
   "go-find-references": {}
+  "go-plus":
+    panelDisplayMode: "closed"
   gofmt: {}
   "highlight-line": {}
+  linter: {}
   "linter-php": {}
-  "linter-rubocop": {}
+  "linter-rubocop":
+    disableWhenNoConfigFile: true
   "linter-twig": {}
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
   react: {}
+  "rubocop-auto-correct":
+    autoRun: true
+    correctFile: true
+    notification: false
+  "status-bar-clock":
+    activateOnStart: "Show on start"
+  term3:
+    fontFamily: "Ricty"
+    fontSize: "13"
   "tree-view": {}
   "vim-mode-plus":
     highlightSearch: true
@@ -47,6 +64,9 @@
   welcome:
     showOnStartup: false
   whitespace: {}
+".erb.html.text":
+  editor:
+    softWrap: true
 ".go.source":
   editor:
     tabLength: 8
@@ -59,3 +79,6 @@
 ".html.php.text":
   editor:
     tabLength: 4
+".ruby.source":
+  editor:
+    softWrap: true

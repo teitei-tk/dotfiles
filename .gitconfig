@@ -17,6 +17,7 @@
     delete-add-items       = !git status | awk '{print $1}' | xargs rm -rf
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     detect-branches        = !git checkout $(git branch | peco)
+    rollback               = !git checkout $(git status | grep 'modified:' | awk '{print $2}' | peco)
 [grep]
     lineNumber = true
 [ghq]

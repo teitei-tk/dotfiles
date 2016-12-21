@@ -473,7 +473,7 @@ autocmd FileType python call s:python_settings()
 " ------------------------------------------------------------------------ 
 " Unite.vim
 " ------------------------------------------------------------------------ 
-let g:unite_enable_start_insert = 0
+let g:unite_enable_start_insert = 1 " start as insert mode
 
 if executable("ghq")
     noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
