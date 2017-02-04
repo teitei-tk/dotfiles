@@ -3,6 +3,8 @@
     general:
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
+  "auto-update-packages":
+    intervalMinutes: 3600
   "autocomplete-go":
     snippetMode: "nameAndType"
   "autocomplete-python":
@@ -16,9 +18,6 @@
     disabledPackages: [
       "project-manager"
       "linter-phpmd"
-      "linter-pep8"
-      "linter-erb"
-      "linter-ruby"
     ]
     telemetryConsent: "no"
     themes: [
@@ -40,6 +39,8 @@
   gofmt: {}
   "highlight-line": {}
   linter: {}
+  "linter-flow":
+    executablePath: "./node_modules/.bin/flow"
   "linter-php": {}
   "linter-rubocop":
     disableWhenNoConfigFile: true
