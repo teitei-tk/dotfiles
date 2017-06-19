@@ -99,3 +99,5 @@ alias random-string='python -c "import string, random; print(str().join([random.
 
 # start from home directory.
 cd $HOME
+
+export PATH="$HOME/.yarn/bin:$PATH"

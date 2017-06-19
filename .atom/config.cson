@@ -3,14 +3,16 @@
     general:
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
+  "atom-package-deps":
+    ignored: []
   "auto-update-packages":
     intervalMinutes: 3600
   "autocomplete-go":
     snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
-    pythonPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/shims/python"
+    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
+    pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
     useKite: false
   "autocomplete-ruby":
     rsensePath: "~/.anyenv/envs/rbenv/shims/rsense"
@@ -18,13 +20,15 @@
     disabledPackages: [
       "project-manager"
       "linter-phpmd"
+      "linter-pep8"
+      "linter-pycodestyle"
     ]
     telemetryConsent: "no"
     themes: [
-      "conduit-ui"
+      "one-dark-ui"
       "base16-tomorrow-dark-theme"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     fontFamily: "Ricty"
     fontSize: 17
@@ -39,12 +43,16 @@
   gofmt: {}
   "highlight-line": {}
   linter: {}
+  "linter-eslint":
+    fixOnSave: true
   "linter-flow":
     executablePath: "./node_modules/.bin/flow"
   "linter-php": {}
   "linter-rubocop":
     disableWhenNoConfigFile: true
   "linter-twig": {}
+  "linter-ui-default":
+    showPanel: true
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
@@ -62,6 +70,8 @@
   "vim-mode-plus":
     highlightSearch: true
     useClipboardAsDefaultRegister: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   welcome:
     showOnStartup: false
   whitespace: {}
