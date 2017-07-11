@@ -11,8 +11,8 @@
     snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
-    pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
+    extraPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
+    pythonPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/shims/python"
     useKite: false
   "autocomplete-ruby":
     rsensePath: "~/.anyenv/envs/rbenv/shims/rsense"
@@ -25,7 +25,7 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
+      "pristine-ui"
       "base16-tomorrow-dark-theme"
     ]
     titleBar: "custom"
