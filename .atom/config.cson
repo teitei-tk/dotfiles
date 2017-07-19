@@ -49,10 +49,11 @@
     executablePath: "./node_modules/.bin/flow"
   "linter-php": {}
   "linter-rubocop":
+    command: "bundle exec rubocop"
     disableWhenNoConfigFile: true
   "linter-twig": {}
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 69
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"
