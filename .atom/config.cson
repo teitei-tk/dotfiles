@@ -53,7 +53,7 @@
     disableWhenNoConfigFile: true
   "linter-twig": {}
   "linter-ui-default":
-    panelHeight: 69
+    panelHeight: 63
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"

@@ -7,6 +7,7 @@ fi
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
+
 # User specific aliases and functions
 alias ls="ls -F"
 alias la="ls -la"
