@@ -60,3 +60,4 @@ brew 'tree'
 brew 'wget'
 brew 'homebrew/dupes/libiconv'
 brew 'sanemat/font/ricty', args: ['vim-powerline']
+brew 'git-secrets'
