@@ -3,6 +3,8 @@
     general:
       _analyticsUserId: "ddc50370-8166-45da-8f1e-1b393335db48"
     php: {}
+  "atom-ide-ui":
+    use: {}
   "atom-package-deps":
     ignored: []
   "auto-update-packages":
@@ -11,7 +13,7 @@
     snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
+    extraPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/versions/3.5.2/lib/python2.7/site-packages"
     pythonPaths: "/Users/higa-yoshikatsu/.anyenv/envs/pyenv/shims/python"
     useKite: false
   "autocomplete-ruby":
@@ -22,6 +24,7 @@
       "linter-phpmd"
       "linter-pep8"
       "linter-pycodestyle"
+      "linter"
     ]
     telemetryConsent: "no"
     themes: [
@@ -53,7 +56,7 @@
     disableWhenNoConfigFile: true
   "linter-twig": {}
   "linter-ui-default":
-    panelHeight: 63
+    panelHeight: 300
   "project-manager":
     environmentSpecificProjects: true
     sortBy: "title"

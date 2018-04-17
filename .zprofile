@@ -1,5 +1,6 @@
 if [ -d ${HOME}/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
+
   eval "$(anyenv init -)"
   for D in `ls $HOME/.anyenv/envs`
   do
@@ -14,4 +15,9 @@ fi
 if [ -d "$HOME/.golang" ]; then
   export GOPATH=$HOME/.golang
   export PATH="$GOPATH/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo" ]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+  source $HOME/.cargo/env
 fi
