@@ -21,3 +21,7 @@ if [ -d "$HOME/.cargo" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
   source $HOME/.cargo/env
 fi
+
+if [ -d "$HOME/.yarn" ]; then
+  export PATH="$HOME/.yarn/bin:$PATH"
+fi
