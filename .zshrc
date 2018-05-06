@@ -3,6 +3,7 @@
 # -------------------------------------------
 export EDITOR=vim        # default editor is vim
 export LANG=ja_JP.UTF-8  # lang = ja_JP
+export LC_ALL=ja_JP.UTF-8
 setopt no_beep           # no beep sound
 setopt correct           # command check
 
