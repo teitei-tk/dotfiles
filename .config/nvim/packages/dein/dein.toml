@@ -1,0 +1,7 @@
+# package manager
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# statusline plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
