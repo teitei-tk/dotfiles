@@ -12,19 +12,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/unite.vim'
-
 NeoBundle "Shougo/neocomplete.vim"
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundleLazy 'Shougo/vimproc', {
-    \ 'build' : {
-    \    'windows' : 'make -f make_mingw32.mak',
-    \    'cygwin' : 'make -f make_cygwin.mak',
-    \    'mac' : 'make -f make_mac.mak',
-    \    'unix' : 'make -f make_unix.mak',
-    \    },
-    \ }
 
 " syntax
 NeoBundle "scrooloose/syntastic.git"
@@ -178,60 +166,6 @@ au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 " Jinja2
 au BufNewFile,BufRead *.jinja2,*.jinja setf jinja
-
-
-" ------------------------------------------------------------------------
-" util
-" ------------------------------------------------------------------------
-" multi_byte setting
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-
-" ------------------------------------------------------------------------
-" Unite.vim
-" ------------------------------------------------------------------------
-let g:unite_enable_start_insert = 1 " start as insert mode
-
-if executable("ghq")
-    noremap <silent> <Space>6 :<C-u>Unite ghq<CR>
-endif
-
-" files
-nnoremap <silent> <Space>7 :<C-u>Unite file<CR>
-
-" buffer
-nnoremap <silent> <Space>8 :<C-u>Unite buffer<CR>
-
-" use file list
-nnoremap <silent> <Space>9 :<C-u>Unite file_mru<CR>
-
-" bookmark
-nnoremap <silent> <Space>0 :<C-u>Unite bookmark<CR>
-
-" grep shortcut
-nnoremap <silent> <Space>f  :<C-u>Unite grep: -buffer-name=search-buffer<CR>
-
-" grep cursor word
-nnoremap <silent> <Space>g :<C-u>Ack <cword><CR>
-
-" ------------------------------------------------------------------------
-" vim-quickrun
-" ------------------------------------------------------------------------
-"  runnerにvimprocを使用して非同期に
-if neobundle#is_installed("vimproc")
-    let g:quickrun_config = {
-        \ "_" : {
-        \    "runner" : "vimproc",
-        \    "runner/vimproc/updatetime" : 60
-        \ }}
-endif
 
 " ------------------------------------------------------------------------
 " colorscheme
