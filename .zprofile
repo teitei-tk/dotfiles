@@ -25,3 +25,7 @@ fi
 if [ -d "$HOME/.yarn" ]; then
   export PATH="$HOME/.yarn/bin:$PATH"
 fi
+
+if [ -d "$HOME/.volt" ]; then
+  export VOLTPATH=$HOME/.volt
+fi

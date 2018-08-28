@@ -16,7 +16,7 @@ execute 'set runtimepath^=' . s:dein_repo_path
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let g:config_dir = expand('~/.config/nvim/packages/dein')
+  let g:config_dir = expand('~/.vim/packages/dein')
   let s:toml = g:config_dir . '/dein.toml'
   let s:lazy_toml = g:config_dir . '/dein_lazy.toml'
 

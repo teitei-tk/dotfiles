@@ -1,0 +1,28 @@
+# package manager
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# statusline plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'kris89/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 't9md/vim-choosewin'
+
+[[plugins]]
+repo = 'Yggdroot/LeaderF'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
