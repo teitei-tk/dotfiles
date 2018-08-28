@@ -100,3 +100,5 @@ alias random-string='python -c "import string, random; print(str().join([random.
 
 # start from home directory.
 cd $HOME
+
+eval "$(direnv hook zsh)"

@@ -13,7 +13,7 @@
     snippetMode: "nameAndType"
   "autocomplete-python":
     caseInsensitiveCompletion: false
-    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/2.7.9/lib/python2.7/site-packages"
+    extraPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/versions/3.5.1/lib/python2.7/site-packages"
     pythonPaths: "/Users/teitei.tk/.anyenv/envs/pyenv/shims/python"
     useKite: false
   "autocomplete-ruby":
@@ -25,6 +25,8 @@
       "linter-pep8"
       "linter-pycodestyle"
       "linter"
+      "racer"
+      "atom-typescript"
     ]
     telemetryConsent: "no"
     themes: [
@@ -54,6 +56,8 @@
   "linter-rubocop":
     command: "bundle exec rubocop"
     disableWhenNoConfigFile: true
+  "linter-tslint":
+    fixOnSave: true
   "linter-twig": {}
   "linter-ui-default":
     panelHeight: 300
