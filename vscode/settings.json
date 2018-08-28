@@ -12,14 +12,12 @@
         "rails": true
     },
     "vim.statusBarColorControl": true,
-    "vim.statusBarColors" : {
-        "normal": ["#8ac6f2", "#444444"],
-        "insert": ["#95e454", "#444444"],
-        "visual": ["#f2c68a", "#444444"],
-        "visualline": ["#f2c68a", "#444444"],
-        "visualblock": ["#f2c68a", "#444444"],
-        "replace": ["#e5786d", "#444444"]
-    },
+    "vim.statusBarColors.normal": ["#8ac6f2", "#444444"],
+    "vim.statusBarColors.insert": ["#95e454", "#444444"],
+    "vim.statusBarColors.visual": ["#f2c68a", "#444444"],
+    "vim.statusBarColors.visualline": ["#f2c68a", "#444444"],
+    "vim.statusBarColors.visualblock": ["#f2c68a", "#444444"],
+    "vim.statusBarColors.replace": ["#e5786d", "#444444"],
     "workbench.colorTheme": "Base16 Eighties Dark",
     "workbench.colorCustomizations": {
         "statusBar.background": "#8ac6f2",
@@ -28,5 +26,9 @@
         "statusBar.foreground": "#444444"
     },
     "activitusbar.activeColour": "#999",
-    "activitusbar.inactiveColour": "#444"
+    "activitusbar.inactiveColour": "#444",
+    "tslint.autoFixOnSave": true,
+    "tslint.packageManager": "yarn",
+    "tslint.alwaysShowStatus": true,
+    "tslint.run": "onSave"
 }
