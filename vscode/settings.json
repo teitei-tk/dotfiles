@@ -30,5 +30,8 @@
     "tslint.autoFixOnSave": true,
     "tslint.packageManager": "yarn",
     "tslint.alwaysShowStatus": true,
-    "tslint.run": "onSave"
+    "tslint.run": "onSave",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.find.globalFindClipboard": true,
+    "vim.useSystemClipboard": true
 }
