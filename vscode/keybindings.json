@@ -1,0 +1,11 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+	{
+		"key": "ctrl+cmd+p",
+		"command": "extension.ghqOpen"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+]

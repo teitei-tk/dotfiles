@@ -5,8 +5,7 @@ import sys
 import os
 import subprocess
 
-EXCLUDE_LIST = [".git", "README.md", "setup.py", ".gitmodules", "Brewfile"]
-
+EXCLUDE_LIST = [".git", "README.md", "setup.py", ".gitmodules", "Brewfile", "vscode"]
 
 class Installer(object):
     @property
