@@ -1,3 +1,10 @@
+# -------------------------------------------
+# env
+# -------------------------------------------
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+export TERM=xterm-256color
+
 if [ -d ${HOME}/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
 

@@ -50,40 +50,24 @@ setopt list_types            # autocomplete list is render file mark
 setopt print_eight_bit       # enable utf-8
 
 # -------------------------------------------
-# git
+# prompt
 # -------------------------------------------
+autoload -Uz vcs_info
 setopt prompt_subst
-autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
-function rprompt-git-current-branch {
-  local name st color action
-
-  if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-    return
-  fi
-
-  name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
-  if [[ -z $name ]]; then
-    return
-  fi
-
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    color=${fg[red]}
-  elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-    color=${fg_bold[red]}
-  elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-    color=${fg_bold[yellow]}
-  else
-    color=${fg_bold[red]}
-  fi
-
-  gitdir=`git rev-parse --git-dir 2> /dev/null`
-  action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
-
-  # %{...%} surrounds escape string
-  echo "%{$color%}($name$action$color)%{$reset_color%}"
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '!'
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:*' formats ' %c%u(%b)'
+zstyle ':vcs_info:*' actionformats ' %c%u(%s:%b|%a)'
+precmd () {
+    psvar=()
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
+
+PROMPT="%(!,%F{red}root,%F{green}teitei.tk) >>%B%F{red}%1(v|%1v|)%f%b %B%F{blue}%~%f%b
+%F{white}$ "
 
 # -------------------------------------------
 # alias
