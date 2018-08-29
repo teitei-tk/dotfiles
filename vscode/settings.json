@@ -42,5 +42,7 @@
   },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "ruby.useBundler": true,
+  "editor.formatOnSaveTimeout": 2000
 }

@@ -1,5 +1,46 @@
 runtime! packages/dein/dein.vim
 
+" -----------------------------------------------------------------------
+" Setting
+" -----------------------------------------------------------------------
+" modify <Leader> to ','
+let mapleader = ","
+set encoding=utf-8
+set number
+set showmatch
+
+" indent setting
+set expandtab
+set smarttab
+set softtabstop=4 tabstop=4 shiftwidth=4
+
+" do backup yourself
+set noswapfile
+set nobackup
+
+" No Beep Sound
+set vb t_vb=
+
+" record on undo history
+set undofile
+set undodir=~/.vim/vimundo
+
+" ------------------------------------------------------------------------
+" each language setting
+" ------------------------------------------------------------------------
+" ruby
+function! s:ruby_settings()
+    setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endfunction
+autocmd FileType ruby call s:ruby_settings()
+
+" yaml
+function! s:yaml_settings()
+    autocmd FileType yaml setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+endfunction
+autocmd FileType yaml call s:yaml_settings()
+
+
 " ------------------------------------------------------------------------
 " colorscheme
 " ------------------------------------------------------------------------

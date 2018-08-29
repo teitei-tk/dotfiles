@@ -92,3 +92,5 @@ nosetests.xml
 .atom/.apm
 .atom/.npm
 .atom/.node-gyp
+
+.vscode
