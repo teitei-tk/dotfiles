@@ -6,5 +6,13 @@ $ cd /path/to/MyDotfiles
 $ python setup.py
 ```
 
-# Ergodox
-* http://configure.ergodox-ez.com/keyboard_layouts/qppnln/edit
+## VSCode Setup
+
+```bash
+$ cd vscode/
+$ sh restore.sh
+```
+
+## Ergodox Keymap
+
+- https://github.com/teitei-tk/qmk_firmware/tree/master/keyboards/ergodox_ez/keymaps/teitei-tk
