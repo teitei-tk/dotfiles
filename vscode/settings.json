@@ -40,6 +40,9 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
+  "[ruby]": {
+    "editor.formatOnSave": false
+  },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "editor.tabSize": 2,
