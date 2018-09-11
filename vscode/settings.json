@@ -47,5 +47,7 @@
   "files.trimTrailingWhitespace": true,
   "editor.tabSize": 2,
   "ruby.useBundler": true,
-  "editor.formatOnSaveTimeout": 2000
+  "editor.formatOnSaveTimeout": 2000,
+  "vim.mouseSelectionGoesIntoVisualMode": true,
+  "breadcrumbs.enabled": true
 }

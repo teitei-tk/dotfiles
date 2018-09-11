@@ -1,0 +1,59 @@
+{
+  "title": "Modify Chrome App Keybind",
+  "rules": [
+    {
+      "description": "bind 'cmd + opt + <-(left_arrow)' as 'cmd + shift + ['",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.google\\.Chrome"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "backslash",
+            "modifiers": {
+              "mandatory": ["command", "shift"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["left_command", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "bind 'cmd + opt + ->(right_arrow)' as 'cmd + shift + ]'",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.google\\.Chrome"],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": ["command", "shift"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": ["left_command", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
