@@ -94,3 +94,6 @@ nosetests.xml
 .atom/.node-gyp
 
 .vscode
+
+.config/
+!.config/karabiner
