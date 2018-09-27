@@ -3,7 +3,9 @@ bsides.Theme-Base16-Eighties
 bungcip.better-toml
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
+eamodio.gitlens
 eg2.tslint
+eg2.vscode-npm-script
 esbenp.prettier-vscode
 fallenwood.vimL
 file-icons.file-icons
