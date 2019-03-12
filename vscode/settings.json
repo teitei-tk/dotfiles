@@ -29,7 +29,6 @@
   "activitusbar.inactiveColour": "#444",
   "tslint.autoFixOnSave": true,
   "tslint.packageManager": "yarn",
-  "tslint.alwaysShowStatus": true,
   "tslint.run": "onType",
   "workbench.startupEditor": "newUntitledFile",
   "editor.find.globalFindClipboard": true,
@@ -49,5 +48,15 @@
   "ruby.useBundler": true,
   "editor.formatOnSaveTimeout": 2000,
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "prettier.eslintIntegration": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ]
 }
