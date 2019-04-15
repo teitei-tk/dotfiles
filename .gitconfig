@@ -21,10 +21,7 @@
 [grep]
     lineNumber = true
 [ghq]
-    root = ~/.golang/src/
-[url "github:"]
-    InsteadOf = https://github.com/
-    InsteadOf = git@github.com:
+    root = ~/repos
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
