@@ -18,6 +18,7 @@
     delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
     detect-branches        = !git checkout $(git branch | peco)
     rollback               = !git checkout $(git status | grep 'modified:' | awk '{print $2}' | peco)
+    pr-checkout            = "!checkout() { git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1; }; checkout"
 [grep]
     lineNumber = true
 [ghq]
