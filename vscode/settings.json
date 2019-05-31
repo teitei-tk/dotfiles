@@ -59,5 +59,6 @@
     { "language": "typescript", "autoFix": true },
     { "language": "typescriptreact", "autoFix": true }
   ],
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "ruby.rubocop.useBundler": true
 }
