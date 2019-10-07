@@ -60,5 +60,6 @@
     { "language": "typescriptreact", "autoFix": true }
   ],
   "window.zoomLevel": 0,
-  "ruby.rubocop.useBundler": true
+  "ruby.rubocop.useBundler": true,
+  "explorer.autoReveal": false
 }

@@ -97,3 +97,5 @@ nosetests.xml
 
 .config/
 !.config/karabiner
+
+node_modules/
