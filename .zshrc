@@ -66,7 +66,7 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-PROMPT="%(!,%F{red}root,%F{green}teitei.tk) >>%B%F{red}%1(v|%1v|)%f%b %B%F{blue}%~%f%b
+PROMPT="%(!,%F{red}root,%F{green})>>%B%F{red}%1(v|%1v|)%f%b %B%F{blue}%~%f%b
 %F{white}$ "
 
 # -------------------------------------------
