@@ -34,7 +34,6 @@
   "editor.find.globalFindClipboard": true,
   "vim.useSystemClipboard": true,
   "editor.minimap.enabled": false,
-  "prettier.tslintIntegration": true,
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": true
@@ -49,7 +48,6 @@
   "editor.formatOnSaveTimeout": 2000,
   "vim.mouseSelectionGoesIntoVisualMode": true,
   "breadcrumbs.enabled": true,
-  "prettier.eslintIntegration": true,
   "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
   "eslint.run": "onSave",
