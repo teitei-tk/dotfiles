@@ -11,5 +11,3 @@ jobs:
         run: python setup.py
       - name: Install brew bundle packages
         run: brew bundle
-      - name: Install VSCode extensions
-        run: cd vscode && sh restore.sh
