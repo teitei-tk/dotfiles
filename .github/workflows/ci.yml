@@ -11,3 +11,5 @@ jobs:
         run: python setup.py
       - name: Install brew bundle packages
         run: brew bundle
+      - name: Install Vim Plugin via dein.vim
+        run: vim -N -u ~/.vim/init.vim -c "try | call dein#install() | finally | qall! | endtry" -V1 -es
