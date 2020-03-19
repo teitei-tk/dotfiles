@@ -44,7 +44,6 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "editor.tabSize": 2,
-  "ruby.useBundler": true,
   "editor.formatOnSaveTimeout": 2000,
   "vim.mouseSelectionGoesIntoVisualMode": true,
   "breadcrumbs.enabled": true,
@@ -58,6 +57,11 @@
     { "language": "typescriptreact", "autoFix": true }
   ],
   "window.zoomLevel": 0,
+  "explorer.autoReveal": false,
   "ruby.rubocop.useBundler": true,
-  "explorer.autoReveal": false
+  "ruby.useBundler": true,
+  "window.clickThroughInactive": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
