@@ -80,7 +80,7 @@ alias c="clear"
 alias dir="ls"
 alias history="history 1"
 alias repos='cd $( ghq list --full-path | peco )'
-alias random-string='python -c "import string, random; print(str().join([random.choice(string.ascii_letters + string.digits) for i in range(100)]))"'
+alias random-string='openssl rand -base64 24'
 
 # start from home directory.
 cd $HOME
