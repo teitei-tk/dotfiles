@@ -5,7 +5,9 @@ import sys
 import os
 import subprocess
 
-EXCLUDE_LIST = [".git", "README.md", "setup.py", ".gitmodules", "Brewfile", "vscode"]
+EXCLUDE_LIST = [".git", "README.md", "setup.py",
+                ".gitmodules", "Brewfile", "vscode"]
+
 
 class Installer(object):
     @property
@@ -41,6 +43,7 @@ class Installer(object):
                 os.symlink(source, dest)
 
         print("Finished Successfully")
+
 
 if __name__ == "__main__":
     Installer().run()

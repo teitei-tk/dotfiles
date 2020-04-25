@@ -28,7 +28,7 @@
     smudge = git media smudge %f
     required = true
 [init]
-    templatedir = ~/.git-templates/secrets
+	templatedir = ~/.git-templates/secrets
 [secrets]
     patterns = private_key
     patterns = private_key_id
