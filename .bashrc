@@ -15,5 +15,6 @@ alias ll="ls -l"
 alias c="clear"
 alias l="ls"
 alias dir="ls"
+alias repos='cd $( ghq list --full-path | peco )'
 
 cd $HOME
