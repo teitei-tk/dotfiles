@@ -19,6 +19,7 @@
     detect-branches        = !git checkout $(git branch | peco)
     rollback               = !git checkout $(git status | grep 'modified:' | awk '{print $2}' | peco)
     pr-checkout            = "!checkout() { git fetch origin pull/$1/head:$2 && git checkout $2; }; checkout"
+    ignore                 = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [grep]
     lineNumber = true
 [ghq]
