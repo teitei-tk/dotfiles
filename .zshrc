@@ -82,9 +82,6 @@ alias history="history 1"
 alias repos='cd $( ghq list --full-path | peco )'
 alias random-string='openssl rand -base64 24'
 
-# start from home directory.
-cd $HOME
-
 if [ -x "$(which direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
