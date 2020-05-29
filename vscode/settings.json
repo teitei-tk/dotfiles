@@ -20,9 +20,9 @@
   "vim.statusBarColors.replace": ["#e5786d", "#444444"],
   "workbench.colorTheme": "Horizon",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#8ac6f2",
-    "statusBar.noFolderBackground": "#8ac6f2",
-    "statusBar.debuggingBackground": "#8ac6f2",
+    "statusBar.background": "#95e454",
+    "statusBar.noFolderBackground": "#95e454",
+    "statusBar.debuggingBackground": "#95e454",
     "statusBar.foreground": "#444444"
   },
   "activitusbar.activeColour": "#999",
@@ -48,14 +48,8 @@
   "vim.mouseSelectionGoesIntoVisualMode": true,
   "breadcrumbs.enabled": true,
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
   "eslint.run": "onSave",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
-  ],
+  "eslint.validate": ["javascript", "javascriptreact"],
   "window.zoomLevel": 0,
   "explorer.autoReveal": false,
   "ruby.rubocop.useBundler": true,
