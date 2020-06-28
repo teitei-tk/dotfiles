@@ -24,6 +24,7 @@
     lineNumber = true
 [ghq]
     root = ~/repos
+    root = /Users/teitei.tk/.golang/src
 [filter "media"]
     clean = git media clean %f
     smudge = git media smudge %f
