@@ -5,6 +5,11 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 export TERM=xterm-256color
 
+if [ -d "$HOME/.anyenv/envs/goenv" ]; then
+  export GOENV_ROOT="$HOME/.anyenv/envs/goenv"
+  export PATH="$GOENV_ROOT/bin:$PATH"
+fi
+
 if [ -d ${HOME}/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
 
@@ -20,6 +25,7 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 if [ -d "$HOME/.golang" ]; then
+  export PATH="$GOROOT/bin:$PATH"
   export GOPATH=$HOME/.golang
   export PATH="$GOPATH/bin:$PATH"
 fi
