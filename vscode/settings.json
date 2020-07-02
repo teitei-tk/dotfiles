@@ -20,9 +20,10 @@
   "vim.statusBarColors.replace": ["#e5786d", "#444444"],
   "workbench.colorTheme": "Horizon",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#007acc",
-    "statusBar.noFolderBackground": "#007acc",
-    "statusBar.debuggingBackground": "#007acc"
+    "statusBar.background": "#8ac6f2",
+    "statusBar.noFolderBackground": "#8ac6f2",
+    "statusBar.debuggingBackground": "#8ac6f2",
+    "statusBar.foreground": "#444444"
   },
   "activitusbar.activeColour": "#999",
   "activitusbar.inactiveColour": "#444",
