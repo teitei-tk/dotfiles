@@ -79,5 +79,8 @@
       }
     ]
   },
-  "go.formatTool": "goimports"
+  "go.formatTool": "goimports",
+  "[html]": {
+    "editor.formatOnSave": false
+  }
 }
