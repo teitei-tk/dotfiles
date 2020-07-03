@@ -29,6 +29,16 @@ $ sh restore.sh
 
 - https://github.com/teitei-tk/qmk_firmware/tree/master/keyboards/ergodox_ez/keymaps/teitei-tk
 
+## Fonts
+
+### Source Han Code JP
+
+- https://github.com/adobe-fonts/source-han-code-jp
+
+## install poewrline fonts
+
+- https://github.com/powerline/fonts#quick-installation
+
 ## Restore
 
 ```bash
