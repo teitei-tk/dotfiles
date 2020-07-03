@@ -82,5 +82,6 @@
   "go.formatTool": "goimports",
   "[html]": {
     "editor.formatOnSave": false
-  }
+  },
+  "go.useLanguageServer": true
 }
