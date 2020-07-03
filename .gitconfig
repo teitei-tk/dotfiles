@@ -23,7 +23,7 @@
 [grep]
     lineNumber = true
 [ghq]
-    root = ~/repos
+    root = ~/repos/src
 [filter "media"]
     clean = git media clean %f
     smudge = git media smudge %f
