@@ -22,6 +22,8 @@
     ignore                 = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [grep]
     lineNumber = true
+[diff]
+    wsErrorHighlight = all
 [ghq]
     root = ~/repos/src
 [filter "media"]
