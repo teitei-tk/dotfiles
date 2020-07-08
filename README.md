@@ -1,26 +1,24 @@
 # Dotfiles
 
-## Setup
-
-### Dotfiles
+## Installation
 
 ```bash
 $ git clone git://github.com:teitei-tk/MyDotfiles.git /path/to/MyDotfiles
 $ cd /path/to/MyDotfiles
-$ python setup.py
+$ make init
 ```
 
-### HomeBrew
+### Dotfiles
 
 ```bash
-$ brew bundle
+$ make setup # setup dotfiles and vscode settings
+$ make setup-dotfiles # dotfiles only
 ```
 
 ### VSCode
 
 ```bash
-$ cd vscode/
-$ sh restore.sh
+$ make setup-vscode
 ```
 
 ## Keymap
@@ -29,19 +27,8 @@ $ sh restore.sh
 
 - https://github.com/teitei-tk/qmk_firmware/tree/master/keyboards/ergodox_ez/keymaps/teitei-tk
 
-## Fonts
-
-### Source Han Code JP
-
-- https://github.com/adobe-fonts/source-han-code-jp
-
-## install poewrline fonts
-
-- https://github.com/powerline/fonts#quick-installation
-
 ## Restore
 
 ```bash
-$ brew bundle dump --force
-$ cd vscode && sh restore.sh && cd -
+$ make dump
 ```

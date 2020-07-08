@@ -4,9 +4,8 @@ function main() {
   dotfiles_dir=$(cd $(dirname $0) && pwd)
   home_dir=$HOME
   dotfiles=$(ls -a)
-  exclude_list=(README.md .git .github setup.sh setup.py Brewfile vscode ..)
+  exclude_list=(README.md .git .github setup.sh setup.py Brewfile Makefile vscode ..)
 
-  echo "Start updating dotfiles symbolic link."
 
   target_files=()
   for i in $dotfiles; do
@@ -36,11 +35,6 @@ EOT
 
     ln -s $source_path $target_path
   done
-
-  cat<<EOT
-
-Finished Successfully.
-EOT
 }
 
 main
