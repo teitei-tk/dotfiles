@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Copy Symlink to Home Directory
-        run: sh setup.sh
+        run: ./setup.sh
       - name: Install brew bundle packages
         run: brew bundle
       - name: Install Vim Plugin via dein.vim

@@ -37,7 +37,10 @@ EOT
     ln -s $source_path $target_path
   done
 
-  echo "\nFinished Successfully."
+  cat<<EOT
+
+Finished Successfully.
+EOT
 }
 
 main
