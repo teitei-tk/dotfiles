@@ -27,7 +27,7 @@ EOT
   for dotfile in ${target_files[@]}; do
     source_path="$dotfiles_dir/$dotfile"
     target_path="$home_dir/$dotfile"
-    if [ -e $target_path ]; then
+    if [ -e $target_path ] || [ -L $target_path ]; then
       echo "$target_path symlink or file exists. move to /tmp/$current_datetime/$dotfile"
       mkdir -p /tmp/$current_datetime
       mv $target_path "/tmp/$current_datetime/$dotfile"
