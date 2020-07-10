@@ -2,6 +2,10 @@
 init: brew-install brew-bundle setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
+.PHONY: shellcheck
+shellcheck:
+	shellcheck setup.sh vscode/sync.sh
+
 .PHONY: dump
 dump: setup-vscode
 	brew bundle dump --force

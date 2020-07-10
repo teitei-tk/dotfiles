@@ -92,6 +92,7 @@ brew "pandoc"
 brew "peco"
 brew "reattach-to-user-namespace"
 brew "redis", restart_service: true
+brew "shellcheck"
 brew "scons"
 brew "teensy_loader_cli"
 brew "terraform"

@@ -9,3 +9,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Init Environment
         run: make init
+      - name: shellcheck
+        run: make shellcheck
