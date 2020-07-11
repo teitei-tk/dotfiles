@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
 
 if [ -L "${VSCODE_SETTING_DIR}/settings.json" ]; then
@@ -13,8 +13,8 @@ if [ -L "${VSCODE_SETTING_DIR}/keybindings.json" ]; then
 fi
 ln -s "${SCRIPT_DIR}/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
 
-cat ./extensions | while read line
+cat < ./extensions | while read -r line
 do
-  code --install-extension $line
+  code --install-extension "$line"
 done
 code --list-extensions > extensions
