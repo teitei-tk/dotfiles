@@ -1,3 +1,10 @@
+BREW_RESULT := $(shell brew --version >/dev/null 2>&1 || (echo "Your command failed with $$?"))
+ifeq (,${BREW_RESULT})
+    BREW_EXISTS := true
+else
+    BREW_EXISTS := false
+endif
+
 .PHONY: init
 init: brew-install brew-bundle setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
@@ -28,7 +35,11 @@ setup-vscode:
 
 .PHONY: brew-install
 brew-install:
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+ifeq (${BREW_EXISTS}, false)
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | /bin/bash
+else
+	@echo "brew file is exists. abort brew-install.
+endif
 
 .PHONY: brew-bundle
 brew-bundle:
