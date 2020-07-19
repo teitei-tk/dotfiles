@@ -26,9 +26,3 @@ $ make setup-vscode
 ### Ergodox Keymap
 
 - https://github.com/teitei-tk/qmk_firmware/tree/master/keyboards/ergodox_ez/keymaps/teitei-tk
-
-## Restore
-
-```bash
-$ make dump
-```

@@ -1,4 +1,4 @@
-BREW_RESULT := $(shell brew --version >/dev/null 2>&1 || (echo "Your command failed with $$?"))
+BREW_RESULT := $(shell brew --version >/dev/null 2>&1)
 ifeq (,${BREW_RESULT})
     BREW_EXISTS := true
 else
@@ -12,10 +12,6 @@ init: brew-install brew-bundle setup install-powerline-fonts install-vim-package
 .PHONY: shellcheck
 shellcheck:
 	shellcheck setup.sh vscode/sync.sh
-
-.PHONY: dump
-dump: setup-vscode
-	brew bundle dump --force
 
 .PHONY: setup
 setup: setup-dotfiles setup-vscode
@@ -36,9 +32,10 @@ setup-vscode:
 .PHONY: brew-install
 brew-install:
 ifeq (${BREW_EXISTS}, false)
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | /bin/bash
+	@echo install Homebrew
+	curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/master/install.sh" | /bin/bash
 else
-	@echo "brew file is exists. abort brew-install.
+	@echo brew file is exists. abort brew-install
 endif
 
 .PHONY: brew-bundle
