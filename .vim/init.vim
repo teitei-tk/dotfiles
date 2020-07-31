@@ -27,6 +27,10 @@ set vb t_vb=
 set undofile
 set undodir=~/.vim/vimundo
 
+if has("clipboard")
+  set clipboard=unnamed
+endif
+
 " ------------------------------------------------------------------------
 " each language setting
 " ------------------------------------------------------------------------
