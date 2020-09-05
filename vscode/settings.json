@@ -83,5 +83,17 @@
   "[html]": {
     "editor.formatOnSave": false
   },
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-n>"],
+      "after": ["g", "b"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<C-n>"],
+      "after": ["g", "b"]
+    }
+  ]
 }
