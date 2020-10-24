@@ -6,7 +6,7 @@ else
 endif
 
 .PHONY: init
-init: brew-install brew-bundle setup install-powerline-fonts install-vim-packages
+init: brew-install brew-bundle mas-bundle setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: ci
@@ -48,6 +48,10 @@ brew-bundle:
 .PHONY: brew-bundle-ci
 brew-bundle-ci:
 	brew bundle --file=Brewfile.ci
+
+.PHONY: mas-bundle
+mas-bundle:
+	brew bundle --file=Brewfile.mas
 
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
