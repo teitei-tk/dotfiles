@@ -99,3 +99,5 @@ nosetests.xml
 !.config/karabiner
 
 node_modules/
+
+Brewfile.mas.lock.json
