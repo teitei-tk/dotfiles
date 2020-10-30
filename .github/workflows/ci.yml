@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@master
-      - name: Init Environment
-        run: make init
+      - name: Checking package dependencies
+        run: make ci
       - name: shellcheck
         run: make shellcheck

@@ -9,6 +9,9 @@ endif
 init: brew-install brew-bundle setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
+.PHONY: ci
+ci: brew-install brew-bundle-ci setup install-powerline-fonts install-vim-packages
+
 .PHONY: shellcheck
 shellcheck:
 	shellcheck setup.sh vscode/sync.sh
@@ -41,6 +44,10 @@ endif
 .PHONY: brew-bundle
 brew-bundle:
 	brew bundle
+
+.PHONY: brew-bundle-ci
+brew-bundle-ci:
+	brew bundle --file=Brewfile.ci
 
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
