@@ -1,3 +1,4 @@
+Arjun.swagger-viewer
 bsides.Theme-Base16-Eighties
 bungcip.better-toml
 castwide.solargraph
@@ -19,7 +20,9 @@ mads-hartmann.bash-ide-vscode
 marchrock.vscode-ghq
 misogi.ruby-rubocop
 ms-azuretools.vscode-docker
+ms-dotnettools.csharp
 ms-python.python
+ms-toolsai.jupyter
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
@@ -29,7 +32,9 @@ octref.vetur
 Orta.vscode-jest
 prograhammer.tslint-vue
 rebornix.ruby
+redhat.vscode-yaml
 sianglim.slim
+taichi.vscode-textlint
 teabyii.ayu
 vscodevim.vim
 wingrunr21.vscode-ruby
