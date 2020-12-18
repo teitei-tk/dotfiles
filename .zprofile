@@ -24,7 +24,7 @@ if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/.golang" ]; then
+if [ -d "$HOME/repos" ]; then
   export PATH="$GOROOT/bin:$PATH"
   export GOPATH=$HOME/repos
   export PATH="$GOPATH/bin:$PATH"
