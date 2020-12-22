@@ -95,5 +95,9 @@
       "before": ["<C-n>"],
       "after": ["g", "b"]
     }
-  ]
+  ],
+  "gopls": {
+    "experimentalWorkspaceModule": true
+  },
+  "go.toolsEnvVars": {"GO111MODULE": "on"}
 }
