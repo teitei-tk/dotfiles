@@ -99,5 +99,9 @@
   "gopls": {
     "experimentalWorkspaceModule": true
   },
-  "go.toolsEnvVars": {"GO111MODULE": "on"}
+  "go.toolsEnvVars": {"GO111MODULE": "on"},
+  "solargraph.autoformat": true,
+  "solargraph.checkGemVersion": false,
+  "solargraph.diagnostics": true,
+  "solargraph.useBundler": true
 }
