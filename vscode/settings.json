@@ -97,6 +97,7 @@
     }
   ],
   "gopls": {
+    "build.expandWorkspaceToModule": true,
     "experimentalWorkspaceModule": true
   },
   "go.toolsEnvVars": {"GO111MODULE": "on"},
