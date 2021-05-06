@@ -1,16 +1,9 @@
-BREW_RESULT := $(shell brew --version >/dev/null 2>&1)
-ifeq (,${BREW_RESULT})
-    BREW_EXISTS := true
-else
-    BREW_EXISTS := false
-endif
-
 .PHONY: init
-init: brew-install brew-bundle mas-bundle setup install-powerline-fonts install-vim-packages
+init: brew-bundle brew-bundle-mas setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: ci
-ci: brew-install brew-bundle-ci setup install-powerline-fonts install-vim-packages
+ci: brew-bundle-ci setup install-powerline-fonts install-vim-packages
 
 .PHONY: shellcheck
 shellcheck:
@@ -32,24 +25,17 @@ setup-vscode:
 	@cd vscode/ && ./sync.sh && cd -
 	@echo "--------------------Finished Successfully.--------------------"
 
-.PHONY: brew-install
-brew-install:
-ifeq (${BREW_EXISTS}, false)
-	@echo install Homebrew
-	curl -fsSL "https://raw.githubusercontent.com/Homebrew/install/master/install.sh" | /bin/bash
-else
-	@echo brew file is exists. abort brew-install
-endif
-
 .PHONY: brew-bundle
 brew-bundle:
 	brew bundle
 
 .PHONY: brew-bundle-ci
 brew-bundle-ci:
+	# https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11.0-Readme.md
+	grep -Ev "awscli|go|node|python|yarn" Brewfile > Brewfile.ci
 	brew bundle --file=Brewfile.ci
 
-.PHONY: mas-bundle
+.PHONY: bundle-bundle-mas
 mas-bundle:
 	brew bundle --file=Brewfile.mas
 
