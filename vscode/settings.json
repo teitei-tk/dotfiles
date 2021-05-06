@@ -103,5 +103,6 @@
   "go.toolsEnvVars": {"GO111MODULE": "on"},
   "solargraph.autoformat": true,
   "solargraph.checkGemVersion": false,
-  "solargraph.diagnostics": true
+  "solargraph.diagnostics": true,
+  "go.toolsManagement.autoUpdate": true
 }
