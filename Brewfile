@@ -26,6 +26,7 @@ brew "mongodb/brew/mongodb-community", restart_service: true
 brew "mysql@5.7", restart_service: true
 brew "nginx"
 brew "node@12", link: false
+brew "openjdk"
 brew "openssl"
 brew "peco"
 brew "python"
@@ -39,7 +40,6 @@ brew "tmux"
 brew "tree"
 brew "vim"
 brew "yarn"
-cask "adoptopenjdk"
 cask "alfred"
 cask "brave-browser"
 cask "coteditor"
