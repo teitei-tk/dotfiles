@@ -21,6 +21,12 @@ $ make setup-dotfiles # dotfiles only
 $ make setup-vscode
 ```
 
+## Fonts
+
+### source-han-code-jp
+
+- https://github.com/adobe-fonts/source-han-code-jp/releases
+
 ## Keymap
 
 ### Ergodox Keymap
