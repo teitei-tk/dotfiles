@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # -------------------------------------------
 # default settings
 # -------------------------------------------
@@ -9,24 +10,17 @@ setopt correct           # command check
 
 bindkey -e
 
-# -------------------------------------------
-# utility funcion
-# -------------------------------------------
-load_file_exists () {
-    if [ -e $1 ]; then
-        source $1
-    fi
-}
-
 # load from local shell settings.
-load_file_exists "$HOME/.zshrc_local"
+if [ -e "$HOME"/.zshrc_local ]; then
+    "$HOME/.zshrc_local"
+fi
 
 # -------------------------------------------
 # history
 # -------------------------------------------
-HISTFILE=~/.zsh_history   # save of comannds history file
-HISTSIZE=20000            # on memory history size
-SAVEHIST=20000            # save history counts
+export HISTFILE=~/.zsh_history   # save of comannds history file
+export HISTSIZE=20000            # on memory history size
+export SAVEHIST=20000            # save history counts
 setopt inc_append_history # to save every command
 setopt hist_reduce_blanks # remove duplicate spaces
 setopt hist_ignore_dups   # ignore duplicate command
@@ -63,9 +57,11 @@ zstyle ':vcs_info:*' actionformats ' %c%u(%s:%b|%a)'
 precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
+    # shellcheck disable=SC2034
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
+# shellcheck disable=SC2034
 PROMPT="%(!,%F{red}root,%F{green}%n )>>%B%F{red}%1(v|%1v|)%f%b %B%F{blue}%~%f%b
 %F{white}$ "
 
