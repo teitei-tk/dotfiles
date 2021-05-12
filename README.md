@@ -3,8 +3,9 @@
 ## Installation
 
 ```bash
-$ git clone git://github.com:teitei-tk/MyDotfiles.git /path/to/MyDotfiles
-$ cd /path/to/MyDotfiles
+$ git clone git://github.com:teitei-tk/MyDotfiles.git $HOME/repos/src/github.com/teitei-tk/MyDotfiles
+$ cd $HOME/repos/src/github.com/teitei-tk/MyDotfiles
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" # install Homebrew https://brew.sh/index_ja
 $ make init
 ```
 
