@@ -1,0 +1,16 @@
+name: Linter
+
+on:
+  push:
+    paths:
+      - "**.sh"
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@1.1.0
+        with:
+          ignore: .zprofile .zshrc .bashrc .bash_profile

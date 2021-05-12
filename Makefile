@@ -2,9 +2,6 @@
 init: brew-bundle brew-bundle-mas setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
-.PHONY: ci
-ci: brew-bundle-ci setup install-powerline-fonts install-vim-packages
-
 .PHONY: shellcheck
 shellcheck:
 	shellcheck setup.sh vscode/sync.sh

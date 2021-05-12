@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -eu
+
 function main() {
   dotfiles_dir="$(cd "$(dirname "$0")" && pwd)"
   home_dir=$HOME
