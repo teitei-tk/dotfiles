@@ -1,10 +1,14 @@
+# shellcheck disable=SC2148
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
+    # shellcheck disable=SC1091
     . /etc/bashrc
 fi
 
 # local definitions
 if [ -f ~/.bashrc_local ]; then
+    # shellcheck disable=SC1090
     source ~/.bashrc_local
 fi
 
@@ -16,5 +20,3 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 alias repos='cd $( ghq list --full-path | peco )'
-
-cd $HOME
