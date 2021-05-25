@@ -104,5 +104,6 @@
   "solargraph.autoformat": true,
   "solargraph.checkGemVersion": false,
   "solargraph.diagnostics": true,
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "eslint.format.enable": true
 }
