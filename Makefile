@@ -29,7 +29,7 @@ brew-bundle:
 .PHONY: brew-bundle-ci
 brew-bundle-ci:
 	# https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11.0-Readme.md
-	grep -Ev "awscli|go|node|python|yarn" Brewfile > Brewfile.ci
+	grep -Ev "awscli|go|node|python|yarn|macvim" Brewfile > Brewfile.ci
 	brew bundle --file=Brewfile.ci
 
 .PHONY: bundle-bundle-mas
