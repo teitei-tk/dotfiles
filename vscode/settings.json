@@ -105,5 +105,6 @@
   "solargraph.checkGemVersion": false,
   "solargraph.diagnostics": true,
   "go.toolsManagement.autoUpdate": true,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
