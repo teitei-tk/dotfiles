@@ -15,6 +15,9 @@ golang.go
 GrapeCity.gc-excelviewer
 Gruntfuggly.activitusbar
 hashicorp.terraform
+hediet.vscode-drawio
+jebbs.plantuml
+joe-re.sql-language-server
 jolaleye.horizon-theme-vscode
 mads-hartmann.bash-ide-vscode
 marchrock.vscode-ghq
@@ -33,6 +36,7 @@ octref.vetur
 Orta.vscode-jest
 prograhammer.tslint-vue
 rebornix.ruby
+redhat.vscode-commons
 redhat.vscode-yaml
 sianglim.slim
 taichi.vscode-textlint
