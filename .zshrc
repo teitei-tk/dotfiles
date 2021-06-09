@@ -12,7 +12,8 @@ bindkey -e
 
 # load from local shell settings.
 if [ -e "$HOME"/.zshrc_local ]; then
-    "$HOME/.zshrc_local"
+  # shellcheck disable=SC1091
+    source "$HOME/.zshrc_local"
 fi
 
 # -------------------------------------------
@@ -35,8 +36,11 @@ autoload -U colors; colors; colors
 # -------------------------------------------
 # autocomplete
 # -------------------------------------------
-# enable auto complete
-autoload -Uz compinit; compinit
+if [ -e ~/.zsh/completions ]; then
+  export FPATH="$HOME/.zsh/completions/:$FPATH"
+fi
+
+autoload -Uz compinit && compinit -i;
 
 setopt auto_param_slash      # auto append slash
 setopt mark_dirs             # match directory as append slash

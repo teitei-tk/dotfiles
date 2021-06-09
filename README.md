@@ -33,3 +33,7 @@ $ make setup-vscode
 ### Ergodox Keymap
 
 - https://github.com/teitei-tk/qmk_firmware/tree/master/keyboards/ergodox_ez/keymaps/teitei-tk
+
+## Docker Completions
+
+- https://docs.docker.com/docker-for-mac/#install-shell-completion
