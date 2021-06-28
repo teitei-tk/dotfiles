@@ -100,11 +100,20 @@
     "build.expandWorkspaceToModule": true,
     "experimentalWorkspaceModule": true
   },
-  "go.toolsEnvVars": {"GO111MODULE": "on"},
+  "go.toolsEnvVars": { "GO111MODULE": "on" },
   "solargraph.autoformat": true,
   "solargraph.checkGemVersion": false,
   "solargraph.diagnostics": true,
   "go.toolsManagement.autoUpdate": true,
   "eslint.format.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "golang.go",
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  }
 }
