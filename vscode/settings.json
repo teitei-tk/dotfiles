@@ -23,7 +23,8 @@
     "statusBar.background": "#8ac6f2",
     "statusBar.noFolderBackground": "#8ac6f2",
     "statusBar.debuggingBackground": "#8ac6f2",
-    "statusBar.foreground": "#444444"
+    "statusBar.foreground": "#444444",
+    "statusBar.debuggingForeground": "#444444"
   },
   "activitusbar.activeColour": "#999",
   "activitusbar.inactiveColour": "#444",
@@ -115,5 +116,6 @@
     },
     "editor.defaultFormatter": "golang.go",
     "editor.suggest.snippetsPreventQuickSuggestions": false
-  }
+  },
+  "csharp.suppressDotnetInstallWarning": true
 }
