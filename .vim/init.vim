@@ -123,8 +123,6 @@ let g:lightline = {
     \   'mode': 'MyMode',
     \   'date' : 'CurrentDatetime'
     \ },
-    \ 'separator': { 'left': '⮀', 'right': '⮂' },
-    \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
     \ }
 
 function! MyModified()

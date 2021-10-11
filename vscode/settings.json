@@ -3,7 +3,7 @@
   "workbench.statusBar.visible": true,
   "workbench.sideBar.location": "left",
   "workbench.activityBar.visible": false,
-  "editor.fontFamily": "SourceHanCodeJP-Regular, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "workbench.iconTheme": "file-icons",
   "ruby.format": "rubocop",
