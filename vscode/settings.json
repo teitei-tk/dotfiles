@@ -124,5 +124,7 @@
     "editor.defaultFormatter": "golang.go",
     "editor.suggest.snippetsPreventQuickSuggestions": false
   },
-  "csharp.suppressDotnetInstallWarning": true
+  "csharp.suppressDotnetInstallWarning": true,
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.enabled": false
 }
