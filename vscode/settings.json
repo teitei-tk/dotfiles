@@ -18,7 +18,7 @@
   "vim.statusBarColors.visualline": ["#f2c68a", "#444444"],
   "vim.statusBarColors.visualblock": ["#f2c68a", "#444444"],
   "vim.statusBarColors.replace": ["#e5786d", "#444444"],
-  "workbench.colorTheme": "Horizon",
+  "workbench.colorTheme": "Ayu Dark",
   "workbench.colorCustomizations": {
     "statusBar.background": "#8ac6f2",
     "statusBar.noFolderBackground": "#8ac6f2",
