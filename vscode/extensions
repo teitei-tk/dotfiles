@@ -11,6 +11,7 @@ esbenp.prettier-vscode
 fallenwood.vimL
 file-icons.file-icons
 formulahendry.github-actions
+GitHub.github-vscode-theme
 golang.go
 GrapeCity.gc-excelviewer
 Gruntfuggly.activitusbar
@@ -22,10 +23,13 @@ mads-hartmann.bash-ide-vscode
 marchrock.vscode-ghq
 misogi.ruby-rubocop
 ms-azuretools.vscode-docker
+MS-CEINTL.vscode-language-pack-ja
 ms-dotnettools.csharp
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
