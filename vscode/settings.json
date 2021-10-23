@@ -126,5 +126,6 @@
   },
   "csharp.suppressDotnetInstallWarning": true,
   "security.workspace.trust.startupPrompt": "never",
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  "redhat.telemetry.enabled": false
 }

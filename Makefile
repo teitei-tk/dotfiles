@@ -1,5 +1,5 @@
 .PHONY: init
-init: brew-bundle brew-bundle-mas setup install-powerline-fonts install-vim-packages
+init: brew-bundle brew-bundle-sensitive brew-bundle-mas setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: shellcheck
@@ -32,9 +32,13 @@ brew-bundle-ci:
 	grep -Ev "awscli|go|node|python|yarn|macvim" Brewfile > Brewfile.ci
 	brew bundle --file=Brewfile.ci
 
-.PHONY: bundle-bundle-mas
-mas-bundle:
+.PHONY: brew-bundle-mas
+brew-bundle-mas:
 	brew bundle --file=Brewfile.mas
+
+.PHONY: brew-bundle-sensitive
+brew-bundle-sensitive:
+	brew bundle --file=Brewfile.sensitive
 
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
