@@ -24,21 +24,21 @@ setup-vscode:
 
 .PHONY: brew-bundle
 brew-bundle:
-	brew bundle
+	brew bundle --file=./brewfiles/Brewfile
 
 .PHONY: brew-bundle-ci
 brew-bundle-ci:
 	# https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11.0-Readme.md
-	grep -Ev "awscli|go|node|python|yarn|macvim" Brewfile > Brewfile.ci
-	brew bundle --file=Brewfile.ci
+	grep -Ev "awscli|go|node|python|yarn|macvim" ./brewfiles/Brewfile > ./brewfiles/Brewfile.ci
+	brew bundle --file=./brewfiles/Brewfile.ci
 
 .PHONY: brew-bundle-mas
 brew-bundle-mas:
-	brew bundle --file=Brewfile.mas
+	brew bundle --file=./brewfiles/Brewfile.mas
 
 .PHONY: brew-bundle-sensitive
 brew-bundle-sensitive:
-	brew bundle --file=Brewfile.sensitive
+	brew bundle --file=./brewfiles/Brewfile.sensitive
 
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
