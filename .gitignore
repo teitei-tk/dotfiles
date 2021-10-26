@@ -97,6 +97,7 @@ nosetests.xml
 
 .config/
 !.config/karabiner
+!.config/efm-langserver
 
 node_modules/
 

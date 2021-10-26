@@ -209,3 +209,25 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+if !has('nvim')
+  let g:lsp_diagnostics_float_cursor = 1
+endif
+let g:lsp_log_file = ''
+
+let g:lsp_settings = {
+      \ 'efm-langserver': {
+      \   'disabled': 0,
+      \   'allowlist': ['markdown'],
+      \  }
+      \ }
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal completeopt=menu
+  setlocal omnifunc=lsp#complete
+endfunction
+
+augroup lsp_install
+  au!
+  au User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END

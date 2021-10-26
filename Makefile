@@ -48,3 +48,7 @@ install-powerline-fonts:
 .PHONY: install-vim-packages
 install-vim-packages:
 	vim -N -u ~/.vim/init.vim -c "try | call dein#install() | finally | qall! | endtry" -V1 -es
+
+.PHONY: install-textlint
+install-textlint:
+	yarn add -D textlint textlint-rule-preset-japanese
