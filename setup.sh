@@ -6,7 +6,7 @@ function main() {
   dotfiles_dir="$(cd "$(dirname "$0")" && pwd)"
   home_dir=$HOME
   dotfiles=$(ls -a)
-  exclude_list=(README.md .git .github setup.sh Makefile vscode brewfiles ..)
+  exclude_list=(README.md .DS_Store .git .github node_modules setup.sh Makefile vscode brewfiles ..)
 
   target_files=()
   for item in $dotfiles; do
