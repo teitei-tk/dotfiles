@@ -20,4 +20,8 @@ alias c="clear"
 alias l="ls"
 alias dir="ls"
 alias repos='cd $( ghq list --full-path | peco )'
-. "$HOME/.cargo/env"
+
+if [ -f "$HOME/.cargo/env" ]; then
+    # shellcheck disable=SC1091
+    source "$HOME/.cargo/env"
+fi

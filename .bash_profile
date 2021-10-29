@@ -5,4 +5,5 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+# shellcheck disable=SC1091
 . "$HOME/.cargo/env"
