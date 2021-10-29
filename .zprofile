@@ -6,6 +6,10 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 export TERM=xterm-256color
 
+if [ -e "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 if [ -d "$HOME/.anyenv/envs/goenv" ]; then
    export GOENV_ROOT="$HOME/.anyenv/envs/goenv"
    export PATH="$GOENV_ROOT/bin:$PATH"
@@ -40,3 +44,4 @@ fi
 if [ -d "$HOME/.yarn" ]; then
   export PATH="$HOME/.yarn/bin:$PATH"
 fi
+
