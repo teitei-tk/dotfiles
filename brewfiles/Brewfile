@@ -33,6 +33,7 @@ brew "python"
 brew "reattach-to-user-namespace"
 brew "redis", restart_service: true
 brew "ripgrep"
+brew "rustup"
 brew "shellcheck"
 brew "terraform"
 brew "tig"

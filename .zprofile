@@ -36,8 +36,7 @@ if [ -d "$HOME/repos" ]; then
 fi
 
 if [ -d "$HOME/.cargo" ]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
-  # shellcheck disable=SC1091
+    # shellcheck disable=SC1091
   source "$HOME"/.cargo/env
 fi
 
