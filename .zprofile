@@ -44,3 +44,6 @@ if [ -d "$HOME/.yarn" ]; then
   export PATH="$HOME/.yarn/bin:$PATH"
 fi
 
+if [ -d "$(brew --prefix)/opt/mysql@5.7/bin" ]; then
+  export PATH="$(brew --prefix)/opt/mysql@5.7/bin:$PATH"
+fi
