@@ -35,6 +35,7 @@ ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
+nhoizey.gremlins
 octref.vetur
 Orta.vscode-jest
 prograhammer.tslint-vue
