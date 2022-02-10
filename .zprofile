@@ -45,9 +45,11 @@ if [ -d "$HOME/.yarn" ]; then
 fi
 
 if [ -d "$(brew --prefix)/opt/mysql@5.7/bin" ]; then
+  # shellcheck disable=SC2155
   export PATH="$(brew --prefix)/opt/mysql@5.7/bin:$PATH"
 fi
 
 if [ -d "$(brew --prefix)/opt/openjdk" ]; then
+  # shellcheck disable=SC2155
   export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
 fi
