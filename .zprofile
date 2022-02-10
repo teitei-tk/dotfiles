@@ -47,3 +47,7 @@ fi
 if [ -d "$(brew --prefix)/opt/mysql@5.7/bin" ]; then
   export PATH="$(brew --prefix)/opt/mysql@5.7/bin:$PATH"
 fi
+
+if [ -d "$(brew --prefix)/opt/openjdk" ]; then
+  export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
+fi
