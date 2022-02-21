@@ -1,6 +1,9 @@
 name: Installation and Setup Check
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: "0 3 * * *"
 
 jobs:
   installation-and-setup-check:
