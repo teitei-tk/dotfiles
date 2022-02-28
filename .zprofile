@@ -53,3 +53,7 @@ if [ -d "$(brew --prefix)/opt/openjdk" ]; then
   # shellcheck disable=SC2155
   export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH"
 fi
+
+if [ -d "$HOME/.pub-cache" ]; then
+  export PATH="$PATH":"$HOME/.pub-cache/bin"
+fi
