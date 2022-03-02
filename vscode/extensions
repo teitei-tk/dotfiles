@@ -3,6 +3,7 @@ bsides.Theme-Base16-Eighties
 bungcip.better-toml
 castwide.solargraph
 christian-kohler.path-intellisense
+Dart-Code.dart-code
 dbaeumer.vscode-eslint
 eamodio.gitlens
 eg2.tslint
@@ -13,6 +14,7 @@ file-icons.file-icons
 formulahendry.github-actions
 fwcd.kotlin
 GitHub.github-vscode-theme
+gitkraken.gitkraken-authentication
 golang.go
 GrapeCity.gc-excelviewer
 Gruntfuggly.activitusbar
