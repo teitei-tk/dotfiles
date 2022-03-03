@@ -127,5 +127,10 @@
   "csharp.suppressDotnetInstallWarning": true,
   "security.workspace.trust.startupPrompt": "never",
   "security.workspace.trust.enabled": false,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "dart.flutterHotReloadOnSave": "always",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnSave": true
+  }
 }
