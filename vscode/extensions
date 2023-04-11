@@ -15,6 +15,7 @@ file-icons.file-icons
 formulahendry.github-actions
 fwcd.kotlin
 GitHub.github-vscode-theme
+github.vscode-github-actions
 golang.go
 GrapeCity.gc-excelviewer
 Gruntfuggly.activitusbar
@@ -42,6 +43,7 @@ ms-vscode-remote.remote-ssh-edit
 ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.remote-explorer
+ms-vscode.remote-server
 nhoizey.gremlins
 octref.vetur
 Orta.vscode-jest
