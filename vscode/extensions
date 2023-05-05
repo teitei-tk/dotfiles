@@ -53,12 +53,14 @@ prograhammer.tslint-vue
 rebornix.ruby
 redhat.vscode-commons
 redhat.vscode-yaml
+rust-lang.rust-analyzer
 Shopify.ruby-lsp
 sianglim.slim
 soutaro.rbs-syntax
 soutaro.steep-vscode
 taichi.vscode-textlint
 teabyii.ayu
+vadimcn.vscode-lldb
 vscodevim.vim
 wingrunr21.vscode-ruby
 yzane.markdown-pdf
