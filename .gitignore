@@ -105,4 +105,4 @@ Brewfile.mas.lock.json
 
 .lima/
 
-./brewfiles/*.lock.json
+brewfiles/Brewfile.vscode.lock.json
