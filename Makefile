@@ -17,7 +17,7 @@ setup-dotfiles:
 	@echo "--------------------Finished Successfully.--------------------"
 
 .PHONY: setup-vscode
-setup-vscode: brew-bundle-vscode
+setup-vscode: brew-bundle-vscode brew-bundle-vscode-dump
 	@echo "------------------Start Sync VSCode Settings.-----------------"
 	@cd vscode/ && ./sync.sh && cd -
 	@echo "--------------------Finished Successfully.--------------------"
@@ -47,6 +47,10 @@ brew-bundle-taps:
 .PHONY: brew-bundle-vscode
 brew-bundle-vscode:
 	brew bundle --file=./brewfiles/Brewfile.vscode
+
+.PHONY: brew-bundle-vscode-dump
+brew-bundle-vscode-dump:
+	brew bundle dump --force --vscode --file=brewfiles/Brewfile.vscode
 
 .PHONY: brew-bundle-dump
 brew-bundle-dump:
