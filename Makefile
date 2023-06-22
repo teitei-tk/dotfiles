@@ -1,5 +1,5 @@
 .PHONY: init
-init: brew-bundle brew-bundle-mas setup install-powerline-fonts install-vim-packages
+init: brew-bundle-taps brew-bundle brew-bundle-mas brew-bundle-cask setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: shellcheck
