@@ -18,15 +18,3 @@ if [ -L "${VSCODE_SETTING_DIR}/keybindings.json" ]; then
   rm "${VSCODE_SETTING_DIR}/keybindings.json"
 fi
 ln -s "${SCRIPT_DIR}/keybindings.json" "${VSCODE_SETTING_DIR}/keybindings.json"
-
-if [ -x "$(command -v code)" ]; then
-  cat < ./extensions | while read -r line
-
-  do
-    code --install-extension "$line"
-  done
-
-  code --list-extensions > extensions
-else
-  echo "VSCode is not installed."
-fi

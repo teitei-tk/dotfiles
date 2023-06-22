@@ -1,5 +1,5 @@
 .PHONY: init
-init: brew-bundle brew-bundle-sensitive brew-bundle-mas setup install-powerline-fonts install-vim-packages
+init: brew-bundle brew-bundle-mas setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: shellcheck
@@ -17,7 +17,7 @@ setup-dotfiles:
 	@echo "--------------------Finished Successfully.--------------------"
 
 .PHONY: setup-vscode
-setup-vscode:
+setup-vscode: brew-bundle-vscode
 	@echo "------------------Start Sync VSCode Settings.-----------------"
 	@cd vscode/ && ./sync.sh && cd -
 	@echo "--------------------Finished Successfully.--------------------"
@@ -36,9 +36,17 @@ brew-bundle-ci:
 brew-bundle-mas:
 	brew bundle --file=./brewfiles/Brewfile.mas
 
-.PHONY: brew-bundle-sensitive
-brew-bundle-sensitive:
-	brew bundle --file=./brewfiles/Brewfile.sensitive
+.PHONY: brew-bundle-cask
+brew-bundle-cask:
+	brew bundle --file=./brewfiles/Brewfile.cask
+
+.PHONY: brew-bundle-taps
+brew-bundle-taps:
+	brew bundle --file=./brewfiles/Brewfile.taps
+
+.PHONY: brew-bundle-vscode
+brew-bundle-vscode:
+	brew bundle --file=./brewfiles/Brewfile.vscode
 
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
