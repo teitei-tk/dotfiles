@@ -48,6 +48,20 @@ brew-bundle-taps:
 brew-bundle-vscode:
 	brew bundle --file=./brewfiles/Brewfile.vscode
 
+.PHONY: brew-bundle-dump
+brew-bundle-dump:
+	brew bundle dump --force --brews --file=brewfiles/Brewfile
+	brew bundle dump --force --vscode --file=brewfiles/Brewfile.vscode
+	brew bundle dump --force --cask --file=brewfiles/Brewfile.cask
+	brew bundle dump --force --taps --file=brewfiles/Brewfile.taps
+	brew bundle dump --force --mas --file=brewfiles/Brewfile.mas
+
+.PHONY: brew-bundle-cleanup
+brew-bundle-cleanup:
+	find ./brewfiles -type f ! -name "*.json" -exec cat {} \; | sort | uniq > ./Brewfile
+	brew bundle cleanup --force --file=./Brewfile
+	rm ./Brewfile
+
 .PHONY: install-powerline-fonts
 install-powerline-fonts:
 	git clone https://github.com/powerline/fonts.git --depth=1
