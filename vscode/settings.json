@@ -136,5 +136,8 @@
   "editor.inlineSuggest.enabled": true,
   "[python]": {
     "editor.formatOnType": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": false
   }
 }
