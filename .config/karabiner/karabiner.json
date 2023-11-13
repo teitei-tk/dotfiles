@@ -219,7 +219,7 @@
                         "product_id": 1552,
                         "vendor_id": 13364
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
