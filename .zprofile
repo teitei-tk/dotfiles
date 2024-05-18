@@ -60,3 +60,7 @@ fi
 
 # Added by OrbStack: command-line tools and integration
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+if [ -d "$HOME/.deno" ]; then
+  export PATH="$HOME/.deno/bin:$PATH"
+fi

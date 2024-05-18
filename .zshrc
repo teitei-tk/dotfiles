@@ -85,3 +85,10 @@ alias random-string='openssl rand -base64 24'
 if [ -x "$(which direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
+
+# bun completions
+[ -s "/Users/teitei.tk/.bun/_bun" ] && source "/Users/teitei.tk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
