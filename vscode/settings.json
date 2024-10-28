@@ -139,5 +139,6 @@
   },
   "[markdown]": {
     "editor.formatOnSave": false
-  }
+  },
+  "liveshare.guestApprovalRequired": true
 }
