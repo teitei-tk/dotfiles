@@ -105,8 +105,7 @@
     }
   ],
   "gopls": {
-    "build.expandWorkspaceToModule": true,
-    "experimentalWorkspaceModule": true
+    "build.expandWorkspaceToModule": true
   },
   "go.toolsEnvVars": { "GO111MODULE": "on" },
   "solargraph.autoformat": true,
