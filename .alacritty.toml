@@ -1,0 +1,47 @@
+[[keyboard.bindings]]
+chars = "\u001c"
+key = "¥"
+mods = "Alt"
+
+[colors.bright]
+black = "#75715E"
+blue = "#66D9EF"
+cyan = "#A1EFE4"
+green = "#A6E22E"
+magenta = "#AE81FF"
+red = "#F92672"
+white = "#F9F8F5"
+yellow = "#F4BF75"
+
+[colors.normal]
+black = "#272822"
+blue = "#66D9EF"
+cyan = "#A1EFE4"
+green = "#A6E22E"
+magenta = "#AE81FF"
+red = "#F92672"
+white = "#F8F8F2"
+yellow = "#F4BF75"
+
+[colors.primary]
+background = "#272822"
+foreground = "#F8F8F2"
+
+[env]
+LANG = "ja_JP.UTF-8"
+LC_ALL = "ja_JP.UTF-8"
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "Hack"
+
+[scrolling]
+history = 100000
+multiplier = 5
+
+[window]
+startup_mode = "Maximized"
+
+[keyboard]
