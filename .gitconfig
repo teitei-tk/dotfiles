@@ -25,7 +25,7 @@
 [diff]
     wsErrorHighlight = all
 [ghq]
-    root = ~/repos/src
+    root = ~/repos
 [filter "media"]
     clean = git media clean %f
     smudge = git media smudge %f
