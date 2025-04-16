@@ -138,5 +138,6 @@
   "[markdown]": {
     "editor.formatOnSave": false
   },
-  "liveshare.guestApprovalRequired": true
+  "liveshare.guestApprovalRequired": true,
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
