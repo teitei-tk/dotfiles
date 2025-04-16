@@ -33,15 +33,6 @@ setopt hist_ignore_dups   # ignore duplicate command
 # enable color
 autoload -U colors; colors; colors
 
-# -------------------------------------------
-# autocomplete
-# -------------------------------------------
-if [ -e ~/.zsh/completions ]; then
-  export FPATH="$HOME/.zsh/completions/:$FPATH"
-fi
-
-autoload -Uz compinit && compinit -i;
-
 setopt auto_param_slash      # auto append slash
 setopt mark_dirs             # match directory as append slash
 setopt list_types            # autocomplete list is render file mark

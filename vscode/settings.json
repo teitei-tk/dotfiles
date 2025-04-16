@@ -2,7 +2,6 @@
   "editor.cursorStyle": "block",
   "workbench.statusBar.visible": true,
   "workbench.sideBar.location": "left",
-  "workbench.activityBar.visible": true,
   "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "workbench.iconTheme": "file-icons",
@@ -57,7 +56,7 @@
   "ruby.useBundler": true,
   "window.clickThroughInactive": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -118,7 +117,7 @@
     "editor.insertSpaces": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     },
     "editor.defaultFormatter": "golang.go",
     "editor.suggest.snippetsPreventQuickSuggestions": false
