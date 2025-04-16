@@ -25,7 +25,7 @@ brew "mysql", restart_service: true
 brew "nginx"
 brew "peco"
 brew "perl"
-brew "protobuf@3", link: true
+brew "protobuf", link: true
 brew "reattach-to-user-namespace"
 brew "redis", restart_service: true
 brew "ripgrep"
