@@ -17,6 +17,11 @@ if [ -e "$HOME"/.zshrc_local ]; then
 fi
 
 # -------------------------------------------
+# autocomplete
+# -------------------------------------------
+autoload -Uz compinit && compinit -i;
+
+# -------------------------------------------
 # history
 # -------------------------------------------
 export HISTFILE=~/.zsh_history   # save of comannds history file
