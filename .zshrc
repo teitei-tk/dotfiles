@@ -77,18 +77,13 @@ alias dir="ls"
 alias history="history 1"
 alias repos='cd $( ghq list --full-path | peco )'
 alias random-string='openssl rand -base64 24'
+alias claude='$HOME/.claude/local/claude'
 
 if [ -x "$(which direnv)" ]; then
   eval "$(direnv hook zsh)"
 fi
 
-# bun completions
-[ -s "/Users/teitei.tk/.bun/_bun" ] && source "/Users/teitei.tk/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
 export PATH="$PATH:/$HOME/.lmstudio/bin"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"

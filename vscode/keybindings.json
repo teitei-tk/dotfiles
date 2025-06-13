@@ -1,11 +1,19 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-	{
-		"key": "ctrl+cmd+p",
-		"command": "extension.ghqOpen"
-	},
-	{
-		"key": "ctrl+t",
-		"command": "workbench.action.terminal.toggleTerminal"
-	},
+  {
+    "key": "ctrl+cmd+p",
+    "command": "extension.ghqOpen"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+option+left",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "cmd+option+right",
+    "command": "workbench.action.focusNextGroup"
+  }
 ]

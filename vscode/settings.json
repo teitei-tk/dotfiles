@@ -139,5 +139,6 @@
     "editor.formatOnSave": false
   },
   "liveshare.guestApprovalRequired": true,
-  "terminal.integrated.defaultProfile.osx": "zsh"
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "npm.keybindingsChangedWarningShown": true
 }
