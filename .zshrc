@@ -75,7 +75,7 @@ alias l="ls"
 alias c="clear"
 alias dir="ls"
 alias history="history 1"
-alias repos='cd $( ghq list --full-path | peco )'
+alias repos='cd $( ghq list --vcs git --full-path | peco )'
 alias random-string='openssl rand -base64 24'
 alias claude='$HOME/.claude/local/claude'
 
