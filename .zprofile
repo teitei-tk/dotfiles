@@ -29,9 +29,9 @@ if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
-if [ -d "$HOME/go" ]; then
+if [ -d "$HOME/.go" ]; then
   export PATH="$GOROOT/bin:$PATH"
-  export GOPATH=$HOME/go
+  export GOPATH=$HOME/.go
   export PATH="$GOPATH/bin:$PATH"
 fi
 
