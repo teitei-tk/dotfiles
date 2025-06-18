@@ -50,7 +50,7 @@ brew-bundle-taps:
 
 .PHONY: brew-bundle-vscode
 brew-bundle-vscode:
-	brew bundle --file=./brewfiles/Brewfile.vscode
+	brew bundle --force --file=./brewfiles/Brewfile.vscode
 
 .PHONY: brew-bundle-vscode-dump
 brew-bundle-vscode-dump:
