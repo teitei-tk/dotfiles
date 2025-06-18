@@ -1,9 +1,9 @@
 .PHONY: init
-init: brew-bundle-taps brew-bundle brew-bundle-mas brew-bundle-cask setup install-powerline-fonts install-vim-packages
+init: brew-bundle-taps brew-bundle brew-bundle-mas brew-bundle-cask setup install-powerline-fonts
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: ci
-ci: brew-bundle-taps brew-bundle brew-bundle-cask setup install-powerline-fonts install-vim-packages
+ci: brew-bundle-taps brew-bundle brew-bundle-cask setup install-powerline-fonts
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: shellcheck
@@ -74,11 +74,3 @@ brew-bundle-cleanup:
 install-powerline-fonts:
 	git clone https://github.com/powerline/fonts.git --depth=1
 	cd fonts && ./install.sh && cd .. && rm -rf fonts
-
-.PHONY: install-vim-packages
-install-vim-packages:
-	vim -N -u ~/.vim/init.vim -c "try | call dein#install() | finally | qall! | endtry" -V1 -es
-
-.PHONY: install-textlint
-install-textlint:
-	yarn add -D textlint textlint-rule-preset-japanese
