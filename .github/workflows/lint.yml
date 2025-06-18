@@ -14,14 +14,6 @@ jobs:
       - name: Install ShellCheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
-      - name: Get changed shell files
-        id: changed
+      - name: Run ShellCheck
         run: |
-          FILES=$(git diff --name-only origin/main...HEAD | grep -E '^setup\.sh$|^vscode/sync\.sh$' | xargs || true)
-          echo "files=$FILES" >> "$GITHUB_OUTPUT"
-
-      - name: Run ShellCheck on changed files
-        if: steps.changed.outputs.files != ''
-        run: |
-          echo "Detected changes in: ${{ steps.changed.outputs.files }}"
-          shellcheck ${{ steps.changed.outputs.files }}
+          shellcheck ./setup.sh ./vscode/sync.sh
