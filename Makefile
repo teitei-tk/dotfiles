@@ -2,6 +2,10 @@
 init: brew-bundle-taps brew-bundle brew-bundle-mas brew-bundle-cask setup install-powerline-fonts install-vim-packages
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
+.PHONY: ci
+ci: brew-bundle-taps brew-bundle brew-bundle-cask setup install-powerline-fonts install-vim-packages
+	@echo "---------------All init Task Finished. Successfully.---------------"
+
 .PHONY: shellcheck
 shellcheck:
 	shellcheck ./**/*.sh .zprofile .zshrc .bashrc .bash_profile

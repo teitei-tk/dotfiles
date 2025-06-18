@@ -16,4 +16,4 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@main
 
       - name: Initialize
-        run: make init
+        run: make ci
