@@ -9,6 +9,7 @@ if [ ! -d "$VSCODE_SETTING_DIR" ]; then
   mkdir -p "$VSCODE_SETTING_DIR"
 fi
 
+
 if [ -L "${VSCODE_SETTING_DIR}/settings.json" ]; then
   rm "${VSCODE_SETTING_DIR}/settings.json"
 fi
