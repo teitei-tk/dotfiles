@@ -1,11 +1,17 @@
-name: Linter
+name: Lint
 
-on: push
+on:
+  push:
 
 jobs:
-  linter:
+  shellcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+
       - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@1.1.0
+        run: |
+          shellcheck ./setup.sh ./vscode/sync.sh
