@@ -1,11 +1,22 @@
-name: Linter
+name: Lint
 
-on: push
+on:
+  push:
 
 jobs:
-  linter:
+  shellcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run ShellCheck
-        uses: ludeeus/action-shellcheck@1.1.0
+      - uses: actions/checkout@v4
+
+      - name: Get changed shell files
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only origin/main...HEAD | grep -E '^setup\.sh$|^vscode/sync\.sh$' || true)
+          echo "files=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Run ShellCheck on changed files
+        if: steps.changed.outputs.files != ''
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          args: ${{ steps.changed.outputs.files }}
