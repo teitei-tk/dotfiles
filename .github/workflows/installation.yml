@@ -1,12 +1,12 @@
 name: Installation
 
 on:
-  push:
+  pull_request:
   schedule:
     - cron: "0 3 * * *"
 
 jobs:
-  installation-and-setup-check:
+  installation:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
