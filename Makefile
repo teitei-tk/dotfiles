@@ -3,7 +3,7 @@ init: brew-bundle-taps brew-bundle brew-bundle-mas brew-bundle-cask setup instal
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: ci
-ci: brew-bundle-taps brew-bundle brew-bundle-cask setup install-powerline-fonts
+ci: brew-bundle-taps brew-bundle brew-bundle-cask setup-dotfiles install-powerline-fonts
 	@echo "---------------All init Task Finished. Successfully.---------------"
 
 .PHONY: shellcheck
