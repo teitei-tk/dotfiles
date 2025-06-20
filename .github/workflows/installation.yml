@@ -1,22 +1,18 @@
-name: Installation and Setup Check
+name: Installation
 
 on:
-  push:
   schedule:
     - cron: "0 3 * * *"
 
 jobs:
-  installation-and-setup-check:
-    runs-on: macos-11
+  installation:
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: check brew package installation.
-        run: make brew-bundle-ci
-      - name: updates to dotfiles.
-        run: make setup-dotfiles
-      - name: updates to VSCode.
-        run: make setup-vscode
-      - name: check powerline-fonts installation.
-        run: make install-powerline-fonts
-      - name: check vim packages installation.
-        run: make install-vim-packages
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Initialize
+        run: make ci
