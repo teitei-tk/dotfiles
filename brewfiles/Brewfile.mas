@@ -2,6 +2,8 @@ mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "Cinebench", id: 1438772273
 mas "Display Maid", id: 450063525
+mas "Draw Things", id: 6444050820
+mas "Gapplin", id: 768053424
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "LINE", id: 539883307
@@ -9,5 +11,4 @@ mas "Magnet", id: 441258766
 mas "RunCat", id: 1429033973
 mas "The Unarchiver", id: 425424353
 mas "Toggl Track", id: 1291898086
-mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835
