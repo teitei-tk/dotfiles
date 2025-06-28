@@ -78,6 +78,7 @@ alias history="history 1"
 alias repos='cd $( ghq list --vcs git --full-path | peco )'
 alias random-string='openssl rand -base64 24'
 alias claude='$HOME/.claude/local/claude'
+alias vscode='code $(ghq root)/$(ghq list --vcs git | peco)'
 
 if [ -x "$(which direnv)" ]; then
   eval "$(direnv hook zsh)"
