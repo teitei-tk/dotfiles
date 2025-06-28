@@ -2,7 +2,7 @@
   "editor.cursorStyle": "block",
   "workbench.statusBar.visible": true,
   "workbench.sideBar.location": "left",
-  "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "HackGen, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "workbench.iconTheme": "file-icons",
   "ruby.format": "rubocop",
