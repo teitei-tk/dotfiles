@@ -19,9 +19,9 @@
   "vim.statusBarColors.replace": ["#e5786d", "#444444"],
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#8ac6f2",
-    "statusBar.noFolderBackground": "#8ac6f2",
-    "statusBar.debuggingBackground": "#8ac6f2",
+    "statusBar.background": "#95e454",
+    "statusBar.noFolderBackground": "#95e454",
+    "statusBar.debuggingBackground": "#95e454",
     "statusBar.foreground": "#444444",
     "statusBar.debuggingForeground": "#444444"
   },
