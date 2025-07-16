@@ -140,5 +140,6 @@
   },
   "liveshare.guestApprovalRequired": true,
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "npm.keybindingsChangedWarningShown": true
+  "npm.keybindingsChangedWarningShown": true,
+  "workbench.editor.enablePreview": false
 }
