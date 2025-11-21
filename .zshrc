@@ -77,7 +77,6 @@ alias dir="ls"
 alias history="history 1"
 alias repos='cd $( ghq list --vcs git --full-path | peco )'
 alias random-string='openssl rand -base64 24'
-alias claude='$HOME/.claude/local/claude'
 alias vscode='code $(ghq root)/$(ghq list --vcs git | peco)'
 
 if [ -x "$(which direnv)" ]; then
@@ -85,6 +84,11 @@ if [ -x "$(which direnv)" ]; then
 fi
 
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$PATH:/$HOME/.lmstudio/bin"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+# Added by LM Studio CLI (lms)
+if [ -d "$HOME/.lmstudio/bin" ]; then
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
+# End of LM Studio CLI section
