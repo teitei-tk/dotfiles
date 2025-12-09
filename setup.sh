@@ -29,9 +29,9 @@ EOT
     source_path="$dotfiles_dir/$dotfile"
     target_path="$home_dir/$dotfile"
     if [ -e "$target_path" ] || [ -L "$target_path" ]; then
-      echo "$target_path symlink or file exists. move to $TMPDIR/$current_datetime/$dotfile"
-      mkdir -p "$TMPDIR/$current_datetime"
-      mv "$target_path" "$TMPDIR/$current_datetime/$dotfile"
+      echo "$target_path symlink or file exists. move to /tmp/dotfiles/$current_datetime/$dotfile"
+      mkdir -p "/tmp/dotfiles/$current_datetime"
+      mv "$target_path" "/tmp/dotfiles/$current_datetime/$dotfile"
     fi
 
     ln -s "$source_path" "$target_path"
