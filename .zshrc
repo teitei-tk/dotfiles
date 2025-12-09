@@ -92,3 +92,9 @@ if [ -d "$HOME/.lmstudio/bin" ]; then
   export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
 # End of LM Studio CLI section
+
+# Added by Antigravity
+if [ -d "$HOME/.antigravity/antigravity/bin" ]; then
+  export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+fi
+# End of Antigravity section
