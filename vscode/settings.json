@@ -8,7 +8,7 @@
   "ruby.format": "rubocop",
   "ruby.lint": {
     "rubocop": true,
-    "rails": true
+    "rails": true,
   },
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": ["#8ac6f2", "#444444"],
@@ -23,7 +23,7 @@
     "statusBar.noFolderBackground": "#8ac6f2",
     "statusBar.debuggingBackground": "#8ac6f2",
     "statusBar.foreground": "#444444",
-    "statusBar.debuggingForeground": "#444444"
+    "statusBar.debuggingForeground": "#444444",
   },
   "activitusbar.activeColour": "#999",
   "activitusbar.inactiveColour": "#444",
@@ -36,10 +36,10 @@
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[ruby]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -56,7 +56,7 @@
   "ruby.useBundler": true,
   "window.clickThroughInactive": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -71,40 +71,40 @@
         "runtimeArgs": [
           "--inspect-brk",
           "${workspaceRoot}/node_modules/.bin/jest",
-          "--runInBand"
+          "--runInBand",
         ],
         "console": "integratedTerminal",
         "internalConsoleOptions": "neverOpen",
-        "port": 9229
+        "port": 9229,
       },
       {
         "name": "Go Debug and Tests",
         "type": "go",
         "request": "launch",
         "mode": "auto",
-        "program": "${fileDirname}"
-      }
-    ]
+        "program": "${fileDirname}",
+      },
+    ],
   },
   "go.formatTool": "goimports",
   "[html]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "go.useLanguageServer": true,
   "vim.normalModeKeyBindings": [
     {
       "before": ["<C-n>"],
-      "after": ["g", "b"]
-    }
+      "after": ["g", "b"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["<C-n>"],
-      "after": ["g", "b"]
-    }
+      "after": ["g", "b"],
+    },
   ],
   "gopls": {
-    "build.expandWorkspaceToModule": true
+    "build.expandWorkspaceToModule": true,
   },
   "go.toolsEnvVars": { "GO111MODULE": "on" },
   "solargraph.autoformat": true,
@@ -117,10 +117,10 @@
     "editor.insertSpaces": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "explicit",
     },
     "editor.defaultFormatter": "golang.go",
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
   },
   "csharp.suppressDotnetInstallWarning": true,
   "security.workspace.trust.startupPrompt": "never",
@@ -129,17 +129,26 @@
   "dart.flutterHotReloadOnSave": "always",
   "[dart]": {
     "editor.defaultFormatter": "Dart-Code.dart-code",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "editor.inlineSuggest.enabled": true,
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
   },
   "[markdown]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   "liveshare.guestApprovalRequired": true,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "npm.keybindingsChangedWarningShown": true,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true,
+  },
 }
