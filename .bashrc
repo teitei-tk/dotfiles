@@ -30,3 +30,7 @@ if [ -d "$HOME/.lmstudio/bin" ]; then
     export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
 # End of LM Studio CLI section
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
