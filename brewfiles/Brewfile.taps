@@ -1,3 +1,4 @@
+tap "ariga/tap"
 tap "dart-lang/dart"
 tap "heroku/brew"
 tap "mongodb/brew"
