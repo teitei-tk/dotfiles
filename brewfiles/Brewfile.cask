@@ -1,38 +1,75 @@
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# GPU-accelerated terminal emulator
 cask "alacritty"
+# Tools for building Android applications
 cask "android-studio"
+# Application uninstaller
 cask "appcleaner"
+# OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# Plain-text editor for web pages, program source codes and more
 cask "coteditor"
+# AI-powered translator
 cask "deepl"
+# Run Stable Diffusion locally
 cask "diffusionbee"
+# Voice and text chat software
 cask "discord"
+# Web browser
 cask "firefox"
+# UI toolkit for building applications for mobile, web and desktop
 cask "flutter"
 cask "font-hack"
 cask "font-hackgen"
 cask "font-hackgen-nerd"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# GitHub notifications on your menu bar
 cask "gitify"
+# Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
 cask "google-drive"
+# Light, Electron-based Wrapper around GraphiQL
 cask "graphiql"
+# Keyboard customiser
 cask "karabiner-elements"
+# Discover, download, and run local LLMs
 cask "lm-studio"
+# Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Software for Logitech devices
 cask "logi-options+"
+# Text editor
 cask "macvim-app"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Replacement for Docker Desktop
 cask "orbstack"
+# All-in-one bookmark manager
 cask "raindropio"
+# Control your tools with a few keystrokes
 cask "raycast"
+# MySQL/MariaDB database management
 cask "sequel-ace"
+# Team communication and collaboration software
 cask "slack"
+# Music streaming service
 cask "spotify"
+# Charting and social-networking for investment traders
 cask "tradingview"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Network protocol analyzer
 cask "wireshark-app"
+# Multiplayer code editor
+cask "zed"
+# Video communication and virtual meeting platform
 cask "zoom"

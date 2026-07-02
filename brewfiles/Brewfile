@@ -1,50 +1,94 @@
+# All in one for **env
 brew "anyenv"
+# Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Command-line interface for SQLite
 brew "sqlite"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Software library to render fonts
 brew "freetype"
+# XML-based font configuration API for X Windows
 brew "fontconfig"
+# Enables you to reproduce the CircleCI environment locally
 brew "circleci"
+# Dependency manager for Cocoa projects
 brew "cocoapods"
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# GitHub command-line tool
 brew "gh"
+# Remote repository management made easy
 brew "ghq"
+# Distributed revision control system
 brew "git"
+# Git extension for versioning large files
 brew "git-lfs"
+# Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Task is a task runner/build tool that aims to be simpler and easier to use
 brew "go-task"
+# Fast linters runner for Go
 brew "golangci-lint"
+# Next generation open source RPC library and framework
 brew "grpc"
+# Smarter Dockerfile linter to validate best practices
 brew "hadolint"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Statically typed programming language for the JVM
 brew "kotlin"
+# Fast and powerful Git hooks manager for any type of projects
 brew "lefthook"
+# Powerful, lightweight programming language
 brew "lua"
+# Mac App Store command-line interface
 brew "mas"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
+# Open source relational database management system
 brew "mysql", restart_service: :changed
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
+# Simplistic interactive filtering tool
 brew "peco"
+# Highly capable, feature-rich programming language
 brew "perl"
+# Protocol buffers (Google's data interchange format)
 brew "protobuf@3"
+# Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
+# Persistent key-value database, with built-in net interface
 brew "redis", restart_service: :changed
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
 brew "rustup"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Tool to build, change, and version infrastructure
 brew "terraform"
+# Text interface for Git repositories
 brew "tig"
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Vi 'workalike' with many additional features
 brew "vim"
+# JavaScript package manager
 brew "yarn"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-brew "ariga/tap/atlas"
-brew "dart-lang/dart/dart", link: false
-brew "heroku/brew/heroku"
-brew "mongodb/brew/mongodb-community"
