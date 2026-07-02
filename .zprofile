@@ -64,3 +64,7 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 if [ -d "$HOME/.deno" ]; then
   export PATH="$HOME/.deno/bin:$PATH"
 fi
+
+# >>> Codex installer >>>
+export PATH="$HOME/.local/bin:$PATH"
+# <<< Codex installer <<<
