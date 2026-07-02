@@ -7,7 +7,38 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": "Catppuccin Mocha",
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": ""
+      }
+    }
+  },
   "vim_mode": true,
+  "auto_install_extensions": {
+    "catppuccin-icons": true,
+    "csv": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "golangci-lint": true,
+    "graphql": true,
+    "html": true,
+    "log": true,
+    "make": true,
+    "mcp-server-context7": true,
+    "oxc": true,
+    "proto": true,
+    "ruby": true,
+    "scss": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true,
+    "vue": true
+  },
   "project_panel": {
     "auto_reveal_entries": false
   },
